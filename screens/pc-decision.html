@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智慧巡检 — 决策中心</title>
+<style>
+:root {
+  --bg: oklch(99% 0.003 240);
+  --surface: oklch(100% 0 0);
+  --fg: oklch(19% 0.018 240);
+  --muted: oklch(48% 0.01 240);
+  --border: oklch(88% 0.006 240);
+  --accent: oklch(52% 0.10 250);
+  --accent-bg: oklch(52% 0.10 250 / 0.08);
+  --sidebar-width: 220px;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  --red: oklch(52% 0.16 28);
+  --red-bg: oklch(52% 0.16 28 / 0.08);
+  --green: oklch(52% 0.12 145);
+  --green-bg: oklch(52% 0.12 145 / 0.08);
+  --yellow: oklch(60% 0.14 95);
+  --yellow-bg: oklch(60% 0.14 95 / 0.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:14px}
+body{font-family:var(--font);background:var(--bg);color:var(--fg);display:flex;min-height:100vh;line-height:1.5;overflow-x:hidden}
+.sidebar{width:var(--sidebar-width);background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;min-height:100vh;position:sticky;top:0}
+.sidebar-logo{display:flex;align-items:center;gap:10px;padding:18px 20px;border-bottom:1px solid var(--border)}
+.sidebar-logo svg{flex-shrink:0}
+.sidebar-logo span{font-weight:700;font-size:15px;letter-spacing:-0.02em;color:var(--fg)}
+.sidebar-section{padding:16px 12px 6px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted)}
+.nav-item{display:flex;align-items:center;gap:10px;padding:8px 20px;color:var(--muted);text-decoration:none;font-size:13px;position:relative;transition:color .15s}
+.nav-item:hover{color:var(--fg)}
+.nav-item.active{color:var(--fg);font-weight:600}
+.nav-item.active::before{content:'';position:absolute;left:0;top:6px;bottom:6px;width:2px;background:var(--accent);border-radius:0 1px 1px 0}
+.nav-item svg{width:16px;height:16px;flex-shrink:0;opacity:0.6}
+.nav-item.active svg{opacity:1}
+.main{flex:1;display:flex;flex-direction:column;min-width:0}
+.topbar{display:flex;align-items:center;gap:16px;padding:10px 28px;height:48px;border-bottom:1px solid var(--border);background:var(--surface)}
+.topbar-title{font-size:14px;font-weight:600;letter-spacing:-0.01em}
+.topbar-spacer{flex:1}
+.topbar-btn{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border:1px solid var(--border);border-radius:4px;background:var(--surface);color:var(--fg);font-size:12px;cursor:pointer;transition:background .15s}
+.topbar-btn:hover{background:var(--bg)}
+.topbar-avatar{width:28px;height:28px;border-radius:4px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
+.content{padding:16px 28px;flex:1;overflow-y:auto;max-width:1440px;display:flex;flex-direction:column;gap:14px}
+/* KPI */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.kpi-card{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:16px 18px;position:relative}
+.kpi-card::before{content:'';position:absolute;top:0;left:12px;right:12px;height:2px;background:var(--border);border-radius:0 0 1px 1px}
+.kpi-card.blue::before{background:var(--accent)}
+.kpi-card.green::before{background:var(--green)}
+.kpi-card.red::before{background:var(--red)}
+.kpi-card.yellow::before{background:var(--yellow)}
+.kpi-label{font-size:11px;color:var(--muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.04em}
+.kpi-value{font-size:26px;font-weight:700;letter-spacing:-0.02em;font-feature-settings:"tnum" 1;font-family:var(--font-mono)}
+.kpi-change{font-size:11px;margin-top:2px;display:inline-flex;align-items:center;gap:3px}
+.kpi-change.up{color:var(--green)}
+.kpi-change.down{color:var(--red)}
+/* Decision grid */
+.decision-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.full-width{grid-column:1/-1}
+.analysis-card{background:var(--surface);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.card-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--border)}
+.card-header h3{font-size:13px;font-weight:600}
+.card-badge{font-size:10px;padding:2px 7px;background:var(--accent-bg);color:var(--accent);border-radius:3px;font-weight:600;font-family:var(--font-mono)}
+.card-body{padding:14px 16px}
+/* Route comparison */
+.route-container{display:flex;gap:16px;align-items:center}
+.route-chart{flex:1;position:relative;height:160px;border-bottom:1px solid var(--border);border-left:1px solid var(--border);margin-left:8px}
+.route-line{position:absolute;height:2px;border-radius:1px}
+.route-line.actual{background:var(--accent);opacity:0.6;width:100%;top:50%}
+.route-line.planned{background:var(--green);opacity:0.4;width:80%;top:25%}
+.route-line.deviation{background:var(--red);opacity:0.6;width:60%;top:70%}
+.route-dot{position:absolute;width:6px;height:6px;border-radius:50%;transform:translate(-50%,-50%)}
+.route-dot.accent{background:var(--accent)}
+.route-dot:hover{transform:translate(-50%,-50%) scale(2);transition:transform .2s}
+.route-legend{display:flex;flex-direction:column;gap:6px;flex-shrink:0}
+.route-legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)}
+.route-legend-line{width:20px;height:2px;border-radius:1px}
+.route-legend-line.actual{background:var(--accent)}
+.route-legend-line.planned{background:var(--green)}
+.route-legend-line.deviation{background:var(--red)}
+/* Heatmap */
+.heatmap-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;padding:6px}
+.heat-cell{aspect-ratio:1;border-radius:2px;background:var(--border);transition:background .15s}
+.heat-cell:hover{filter:brightness(0.9)}
+.heat-cell.h0{background:var(--border)}
+.heat-cell.h1{background:color-mix(in srgb,var(--accent) 20%,var(--border))}
+.heat-cell.h2{background:color-mix(in srgb,var(--accent) 40%,var(--border))}
+.heat-cell.h3{background:color-mix(in srgb,var(--accent) 60%,var(--border))}
+.heat-cell.h4{background:color-mix(in srgb,var(--accent) 80%,var(--border))}
+.heat-cell.h5{background:var(--accent)}
+.heat-legend{display:flex;align-items:center;gap:6px;padding:6px 12px;justify-content:center}
+.heat-legend-swatch{width:12px;height:12px;border-radius:2px}
+.heat-label{font-size:10px;color:var(--muted)}
+/* Table */
+.data-table{width:100%;border-collapse:collapse}
+.data-table th{padding:8px 10px;text-align:left;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;border-bottom:1px solid var(--border);font-weight:600}
+.data-table td{padding:8px 10px;font-size:12px;border-bottom:1px solid var(--border)}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:hover td{background:var(--bg)}
+.data-table td.mono{font-family:var(--font-mono);font-feature-settings:"tnum" 1}
+.status-pill{display:inline-flex;align-items:center;gap:4px;padding:2px 7px;border-radius:3px;font-size:10px;font-weight:600}
+.status-pill.ok{background:var(--green-bg);color:var(--green)}
+.status-pill.warn{background:var(--yellow-bg);color:var(--yellow)}
+.status-pill.bad{background:var(--red-bg);color:var(--red)}
+/* AI Insight */
+.insight-card{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:16px}
+.insight-card h3{font-size:13px;font-weight:600;margin-bottom:10px}
+.insight-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)}
+.insight-row:last-child{border-bottom:none}
+.insight-icon{width:18px;height:18px;border-radius:3px;background:var(--accent-bg);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0;margin-top:1px}
+.insight-text{font-size:12px;flex:1}
+.insight-meta{font-size:11px;color:var(--muted);margin-top:2px}
+/* Bar chart */
+.bar-chart{display:flex;align-items:flex-end;gap:6px;height:140px;padding:6px 0}
+.bar-group{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px}
+.bar-stack{width:100%;display:flex;gap:2px;height:120px;align-items:flex-end}
+.bar-seg{flex:1;border-radius:2px 2px 0 0;min-height:4px}
+.bar-seg.blue{background:var(--accent)}
+.bar-seg.green{background:var(--green)}
+.bar-seg.red{background:var(--red)}
+.bar-cluster-label{font-size:9px;color:var(--muted);text-align:center}
+/* Toast */
+.toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--fg);color:var(--surface);padding:10px 18px;border-radius:4px;font-size:12px;font-weight:500;opacity:0;transition:all .3s ease;pointer-events:none;z-index:100}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:768px){
+.sidebar{position:fixed;bottom:0;left:0;right:0;height:auto;min-height:auto;flex-direction:row;border-right:none;border-top:1px solid var(--border);z-index:50;padding:0;overflow-x:auto}
+.sidebar .sidebar-logo,.sidebar .sidebar-section{display:none}
+.nav-item{flex:1;justify-content:center;padding:10px 6px;font-size:10px;white-space:nowrap;gap:4px;flex-direction:column;min-width:0}
+.nav-item.active::before{display:none}
+.nav-item svg{width:18px;height:18px}
+.content{padding:12px 14px;padding-bottom:72px}
+.kpi-grid{grid-template-columns:repeat(2,1fr)}
+.decision-grid{grid-template-columns:1fr}
+.route-container{flex-direction:column}
+.heatmap-grid{padding:4px;gap:2px}
+.data-table thead{display:none}
+.data-table td{display:block;padding:4px 8px;border-bottom:none}
+.data-table tr{display:flex;flex-wrap:wrap;padding:6px 8px;border-bottom:1px solid var(--border);gap:4px}
+.data-table tr td:before{content:attr(data-label);font-size:10px;color:var(--muted);display:block;text-transform:uppercase;letter-spacing:0.04em}
+}
+</style>
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="6" height="6" rx="1" fill="var(--accent)"/><rect x="15" y="3" width="6" height="6" rx="1" fill="var(--accent)" opacity="0.4"/><rect x="3" y="15" width="6" height="6" rx="1" fill="var(--accent)" opacity="0.4"/><rect x="15" y="15" width="6" height="6" rx="1" fill="var(--accent)"/></svg>
+    <span>智慧巡检</span>
+  </div>
+  <div class="sidebar-section">管理层</div>
+  <a href="pc-dashboard.html" class="nav-item">
+    <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="9" y="1" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="1" y="9" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="9" y="9" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
+    数据大盘
+  </a>
+  <a href="pc-workorder.html" class="nav-item">
+    <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="9" y="4" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="1" y="11" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="13" y="1" width="2" height="6" rx=".5" fill="var(--accent)" opacity="0.3"/></svg>
+    工单调度
+  </a>
+  <a href="pc-decision.html" class="nav-item active">
+    <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="9" width="2" height="6" rx=".5" fill="currentColor"/><rect x="7" y="5" width="2" height="10" rx=".5" fill="currentColor"/><rect x="12" y="1" width="2" height="14" rx=".5" fill="currentColor"/></svg>
+    决策中心
+  </a>
+</nav>
+
+<div class="main">
+<div class="topbar">
+  <div class="topbar-title">决策中心</div>
+  <div class="topbar-spacer"></div>
+  <button class="topbar-btn" onclick="showToast('AI 分析已刷新')">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 7a5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 4.24 2.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M12 2.5V5.5H9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    AI 分析
+  </button>
+  <button class="topbar-btn" onclick="showToast('正在导出报告...')">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v8M4 6l3 3 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 9v3h12V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+    导出报告
+  </button>
+  <div class="topbar-avatar">张</div>
+</div>
+
+<div class="content">
+<div class="kpi-grid">
+  <div class="kpi-card blue">
+    <div class="kpi-label">本周巡检完成率</div>
+    <div class="kpi-value">87.3%</div>
+    <div class="kpi-change up">↑ 4.2% 上周</div>
+  </div>
+  <div class="kpi-card green">
+    <div class="kpi-label">平均单次耗时</div>
+    <div class="kpi-value">23.7min</div>
+    <div class="kpi-change up">↓ 3.1min 上周</div>
+  </div>
+  <div class="kpi-card red">
+    <div class="kpi-label">P0 平均响应</div>
+    <div class="kpi-value">11.2min</div>
+    <div class="kpi-change down">↑ 2.3min 上周</div>
+  </div>
+  <div class="kpi-card yellow">
+    <div class="kpi-label">问题复现率</div>
+    <div class="kpi-value">6.8%</div>
+    <div class="kpi-change up">↓ 1.4% 上周</div>
+  </div>
+</div>
+
+<div class="decision-grid">
+  <div class="analysis-card">
+    <div class="card-header"><h3>巡检路线偏差分析</h3><span class="card-badge">AI GIS</span></div>
+    <div class="card-body">
+      <div class="route-container">
+        <div class="route-chart">
+          <div style="position:absolute;left:0;top:0;font-size:9px;color:var(--muted)">100m</div>
+          <div class="route-line actual" style="top:40%"></div>
+          <div class="route-line planned" style="top:20%;width:75%"></div>
+          <div class="route-line deviation" style="top:65%;width:20%"></div>
+          <div class="route-dot accent" style="left:40%;top:40%" title="偏离点"></div>
+          <div class="route-dot accent" style="left:75%;top:40%" title="偏离点"></div>
+        </div>
+        <div class="route-legend">
+          <span class="route-legend-item"><span class="route-legend-line actual"></span>实际轨迹</span>
+          <span class="route-legend-item"><span class="route-legend-line planned"></span>规划路线</span>
+          <span class="route-legend-item"><span class="route-legend-line deviation"></span>偏离段</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="analysis-card">
+    <div class="card-header"><h3>巡检覆盖率热力图</h3><span class="card-badge">GIS</span></div>
+    <div class="card-body">
+      <div class="heatmap-grid">
+        <div class="heat-cell h5"></div><div class="heat-cell h4"></div><div class="heat-cell h5"></div><div class="heat-cell h3"></div><div class="heat-cell h2"></div><div class="heat-cell h1"></div><div class="heat-cell h2"></div><div class="heat-cell h3"></div><div class="heat-cell h4"></div><div class="heat-cell h5"></div>
+        <div class="heat-cell h4"></div><div class="heat-cell h3"></div><div class="heat-cell h4"></div><div class="heat-cell h2"></div><div class="heat-cell h1"></div><div class="heat-cell h0"></div><div class="heat-cell h1"></div><div class="heat-cell h2"></div><div class="heat-cell h3"></div><div class="heat-cell h4"></div>
+        <div class="heat-cell h5"></div><div class="heat-cell h4"></div><div class="heat-cell h3"></div><div class="heat-cell h1"></div><div class="heat-cell h0"></div><div class="heat-cell h0"></div><div class="heat-cell h0"></div><div class="heat-cell h1"></div><div class="heat-cell h2"></div><div class="heat-cell h3"></div>
+        <div class="heat-cell h3"></div><div class="heat-cell h2"></div><div class="heat-cell h1"></div><div class="heat-cell h0"></div><div class="heat-cell h0"></div><div class="heat-cell h0"></div><div class="heat-cell h0"></div><div class="heat-cell h1"></div><div class="heat-cell h2"></div><div class="heat-cell h3"></div>
+        <div class="heat-cell h2"></div><div class="heat-cell h1"></div><div class="heat-cell h0"></div><div class="heat-cell h0"></div><div class="heat-cell h1"></div><div class="heat-cell h1"></div><div class="heat-cell h0"></div><div class="heat-cell h1"></div><div class="heat-cell h2"></div><div class="heat-cell h3"></div>
+        <div class="heat-cell h4"></div><div class="heat-cell h3"></div><div class="heat-cell h2"></div><div class="heat-cell h1"></div><div class="heat-cell h2"></div><div class="heat-cell h3"></div><div class="heat-cell h1"></div><div class="heat-cell h2"></div><div class="heat-cell h3"></div><div class="heat-cell h4"></div>
+      </div>
+      <div class="heat-legend">
+        <span class="heat-label">低</span>
+        <span class="heat-legend-swatch" style="background:var(--border)"></span>
+        <span class="heat-legend-swatch" style="background:color-mix(in srgb,var(--accent) 25%,var(--border))"></span>
+        <span class="heat-legend-swatch" style="background:color-mix(in srgb,var(--accent) 50%,var(--border))"></span>
+        <span class="heat-legend-swatch" style="background:color-mix(in srgb,var(--accent) 75%,var(--border))"></span>
+        <span class="heat-legend-swatch" style="background:var(--accent)"></span>
+        <span class="heat-label">高</span>
+      </div>
+    </div>
+  </div>
+  <div class="analysis-card full-width">
+    <div class="card-header"><h3>巡检员效率对比</h3><span class="card-badge">本周</span></div>
+    <div class="card-body" style="padding:0;overflow-x:auto">
+      <table class="data-table">
+        <thead><tr><th>姓名</th><th>区域</th><th>完成工单</th><th>平均耗时</th><th>覆盖率</th><th>漏检率</th><th>状态</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">张卫国</td><td>A区</td><td class="mono">47</td><td class="mono">21.3min</td><td class="mono">94%</td><td class="mono">1.2%</td><td><span class="status-pill ok">优秀</span></td></tr>
+          <tr><td class="mono">李华明</td><td>B区</td><td class="mono">41</td><td class="mono">24.7min</td><td class="mono">88%</td><td class="mono">2.5%</td><td><span class="status-pill ok">良好</span></td></tr>
+          <tr><td class="mono">王海峰</td><td>C区</td><td class="mono">36</td><td class="mono">27.1min</td><td class="mono">81%</td><td class="mono">3.8%</td><td><span class="status-pill warn">一般</span></td></tr>
+          <tr><td class="mono">赵远</td><td>D区</td><td class="mono">28</td><td class="mono">33.5min</td><td class="mono">72%</td><td class="mono">5.6%</td><td><span class="status-pill bad">需改进</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="analysis-card">
+    <div class="card-header"><h3>风险趋势预测</h3><span class="card-badge">AI</span></div>
+    <div class="card-body">
+      <div class="bar-chart">
+        <div class="bar-group"><div class="bar-stack"><div class="bar-seg blue" style="height:70%"></div><div class="bar-seg green" style="height:20%"></div></div><span class="bar-cluster-label">周一</span></div>
+        <div class="bar-group"><div class="bar-stack"><div class="bar-seg blue" style="height:55%"></div><div class="bar-seg green" style="height:30%"></div><div class="bar-seg red" style="height:5%"></div></div><span class="bar-cluster-label">周二</span></div>
+        <div class="bar-group"><div class="bar-stack"><div class="bar-seg blue" style="height:60%"></div><div class="bar-seg green" style="height:25%"></div><div class="bar-seg red" style="height:8%"></div></div><span class="bar-cluster-label">周三</span></div>
+        <div class="bar-group"><div class="bar-stack"><div class="bar-seg blue" style="height:45%"></div><div class="bar-seg green" style="height:35%"></div><div class="bar-seg red" style="height:10%"></div></div><span class="bar-cluster-label">周四</span></div>
+        <div class="bar-group"><div class="bar-stack"><div class="bar-seg blue" style="height:40%"></div><div class="bar-seg green" style="height:35%"></div><div class="bar-seg red" style="height:15%"></div></div><span class="bar-cluster-label">周五</span></div>
+        <div class="bar-group"><div class="bar-stack"><div class="bar-seg green" style="height:40%"></div><div class="bar-seg red" style="height:20%"></div></div><span class="bar-cluster-label">周六</span></div>
+        <div class="bar-group"><div class="bar-stack"><div class="bar-seg green" style="height:45%"></div><div class="bar-seg red" style="height:18%"></div></div><span class="bar-cluster-label">周日</span></div>
+      </div>
+      <div class="route-legend" style="flex-direction:row;justify-content:center;padding-top:6px">
+        <span class="route-legend-item"><span class="route-legend-line actual" style="height:8px;width:8px;border-radius:2px"></span>低风险</span>
+        <span class="route-legend-item"><span class="route-legend-line planned" style="height:8px;width:8px;border-radius:2px"></span>中风险</span>
+        <span class="route-legend-item"><span class="route-legend-line deviation" style="height:8px;width:8px;border-radius:2px"></span>高风险</span>
+      </div>
+    </div>
+  </div>
+  <div class="analysis-card">
+    <div class="card-header"><h3>问题聚类分析</h3><span class="card-badge">AI NLP</span></div>
+    <div class="card-body">
+      <div class="insight-row">
+        <span class="insight-icon">A</span>
+        <div class="insight-text"><strong>消防设备</strong> — 近7日上报 12 起，环比 +33%<div class="insight-meta">主要集中于 A区3F、C区1F</div></div>
+      </div>
+      <div class="insight-row">
+        <span class="insight-icon" style="background:var(--yellow-bg);color:var(--yellow)">B</span>
+        <div class="insight-text"><strong>照明系统</strong> — 近7日上报 9 起，环比 +12%<div class="insight-meta">B区走廊灯带为高频问题</div></div>
+      </div>
+      <div class="insight-row">
+        <span class="insight-icon" style="background:var(--green-bg);color:var(--green)">C</span>
+        <div class="insight-text"><strong>空调末端</strong> — 近7日上报 6 起，环比 -8%<div class="insight-meta">D区为本轮新增高发区</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000)}
+</script>
+</body>
+</html>

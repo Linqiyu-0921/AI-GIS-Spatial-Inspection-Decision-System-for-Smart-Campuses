@@ -1,0 +1,225 @@
+<mxfile host="app.diagrams.net" modified="2026-05-14T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="version-roadmap" name="版本路线图">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- V1.0 Swimlane -->
+        <mxCell id="v-s1" value="&lt;b&gt;V1.0（当前 — ~3个月）&lt;/b&gt;" style="swimlane;startSize=36;fillColor=#fff2cc;strokeColor=#d6b656;rounded=1;arcSize=10;fontSize=15;fontStyle=1;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="870" height="480" as="geometry" />
+        </mxCell>
+
+        <!-- V2.0 Swimlane -->
+        <mxCell id="v-s2" value="&lt;b&gt;V2.0（规划 — ~6-12个月）&lt;/b&gt;" style="swimlane;startSize=36;fillColor=#f5f5f5;strokeColor=#999999;rounded=1;arcSize=10;fontSize=15;fontStyle=1;dashed=1;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="910" y="20" width="870" height="480" as="geometry" />
+        </mxCell>
+
+        <!-- ===== V1.0 Phase Boxes ===== -->
+        <mxCell id="v-p1" value="&lt;b&gt;Phase 1&lt;/b&gt;&lt;hr&gt;第1-2周&lt;br&gt;基础搭建" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=8;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="35" y="70" width="158" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v-p2" value="&lt;b&gt;Phase 2&lt;/b&gt;&lt;hr&gt;第3-6周&lt;br&gt;核心闭环" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=8;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="203" y="70" width="158" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v-p3" value="&lt;b&gt;Phase 3&lt;/b&gt;&lt;hr&gt;第7-9周&lt;br&gt;场景扩展" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=8;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="371" y="70" width="158" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v-p4" value="&lt;b&gt;Phase 4&lt;/b&gt;&lt;hr&gt;第10-11周&lt;br&gt;AI/GIS嵌入" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=8;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="539" y="70" width="158" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v-p5" value="&lt;b&gt;Phase 5&lt;/b&gt;&lt;hr&gt;第12周&lt;br&gt;集成测试" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=8;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="707" y="70" width="158" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- V1.0 Horizontal Arrows between phases -->
+        <mxCell id="v-a12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#6c8ebf;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="v-p1" target="v-p2" />
+        <mxCell id="v-a23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#6c8ebf;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="v-p2" target="v-p3" />
+        <mxCell id="v-a34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#6c8ebf;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="v-p3" target="v-p4" />
+        <mxCell id="v-a45" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#6c8ebf;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="v-p4" target="v-p5" />
+
+        <!-- V1.0 Milestones (diamonds) -->
+        <mxCell id="v-m1" value="&lt;b&gt;M1&lt;/b&gt;&lt;br&gt;技术方案&lt;br&gt;评审通过" style="shape=rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="52" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v-m2" value="&lt;b&gt;M2&lt;/b&gt;&lt;br&gt;日常巡检&lt;br&gt;闭环演示" style="shape=rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="220" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v-m3" value="&lt;b&gt;M3&lt;/b&gt;&lt;br&gt;三场景全量&lt;br&gt;演示" style="shape=rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="388" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v-m4" value="&lt;b&gt;M4&lt;/b&gt;&lt;br&gt;AI/GIS能力&lt;br&gt;集成演示" style="shape=rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="556" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v-m5" value="&lt;b&gt;M5&lt;/b&gt;&lt;br&gt;V1.0正式&lt;br&gt;交付" style="shape=rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="724" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Phase -> Milestone arrows -->
+        <mxCell id="v-pm1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#6c8ebf;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v-p1" target="v-m1" />
+        <mxCell id="v-pm2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#6c8ebf;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v-p2" target="v-m2" />
+        <mxCell id="v-pm3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#6c8ebf;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v-p3" target="v-m3" />
+        <mxCell id="v-pm4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#6c8ebf;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v-p4" target="v-m4" />
+        <mxCell id="v-pm5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#6c8ebf;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v-p5" target="v-m5" />
+
+        <!-- Milestone -> next Phase arrows -->
+        <mxCell id="v-mp2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#82b366;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v-m1" target="v-p2" />
+        <mxCell id="v-mp3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#82b366;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v-m2" target="v-p3" />
+        <mxCell id="v-mp4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#82b366;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v-m3" target="v-p4" />
+        <mxCell id="v-mp5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#82b366;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v-m4" target="v-p5" />
+
+        <!-- V1.0 Content summary boxes -->
+        <mxCell id="v-c1" value="&lt;div style=&quot;text-align:left;padding:4px;&quot;&gt;&lt;b&gt;场景闭环&lt;/b&gt;&lt;br&gt;日常巡检（8步闭环）&lt;br&gt;设备检查（7步闭环）&lt;br&gt;应急事件（7步并行响应）&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#d6b656;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="35" y="250" width="400" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="v-c2" value="&lt;div style=&quot;text-align:left;padding:4px;&quot;&gt;&lt;b&gt;AI/GIS 嵌入&lt;/b&gt;&lt;br&gt;图像识别 · NLP结构化 · 预测分析&lt;br&gt;空间可视化 · 问题聚类 · 缓冲区分析&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#d6b656;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="445" y="250" width="430" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="v-c3" value="&lt;div style=&quot;text-align:left;padding:4px;&quot;&gt;&lt;b&gt;工单系统 + 分析引擎&lt;/b&gt;&lt;br&gt;4步工单（创建→分配→处置→验收）&lt;br&gt;SLA时限 · 升级机制 · 分析驱动计划自优化&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#d6b656;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="35" y="330" width="400" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="v-c4" value="&lt;div style=&quot;text-align:left;padding:4px;&quot;&gt;&lt;b&gt;移动端 + PC 后台&lt;/b&gt;&lt;br&gt;iOS + Android双端，离线缓存断网续传&lt;br&gt;计划编排 · 工单管理 · 数据分析 · 设备台账&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#d6b656;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="445" y="330" width="430" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ===== V2.0 Phase Boxes ===== -->
+        <mxCell id="v2-p1" value="&lt;b&gt;Phase 1：架构重构&lt;/b&gt;&lt;hr&gt;第1-2个月 — 单体拆微服务、多租户数据隔离、权限体系重构" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;arcSize=8;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="930" y="70" width="830" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-p2" value="&lt;b&gt;Phase 2：3D/BIM集成&lt;/b&gt;&lt;hr&gt;第2-4个月 — 3D园区建模、BIM引擎集成、3D可视化底座" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;arcSize=8;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="930" y="145" width="830" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-p3" value="&lt;b&gt;Phase 3：场景扩展&lt;/b&gt;&lt;hr&gt;第4-6个月 — 能耗/停车/安防场景接入，IoT全量接入" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;arcSize=8;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="930" y="220" width="830" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-p4" value="&lt;b&gt;Phase 4：数字孪生&lt;/b&gt;&lt;hr&gt;第6-9个月 — 实时数据映射、仿真引擎、预测性维护" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;arcSize=8;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="930" y="295" width="830" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-p5" value="&lt;b&gt;Phase 5：平台化&lt;/b&gt;&lt;hr&gt;第9-12个月 — 开放API、SaaS化运营、多园区标杆客户落地" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;arcSize=8;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="930" y="370" width="830" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- V2.0 Vertical Arrows -->
+        <mxCell id="v2-a12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#9673a6;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v2-p1" target="v2-p2" />
+        <mxCell id="v2-a23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#9673a6;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v2-p2" target="v2-p3" />
+        <mxCell id="v2-a34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#9673a6;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v2-p3" target="v2-p4" />
+        <mxCell id="v2-a45" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#9673a6;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v2-p4" target="v2-p5" />
+
+        <!-- V2.0 upgrade point overview -->
+        <mxCell id="v2-u1" value="&lt;div style=&quot;text-align:left;padding:2px;&quot;&gt;&lt;b&gt;升级维度对比：&lt;/b&gt;&lt;/div&gt;" style="text;html=1;fontSize=11;fontColor=#333;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="930" y="445" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-u2" value="2D→3D/BIM · 单体→微服务 · 单园区→多租户 · 3场景→扩展场景 · AI/GIS能力扩展" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#999;arcSize=6;fontSize=10;fontColor=#666;" vertex="1" parent="1">
+          <mxGeometry x="930" y="465" width="830" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Decision Gate ===== -->
+        <mxCell id="v-gate" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#b85450;strokeWidth=3;exitX=1;exitY=0.5;entryX=0;entryY=0.5;dashed=1;" edge="1" parent="1" source="v-s1" target="v-s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v-gate-label" value="&lt;b&gt;决策门：MVP验证通过&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=10;fontSize=12;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="860" y="240" width="100" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Bottom Comparison Table ===== -->
+        <!-- Header row -->
+        <mxCell id="v-t-h1" value="&lt;b&gt;维度&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333;fontSize=11;fontColor=#fff;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="520" width="200" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="v-t-h2" value="&lt;b&gt;V1.0&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontColor=#333;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="220" y="520" width="780" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="v-t-h3" value="&lt;b&gt;V2.0&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;fontSize=11;fontColor=#333;arcSize=4;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="520" width="780" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- Table rows: 8 dimensions -->
+        <mxCell id="v-t-r1a" value="园区范围" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f8f8;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="560" width="200" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="v-t-r1b" value="单园区" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="220" y="560" width="780" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="v-t-r1c" value="多租户 / 多园区" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;fontSize=10;arcSize=4;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="560" width="780" height="34" as="geometry" />
+        </mxCell>
+
+        <mxCell id="v-t-r2a" value="地图" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="598" width="200" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="v-t-r2b" value="2D 园区地图" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="220" y="598" width="780" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="v-t-r2c" value="3D / BIM 集成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;fontSize=10;arcSize=4;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="598" width="780" height="34" as="geometry" />
+        </mxCell>
+
+        <mxCell id="v-t-r3a" value="场景" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f8f8;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="636" width="200" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="v-t-r3b" value="日常巡检、设备检查、应急事件" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="220" y="636" width="780" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="v-t-r3c" value="+ 能耗、停车、安防" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;fontSize=10;arcSize=4;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="636" width="780" height="34" as="geometry" />
+        </mxCell>
+
+        <mxCell id="v-t-r4a" value="AI 能力" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="674" width="200" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="v-t-r4b" value="图像识别、NLP、预测分析" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="220" y="674" width="780" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="v-t-r4c" value="+ 语音交互、知识图谱、数字孪生推理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;fontSize=10;arcSize=4;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="674" width="780" height="34" as="geometry" />
+        </mxCell>
+
+        <mxCell id="v-t-r5a" value="GIS 能力" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f8f8;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="712" width="200" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="v-t-r5b" value="可视化、聚类、缓冲区" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="220" y="712" width="780" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="v-t-r5c" value="+ 3D漫游、BIM联动、实时仿真" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;fontSize=10;arcSize=4;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="712" width="780" height="34" as="geometry" />
+        </mxCell>
+
+        <mxCell id="v-t-r6a" value="部署" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="750" width="200" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="v-t-r6b" value="单体部署" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="220" y="750" width="780" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="v-t-r6c" value="微服务架构" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;fontSize=10;arcSize=4;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="750" width="780" height="34" as="geometry" />
+        </mxCell>
+
+        <mxCell id="v-t-r7a" value="目标" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f8f8;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="788" width="200" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="v-t-r7b" value="MVP 验证" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="220" y="788" width="780" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="v-t-r7c" value="平台规模化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;fontSize=10;arcSize=4;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="788" width="780" height="34" as="geometry" />
+        </mxCell>
+
+        <mxCell id="v-t-r8a" value="工期" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="826" width="200" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="v-t-r8b" value="~3 个月" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="220" y="826" width="780" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="v-t-r8c" value="~6-12 个月" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;fontSize=10;arcSize=4;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="826" width="780" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- Bottom note -->
+        <mxCell id="v-note" value="&lt;i&gt;设计原则：小步快跑、闭环优先。V1.0聚焦单园区深度闭环验证产品价值，V2.0基于市场反馈扩展平台能力。&lt;/i&gt;" style="text;html=1;fontSize=10;fontColor=#666;fillColor=none;strokeColor=none;align=center;" vertex="1" parent="1">
+          <mxGeometry x="20" y="865" width="1760" height="24" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

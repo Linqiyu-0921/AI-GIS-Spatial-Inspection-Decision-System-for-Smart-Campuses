@@ -1,0 +1,234 @@
+<mxfile host="app.diagrams.net" modified="2026-05-14T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="deployment-architecture" name="部署架构图">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="智慧园区空间巡检决策系统 — 部署架构图" style="text;html=1;fontSize=20;fontStyle=1;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="600" y="15" width="600" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 客户端层 ========== -->
+        <mxCell id="layer-client" value="客户端层 (Client Layer)" style="swimlane;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;arcSize=8;fontSize=14;fontStyle=1;fontColor=#1a1a2e;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="65" width="1600" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="client-mobile" value="&lt;div&gt;&lt;b&gt;移动端&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;color:#666;&quot;&gt;iOS / Android&lt;/font&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.5;&quot;&gt;· 巡检员App（V1.0）&lt;br&gt;· GPS定位 + 相机调用&lt;br&gt;· 离线巡检 + 增量同步&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=10;fontSize=12;verticalAlign=top;spacingTop=5;" vertex="1" parent="layer-client">
+          <mxGeometry x="100" y="45" width="240" height="75" as="geometry" />
+        </mxCell>
+
+        <mxCell id="client-pc" value="&lt;div&gt;&lt;b&gt;PC端&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;color:#666;&quot;&gt;Web浏览器&lt;/font&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.5;&quot;&gt;· 管理层Web后台（V1.0）&lt;br&gt;· GIS地图大屏渲染&lt;br&gt;· 响应式布局&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=10;fontSize=12;verticalAlign=top;spacingTop=5;" vertex="1" parent="layer-client">
+          <mxGeometry x="480" y="45" width="240" height="75" as="geometry" />
+        </mxCell>
+
+        <mxCell id="client-external" value="&lt;div&gt;&lt;b&gt;外部系统&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;color:#999;&quot;&gt;V2.0 对接&lt;/font&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.5;&quot;&gt;· 企业微信/钉钉&lt;br&gt;· 第三方工单系统&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;arcSize=10;fontSize=12;verticalAlign=top;spacingTop=5;dashed=1;" vertex="1" parent="layer-client">
+          <mxGeometry x="880" y="45" width="240" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- HTTPS arrows from client -->
+        <mxCell id="client-https-label" value="HTTPS / WSS" style="text;html=1;fontSize=11;fontStyle=1;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="380" y="200" width="100" height="15" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 服务层 ========== -->
+        <mxCell id="layer-service" value="服务层 (Service Layer)" style="swimlane;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;arcSize=8;fontSize=14;fontStyle=1;fontColor=#1a1a2e;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="230" width="1600" height="340" as="geometry" />
+        </mxCell>
+
+        <!-- API Gateway -->
+        <mxCell id="gateway" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b style=&quot;font-size:13px;&quot;&gt;API 网关（单体应用入口）&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.6;&quot;&gt;· 统一认证鉴权（JWT）&lt;br&gt;· 路由转发（移动端/PC端/内部服务）&lt;br&gt;· 限流与日志&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;arcSize=10;fontSize=12;verticalAlign=top;spacingTop=5;" vertex="1" parent="layer-service">
+          <mxGeometry x="500" y="40" width="400" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- AI Service Section -->
+        <mxCell id="ai-section" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff0f0;strokeColor=#f8cecc;arcSize=10;dashed=1;fontSize=10;fontColor=#b85450;" vertex="1" parent="layer-service">
+          <mxGeometry x="50" y="150" width="450" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-title" value="&lt;b&gt;&lt;font color=&quot;#b85450&quot;&gt;AI 服务层&lt;/font&gt;&lt;/b&gt;" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="layer-service">
+          <mxGeometry x="65" y="152" width="100" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ai-image" value="&lt;b&gt;图像识别API&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;问题缺陷分类 · 置信度评分&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=8;fontSize=10;verticalAlign=middle;" vertex="1" parent="layer-service">
+          <mxGeometry x="65" y="175" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-nlp" value="&lt;b&gt;NLP结构化API&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;语音转文字 · 信息提取&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=8;fontSize=10;verticalAlign=middle;" vertex="1" parent="layer-service">
+          <mxGeometry x="65" y="225" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-predict" value="&lt;b&gt;预测分析API&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;趋势预测 · 异常检测&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=8;fontSize=10;verticalAlign=middle;" vertex="1" parent="layer-service">
+          <mxGeometry x="65" y="275" width="200" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- AI deps -->
+        <mxCell id="ai-dep-ali" value="→ 阿里云视觉智能" style="text;html=1;fontSize=10;fontColor=#999;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="layer-service">
+          <mxGeometry x="275" y="180" width="120" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-dep-nlp" value="→ 阿里云NLP" style="text;html=1;fontSize=10;fontColor=#999;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="layer-service">
+          <mxGeometry x="275" y="230" width="120" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-dep-pa" value="→ 阿里云PAI / 自研" style="text;html=1;fontSize=10;fontColor=#999;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="layer-service">
+          <mxGeometry x="275" y="280" width="120" height="15" as="geometry" />
+        </mxCell>
+
+        <!-- GIS Service Section -->
+        <mxCell id="gis-section" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0faf0;strokeColor=#d5e8d4;arcSize=10;dashed=1;fontSize=10;fontColor=#82b366;" vertex="1" parent="layer-service">
+          <mxGeometry x="580" y="150" width="450" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="gis-title" value="&lt;b&gt;&lt;font color=&quot;#82b366&quot;&gt;GIS 服务层&lt;/font&gt;&lt;/b&gt;" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="layer-service">
+          <mxGeometry x="595" y="152" width="100" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="gis-map" value="&lt;b&gt;地图渲染API&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;2D矢量底图 · 实时位置Marker&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=8;fontSize=10;verticalAlign=middle;" vertex="1" parent="layer-service">
+          <mxGeometry x="595" y="175" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gis-spatial" value="&lt;b&gt;空间分析API&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;轨迹记录 · 热力图聚类&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=8;fontSize=10;verticalAlign=middle;" vertex="1" parent="layer-service">
+          <mxGeometry x="595" y="225" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gis-route" value="&lt;b&gt;路径规划API&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;步行/驾车导航 · 就近匹配&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=8;fontSize=10;verticalAlign=middle;" vertex="1" parent="layer-service">
+          <mxGeometry x="595" y="275" width="200" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="gis-dep-amap" value="→ 高德地图API" style="text;html=1;fontSize=10;fontColor=#999;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="layer-service">
+          <mxGeometry x="805" y="180" width="120" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="gis-dep-postgis" value="→ PostGIS自研" style="text;html=1;fontSize=10;fontColor=#999;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="layer-service">
+          <mxGeometry x="805" y="230" width="120" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="gis-dep-amap2" value="→ 高德地图API" style="text;html=1;fontSize=10;fontColor=#999;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="layer-service">
+          <mxGeometry x="805" y="280" width="120" height="15" as="geometry" />
+        </mxCell>
+
+        <!-- Gateway to AI/GIS arrows -->
+        <mxCell id="arr-gw-ai" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b85450;strokeWidth=1.5;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-service" source="gateway" target="ai-section">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-gw-gis" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=1.5;exitX=0.7;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-service" source="gateway" target="gis-section">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Client → Gateway arrow -->
+        <mxCell id="arr-client-gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="layer-client" target="gateway">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="900" y="195" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== 数据层 ========== -->
+        <mxCell id="layer-data" value="数据层 (Data Layer)" style="swimlane;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;rounded=1;arcSize=8;fontSize=14;fontStyle=1;fontColor=#1a1a2e;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="600" width="1600" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-pg" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;业务数据库&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;color:#666;&quot;&gt;PostgreSQL (1主1从)&lt;/font&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 用户/计划/工单/验收/报告&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=10;fontSize=12;verticalAlign=top;spacingTop=5;" vertex="1" parent="layer-data">
+          <mxGeometry x="100" y="45" width="240" height="105" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-postgis" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;空间数据库&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;color:#666;&quot;&gt;PostgreSQL + PostGIS 3.1+&lt;/font&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 轨迹/点位/路线/聚类&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=10;fontSize=12;verticalAlign=top;spacingTop=5;" vertex="1" parent="layer-data">
+          <mxGeometry x="440" y="45" width="240" height="105" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-redis" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;缓存层&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;color:#666;&quot;&gt;Redis 哨兵模式&lt;/font&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 会话/实时位置/瓦片缓存&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;arcSize=10;fontSize=12;verticalAlign=top;spacingTop=5;" vertex="1" parent="layer-data">
+          <mxGeometry x="780" y="45" width="240" height="105" as="geometry" />
+        </mxCell>
+
+        <mxCell id="data-oss" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;文件存储&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;color:#666;&quot;&gt;阿里云OSS / MinIO&lt;/font&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 照片/语音/视频/报告&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;arcSize=10;fontSize=12;verticalAlign=top;spacingTop=5;" vertex="1" parent="layer-data">
+          <mxGeometry x="1120" y="45" width="240" height="105" as="geometry" />
+        </mxCell>
+
+        <!-- Data connections (from service layer) -->
+        <mxCell id="arr-data1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1.5;exitX=0.2;exitY=1;entryX=0.2;entryY=0;" edge="1" parent="1" source="layer-service" target="data-pg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-data2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1.5;exitX=0.4;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="layer-service" target="data-postgis">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-data3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1.5;exitX=0.6;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="layer-service" target="data-redis">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-data4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1.5;exitX=0.8;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="layer-service" target="data-oss">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========== External Services ========== -->
+        <mxCell id="ext-section" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#ccc;arcSize=8;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="790" width="1600" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-title" value="&lt;b&gt;外部服务依赖&lt;/b&gt;" style="text;html=1;fontSize=12;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="120" y="795" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ext-amap" value="&lt;b&gt;高德地图API&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;2D矢量底图 / POI / 路径规划&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=8;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="120" y="820" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-ali-vision" value="&lt;b&gt;阿里云视觉智能&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;通用图像分类 / 缺陷识别&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=8;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="400" y="820" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-ali-nlp" value="&lt;b&gt;阿里云NLP&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;语音转写 / 实体抽取 / 信息结构化&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=8;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="680" y="820" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-ali-pai" value="&lt;b&gt;阿里云PAI&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;预测模型训练 / AutoML&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=8;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="960" y="820" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-ali-oss" value="&lt;b&gt;阿里云OSS&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;照片/语音/视频文件存储&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;arcSize=8;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="820" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- External service connection arrows (from service layer) -->
+        <mxCell id="arr-ext-amap" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#d6b656;strokeWidth=1.5;exitX=0.5;exitY=1;entryX=0.5;entryY=0;dashed=1;" edge="1" parent="1" source="layer-service" target="ext-amap">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="615" />
+              <mxPoint x="220" y="615" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arr-ext-ai" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b85450;strokeWidth=1.5;exitX=0.3;exitY=1;entryX=0.5;entryY=0;dashed=1;" edge="1" parent="1" source="layer-service" target="ext-ali-vision">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="500" y="615" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== Legend ========== -->
+        <mxCell id="legend-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#ccc;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="100" y="920" width="600" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-t" value="&lt;b&gt;图例&lt;/b&gt;" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="115" y="922" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-client-c" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="115" y="948" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-client-t" value="客户端" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="140" y="946" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-gw" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="210" y="948" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-gw-t" value="网关" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="235" y="946" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-ai-c" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="300" y="948" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-ai-t" value="AI服务" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="325" y="946" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-gis-c" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="395" y="948" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-gis-t" value="GIS服务" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="420" y="946" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-data-c" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="490" y="948" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-data-t" value="数据存储" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="515" y="946" width="70" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

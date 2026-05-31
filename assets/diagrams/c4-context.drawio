@@ -1,0 +1,200 @@
+<mxfile host="app.diagrams.net" modified="2026-05-14T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="c4-context" name="C4上下文图">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="C4 Context — 系统上下文图" style="text;html=1;fontSize=20;fontStyle=1;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="500" y="15" width="600" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- ======= Center: 智慧园区空间巡检决策系统 ======= -->
+        <mxCell id="center-system" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b style=&quot;font-size:16px;&quot;&gt;智慧园区空间巡检决策系统&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:11px;line-height:1.6;&quot;&gt;· 七步闭环巡检流程&lt;br&gt;· AI + GIS 双引擎能力&lt;br&gt;· 移动端 + PC端双端覆盖&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=12;fontSize=12;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="525" y="380" width="550" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- ======= Top: Users ======= -->
+        <mxCell id="user-label" value="&lt;b&gt;用户 / 角色&lt;/b&gt;" style="text;html=1;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#333;" vertex="1" parent="1">
+          <mxGeometry x="150" y="70" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 巡检员 (top-left) -->
+        <mxCell id="user-inspector" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b style=&quot;font-size:13px;&quot;&gt;巡检员&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 日常巡检&lt;br&gt;· 设备检查&lt;br&gt;· 问题上报&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="150" y="100" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="conn-usr1-sys" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1.5;exitX=0.5;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="user-inspector" target="center-system">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-usr1-label" value="使用" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#666;" vertex="1" connectable="0" parent="conn-usr1-sys">
+          <mxGeometry x="-0.3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 管理层 (top-right) -->
+        <mxCell id="user-mgmt" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b style=&quot;font-size:13px;&quot;&gt;管理层&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 数据查看&lt;br&gt;· 工单调度&lt;br&gt;· 决策分析&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="600" y="100" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="conn-usr2-sys" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1.5;exitX=0.5;exitY=1;entryX=0.55;entryY=0;" edge="1" parent="1" source="user-mgmt" target="center-system">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 维修员 (left) -->
+        <mxCell id="user-repair" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b style=&quot;font-size:13px;&quot;&gt;维修员&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 工单处置&lt;br&gt;· 到场维修&lt;br&gt;· 结果反馈&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="150" y="250" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="conn-usr3-sys" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0.1;entryY=0.5;" edge="1" parent="1" source="user-repair" target="center-system">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="300" />
+              <mxPoint x="430" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 指挥中心 V2.0 (top, right of users) -->
+        <mxCell id="user-cmd" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b style=&quot;font-size:13px;&quot;&gt;指挥中心&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#999&quot;&gt;(V2.0)&lt;/font&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 应急调度&lt;br&gt;· 资源协调&lt;br&gt;· 态势感知&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="100" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="conn-usr4-sys" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#999;strokeWidth=1.5;dashed=1;exitX=0.5;exitY=1;entryX=0.75;entryY=0;" edge="1" parent="1" source="user-cmd" target="center-system">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1010" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ======= Bottom: External Systems ======= -->
+        <mxCell id="ext-label" value="&lt;b&gt;外部系统&lt;/b&gt;" style="text;html=1;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#333;" vertex="1" parent="1">
+          <mxGeometry x="150" y="580" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- IoT传感器 V2.0 (bottom-left) -->
+        <mxCell id="ext-iot" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b style=&quot;font-size:13px;&quot;&gt;IoT传感器&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#999&quot;&gt;(V2.0)&lt;/font&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 电梯监测&lt;br&gt;· 消防烟感&lt;br&gt;· 空调状态&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="610" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="conn-ext1-sys" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#999;strokeWidth=1.5;dashed=1;exitX=0.5;exitY=0;entryX=0.25;entryY=1;" edge="1" parent="1" source="ext-iot" target="center-system">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="570" />
+              <mxPoint x="240" y="555" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 地图服务 (bottom) -->
+        <mxCell id="ext-map" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b style=&quot;font-size:13px;&quot;&gt;地图服务&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 高德地图&lt;br&gt;· 瓦片/POI&lt;br&gt;· 路径规划&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="400" y="610" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="conn-ext2-sys" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1.5;exitX=0.5;exitY=0;entryX=0.45;entryY=1;" edge="1" parent="1" source="ext-map" target="center-system">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="570" />
+              <mxPoint x="490" y="555" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- AI云服务 (bottom-right) -->
+        <mxCell id="ext-ai" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b style=&quot;font-size:13px;&quot;&gt;AI云服务&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 阿里云视觉&lt;br&gt;· 阿里云NLP&lt;br&gt;· 预测分析&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="660" y="610" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="conn-ext3-sys" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1.5;exitX=0.5;exitY=0;entryX=0.65;entryY=1;" edge="1" parent="1" source="ext-ai" target="center-system">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="750" y="570" />
+              <mxPoint x="750" y="555" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- BIM模型 V2.0 (bottom-right) -->
+        <mxCell id="ext-bim" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b style=&quot;font-size:13px;&quot;&gt;BIM模型&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#999&quot;&gt;(V2.0)&lt;/font&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 3D建筑&lt;br&gt;· 设备坐标&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="610" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="conn-ext4-sys" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#999;strokeWidth=1.5;dashed=1;exitX=0.5;exitY=0;entryX=0.85;entryY=1;" edge="1" parent="1" source="ext-bim" target="center-system">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1010" y="570" />
+              <mxPoint x="1010" y="555" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ======= Relationship labels ======= -->
+        <mxCell id="rel1" value="接收计划→执行→上报" style="text;html=1;fontSize=10;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;rot=0;" vertex="1" parent="1">
+          <mxGeometry x="188" y="355" width="120" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="rel2" value="查看大盘→调度→决策" style="text;html=1;fontSize=10;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="618" y="355" width="120" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="rel3" value="接收工单→维修→反馈" style="text;html=1;fontSize=10;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="170" y="500" width="120" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="rel4" value="2D底图/路径规划" style="text;html=1;fontSize=10;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="450" y="555" width="100" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="rel5" value="图像识别/NLP/预测" style="text;html=1;fontSize=10;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="700" y="555" width="100" height="15" as="geometry" />
+        </mxCell>
+
+        <!-- System boundary -->
+        <mxCell id="sys-boundary" value="系统边界" style="text;html=1;fontSize=12;fontStyle=2;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="360" width="100" height="15" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#ccc;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="80" width="280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-t" value="&lt;b&gt;图例&lt;/b&gt;" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1165" y="82" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-u" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1165" y="105" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-u-t" value="角色/用户" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="103" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-sys" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1165" y="125" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-sys-t" value="系统" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="123" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-ext" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1165" y="145" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-ext-t" value="外部系统" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="143" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-v2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1165" y="165" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-v2-t" value="V2.0 规划" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="163" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-arr" value="" style="endArrow=classic;html=1;strokeColor=#666;strokeWidth=1.5;" edge="1" parent="1">
+          <mxGeometry width="30" height="10" relative="1" as="geometry">
+            <mxPoint x="1280" y="112" as="sourcePoint" />
+            <mxPoint x="1320" y="112" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg-arr-t" value="交互关系" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="100" width="60" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

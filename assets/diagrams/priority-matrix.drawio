@@ -1,0 +1,143 @@
+<mxfile host="app.diagrams.net" modified="2026-05-14T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="priority-matrix" name="优先级矩阵">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="p-title" value="&lt;b&gt;P0-P3 优先级矩阵&lt;/b&gt;" style="text;html=1;fontSize=20;fontColor=#1a1a2e;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1360" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Table Header ===== -->
+        <mxCell id="p-h1" value="&lt;b&gt;级别&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333;fontSize=12;fontColor=#fff;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="70" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p-h2" value="&lt;b&gt;判定条件&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333;fontSize=12;fontColor=#fff;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="120" y="70" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p-h3" value="&lt;b&gt;SLA 响应&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333;fontSize=12;fontColor=#fff;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="480" y="70" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p-h4" value="&lt;b&gt;SLA 处置&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333;fontSize=12;fontColor=#fff;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="700" y="70" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p-h5" value="&lt;b&gt;适用场景&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333;fontSize=12;fontColor=#fff;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="940" y="70" width="440" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== P0 Row ===== -->
+        <mxCell id="p0-badge" value="&lt;b&gt;P0&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontColor=#b85450;arcSize=4;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="20" y="114" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p0-cond" value="重大安全事件：火灾、电梯困人、&lt;br&gt;水管爆裂、人员伤亡" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#b85450;fontSize=11;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="120" y="114" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p0-resp" value="&amp;le;3min 确认&lt;br&gt;&amp;le;10min 到场" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="480" y="114" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p0-deal" value="立即处置，直至解除" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="700" y="114" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p0-scene" value="应急事件" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="940" y="114" width="440" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ===== P1 Row ===== -->
+        <mxCell id="p1-badge" value="&lt;b&gt;P1&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontColor=#d79b00;arcSize=4;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="20" y="188" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p1-cond" value="严重隐患：设备重大故障、&lt;br&gt;消防通道堵塞、电气裸露、结构损坏" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#d79b00;fontSize=11;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="120" y="188" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p1-resp" value="&amp;le;30min 到场" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="480" y="188" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p1-deal" value="&amp;le;2h 完成&lt;br&gt;设备 &amp;le;48h" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="700" y="188" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p1-scene" value="设备故障、安全隐患" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="940" y="188" width="440" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ===== P2 Row ===== -->
+        <mxCell id="p2-badge" value="&lt;b&gt;P2&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontColor=#d6b656;arcSize=4;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="20" y="262" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-cond" value="一般问题：照明损坏、墙面污损、&lt;br&gt;设备表面锈蚀、标识脱落" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#d6b656;fontSize=11;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="120" y="262" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-resp" value="&amp;le;2h 到场" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="480" y="262" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-deal" value="&amp;le;24h 完成&lt;br&gt;设备 &amp;le;7d" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="700" y="262" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p2-scene" value="日常巡检一般问题" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="940" y="262" width="440" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ===== P3 Row ===== -->
+        <mxCell id="p3-badge" value="&lt;b&gt;P3&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontColor=#82b366;arcSize=4;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="20" y="336" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p3-cond" value="轻微问题：地面纸屑、绿化落叶、&lt;br&gt;椅子未归位、标识歪斜" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#82b366;fontSize=11;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="120" y="336" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p3-resp" value="当场处置" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="480" y="336" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p3-deal" value="&amp;le;10min 闭环" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="700" y="336" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p3-scene" value="日常巡检轻微问题" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="940" y="336" width="440" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BOTTOM SECTION: 优先级动态调整 ===== -->
+        <mxCell id="p-bottom-title" value="&lt;b&gt;优先级动态调整规则&lt;/b&gt;" style="text;html=1;fontSize=15;fontColor=#1a1a2e;fillColor=none;strokeColor=none;align=left;" vertex="1" parent="1">
+          <mxGeometry x="20" y="440" width="400" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 5 adjustment rules -->
+        <mxCell id="p-adj1" value="&lt;b&gt;同类问题周频次&amp;ge;3&lt;/b&gt; → P2 自动升为 P1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f8f8;strokeColor=#ddd;fontSize=11;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="20" y="480" width="430" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p-adj2" value="&lt;b&gt;设备参数连续 3 次超标&lt;/b&gt; → P2 自动升为 P1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#ddd;fontSize=11;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="480" width="430" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p-adj3" value="&lt;b&gt;消防类问题&lt;/b&gt; → 自动升为 P1（一般）或 P0（严重）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f8f8;strokeColor=#ddd;fontSize=11;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="900" y="480" width="460" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p-adj4" value="&lt;b&gt;应急事件处置超时&lt;/b&gt; → 维持 P0，触发 L3 最高级响应" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#ddd;fontSize=11;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="20" y="524" width="430" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p-adj5" value="&lt;b&gt;工单被退回 2 次&lt;/b&gt; → 自动升一级优先级" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#ddd;fontSize=11;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="524" width="430" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- ===== 优先级与工单绑定 ===== -->
+        <mxCell id="p-workorder-title" value="&lt;b&gt;优先级与工单绑定规则&lt;/b&gt;" style="text;html=1;fontSize=15;fontColor=#1a1a2e;fillColor=none;strokeColor=none;align=left;" vertex="1" parent="1">
+          <mxGeometry x="20" y="590" width="400" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p-wo1" value="优先级在工单创建时由 AI 辅助判定，管理层可手动调整" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="20" y="630" width="680" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p-wo2" value="优先级一旦调整，SLA 重新计算" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="20" y="674" width="680" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p-wo3" value="同一工单不支持多优先级，以当前最高优先级为准" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="20" y="718" width="680" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- Color note -->
+        <mxCell id="p-colornote" value="&lt;i&gt;图标对应：🔴 P0 &amp;lt;10min  &amp;nbsp;🟠 P1 &amp;lt;1h  &amp;nbsp;🟡 P2 &amp;lt;24h  &amp;nbsp;🟢 P3 &amp;gt;24h 或当场处置&lt;/i&gt;" style="text;html=1;fontSize=11;fontColor=#666;fillColor=none;strokeColor=none;align=right;" vertex="1" parent="1">
+          <mxGeometry x="720" y="630" width="660" height="120" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

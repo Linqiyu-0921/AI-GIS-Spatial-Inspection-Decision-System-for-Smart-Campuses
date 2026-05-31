@@ -1,0 +1,160 @@
+<mxfile host="app.diagrams.net" modified="2026-05-14T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="emergency-response" name="应急事件流程">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!-- Title -->
+        <mxCell id="2" value="&lt;b&gt;应急事件流程 — 非线性并行响应&lt;/b&gt;" style="text;html=1;fontSize=20;fontColor=#1a1a2e;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="600" y="10" width="500" height="30" as="geometry" />
+        </mxCell>
+        <!-- ===== 1. 触发源 ===== -->
+        <mxCell id="10" value="&lt;b&gt;IoT告警&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;烟雾/水浸/电梯传感器" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="80" y="50" width="190" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;b&gt;人工紧急上报&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;巡检员/员工一键上报" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="340" y="50" width="190" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="&lt;b&gt;系统检测&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;视频AI/设备参数超阈值" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="600" y="50" width="190" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="&lt;b&gt;触发&lt;/b&gt;" style="text;html=1;fontSize=12;fontColor=#b85450;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="380" y="28" width="80" height="20" as="geometry" />
+        </mxCell>
+        <!-- Arrows from triggers down to confirm -->
+        <mxCell id="14" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b85450;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="10" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="15" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b85450;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="11" target="21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b85450;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="12" target="22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- ===== 2. 确认核实 ===== -->
+        <mxCell id="20" value="&lt;b&gt;IoT传感器核查&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;系统自动读传感器数据" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="80" y="140" width="190" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="&lt;b&gt;视频联动核查&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;AI分析摄像头画面" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="340" y="140" width="190" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="&lt;b&gt;就近人员现场确认&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;巡检员/安保到场拍照" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="600" y="140" width="190" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="&lt;b&gt;确认核实 ≤3min&lt;/b&gt;" style="text;html=1;fontSize=12;fontColor=#6c8ebf;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="330" y="118" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="&lt;i&gt;双源确认：IoT+视频任一确认即有效&lt;/i&gt;" style="text;html=1;fontSize=10;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="220" y="198" width="400" height="16" as="geometry" />
+        </mxCell>
+        <!-- Arrows from confirm down to command center -->
+        <mxCell id="25" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#6c8ebf;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.17;entryY=0;" edge="1" parent="1" source="20" target="30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#6c8ebf;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="21" target="30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#6c8ebf;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.83;entryY=0;" edge="1" parent="1" source="22" target="30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- ===== 3. 指挥中心 ===== -->
+        <mxCell id="30" value="&lt;b&gt;指挥中心 — 研判调度&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=10;fontSize=13;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="80" y="230" width="710" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="&lt;div style=&quot;text-align:center;padding:4px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;事件定级&lt;/b&gt;&lt;br&gt;P0/P1分级判定&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="100" y="270" width="150" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="&lt;div style=&quot;text-align:center;padding:4px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;GIS缓冲区分析&lt;/b&gt;&lt;br&gt;影响半径计算&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="280" y="270" width="150" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="&lt;div style=&quot;text-align:center;padding:4px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;AI预案匹配&lt;/b&gt;&lt;br&gt;最佳处置方案推荐&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=6;fontSize=10;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="460" y="270" width="150" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="&lt;div style=&quot;text-align:center;padding:4px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;资源调度&lt;/b&gt;&lt;br&gt;最近人员+设备分派&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="620" y="270" width="150" height="55" as="geometry" />
+        </mxCell>
+        <!-- ===== 4. 并行响应 ===== -->
+        <mxCell id="40" value="&lt;b&gt;并行响应（多线程同步执行）&lt;/b&gt;" style="text;html=1;fontSize=12;fontColor=#333;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="280" y="358" width="300" height="20" as="geometry" />
+        </mxCell>
+        <!-- Arrows from command center down to 4 threads -->
+        <mxCell id="41" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#d6b656;strokeWidth=2;exitX=0.15;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="30" target="50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="42" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#d6b656;strokeWidth=2;exitX=0.38;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="30" target="51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="43" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#d6b656;strokeWidth=2;exitX=0.62;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="30" target="52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="44" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#d6b656;strokeWidth=2;exitX=0.85;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="30" target="53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Thread 1 -->
+        <mxCell id="50" value="&lt;b&gt;线程1：现场处置&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:15px;&quot;&gt;角色：巡检员/维修队&lt;br&gt;任务：灭火/关阀/急救&lt;br&gt;AI：知识库方案推荐&lt;br&gt;GIS：实时导航+到位验证&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=10;fontSize=11;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="80" y="390" width="170" height="150" as="geometry" />
+        </mxCell>
+        <!-- Thread 2 -->
+        <mxCell id="51" value="&lt;b&gt;线程2：设备抢修&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:15px;&quot;&gt;角色：维保团队&lt;br&gt;任务：电梯/水管/电气抢修&lt;br&gt;AI：故障诊断+方案推荐&lt;br&gt;GIS：BIM室内导航&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=10;fontSize=11;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="300" y="390" width="170" height="150" as="geometry" />
+        </mxCell>
+        <!-- Thread 3 -->
+        <mxCell id="52" value="&lt;b&gt;线程3：疏散引导&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:15px;&quot;&gt;角色：安保人员&lt;br&gt;任务：疏散人员+警戒线&lt;br&gt;AI：疏散路径优化&lt;br&gt;GIS：影响范围+逃生指引&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=10;fontSize=11;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="520" y="390" width="170" height="150" as="geometry" />
+        </mxCell>
+        <!-- Thread 4 -->
+        <mxCell id="53" value="&lt;b&gt;线程4：资源协调&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:15px;&quot;&gt;角色：管理层&lt;br&gt;任务：协调外部资源+上报&lt;br&gt;AI：资源匹配优化&lt;br&gt;GIS：资源分布可视化&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=10;fontSize=11;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="620" y="390" width="170" height="150" as="geometry" />
+        </mxCell>
+        <!-- ===== 态势地图 (right side) ===== -->
+        <mxCell id="60" value="&lt;b&gt;态势地图&lt;/b&gt;&lt;hr size=&quot;1&amp;quot&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:16px;&quot;&gt;指挥中心实时追踪&lt;br&gt;&lt;br&gt;• 事件位置+影响范围&lt;br&gt;• 人员分布+移动轨迹&lt;br&gt;• 资源使用状态&lt;br&gt;• 处置进展+时间线&lt;br&gt;• SLA达成预警&lt;br&gt;&lt;br&gt;&lt;i&gt;GIS多图层叠加&lt;br&gt;实时语音通信&lt;br&gt;历史回放复盘&lt;/i&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;arcSize=10;fontSize=11;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="830" y="140" width="230" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="61" value="&lt;i&gt;态势感知&lt;/i&gt;" style="text;html=1;fontSize=10;fontColor=#9673a6;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="870" y="120" width="120" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="62" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#9673a6;strokeWidth=2;dashed=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="30" target="60">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="63" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#9673a6;strokeWidth=2;dashed=1;exitX=1;exitY=0.3;entryX=0;entryY=0.3;" edge="1" parent="1" source="50" target="60">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="64" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#9673a6;strokeWidth=2;dashed=1;exitX=1;exitY=0.3;entryX=0;entryY=0.5;" edge="1" parent="1" source="51" target="60">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- ===== 5. 解除 + 复盘 ===== -->
+        <mxCell id="70" value="&lt;b&gt;各线程逐一确认完成&lt;/b&gt;" style="text;html=1;fontSize=10;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="200" y="565" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="71" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#d6b656;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="50" target="80">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="72" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#d6b656;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="51" target="80">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="73" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#d6b656;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="52" target="80">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="74" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#d6b656;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="53" target="80">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="80" value="&lt;b&gt;⑥ 解除确认&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;指挥中心综合各线程报告，确认事件解除" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="240" y="600" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="81" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#d79b00;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="80" target="85">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="85" value="&lt;b&gt;⑦ 复盘分析&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;AI自动生成复盘报告，更新预案库" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="500" y="600" width="200" height="55" as="geometry" />
+        </mxCell>
+        <!-- ===== 图例 ===== -->
+        <mxCell id="90" value="&lt;b&gt;图例&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="680" width="260" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="91" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:16px;&quot;&gt;&lt;span style=&quot;background-color:#f8cecc;&quot;&gt; 触发源 &lt;/span&gt; — IoT/人工/系统检测&lt;br&gt;&lt;span style=&quot;background-color:#dae8fc;&quot;&gt; 确认核实 &lt;/span&gt; — 双源并行核查&lt;br&gt;&lt;span style=&quot;background-color:#fff2cc;&quot;&gt; 指挥中心 &lt;/span&gt;—研判调度中心&lt;br&gt;&lt;span style=&quot;background-color:#d5e8d4;&quot;&gt; 并行线程 &lt;/span&gt;—多角色同时响应&lt;br&gt;&lt;span style=&quot;background-color:#e1d5e7;&quot;&gt; 态势地图 &lt;/span&gt;—实时监控中枢&lt;br&gt;&lt;b&gt;SLA：&lt;/b&gt;确认≤3min | 到场≤10min | 响应≤10min&lt;/div&gt;" style="text;html=1;fontSize=10;fontColor=#333;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="35" y="700" width="250" height="130" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

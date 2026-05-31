@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智慧巡检 — 工单调度</title>
+<style>
+:root {
+  --bg: oklch(99% 0.003 240);
+  --surface: oklch(100% 0 0);
+  --fg: oklch(19% 0.018 240);
+  --muted: oklch(48% 0.01 240);
+  --border: oklch(88% 0.006 240);
+  --accent: oklch(52% 0.10 250);
+  --accent-bg: oklch(52% 0.10 250 / 0.08);
+  --sidebar-width: 220px;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  --red: oklch(52% 0.16 28);
+  --red-bg: oklch(52% 0.16 28 / 0.08);
+  --green: oklch(52% 0.12 145);
+  --green-bg: oklch(52% 0.12 145 / 0.08);
+  --yellow: oklch(60% 0.14 95);
+  --yellow-bg: oklch(60% 0.14 95 / 0.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:14px}
+body{font-family:var(--font);background:var(--bg);color:var(--fg);display:flex;min-height:100vh;line-height:1.5;overflow-x:hidden}
+.sidebar{width:var(--sidebar-width);background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;min-height:100vh;position:sticky;top:0}
+.sidebar-logo{display:flex;align-items:center;gap:10px;padding:18px 20px;border-bottom:1px solid var(--border)}
+.sidebar-logo svg{flex-shrink:0}
+.sidebar-logo span{font-weight:700;font-size:15px;letter-spacing:-0.02em;color:var(--fg)}
+.sidebar-section{padding:16px 12px 6px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted)}
+.nav-item{display:flex;align-items:center;gap:10px;padding:8px 20px;color:var(--muted);text-decoration:none;font-size:13px;position:relative;transition:color .15s}
+.nav-item:hover{color:var(--fg)}
+.nav-item.active{color:var(--fg);font-weight:600}
+.nav-item.active::before{content:'';position:absolute;left:0;top:6px;bottom:6px;width:2px;background:var(--accent);border-radius:0 1px 1px 0}
+.nav-item svg{width:16px;height:16px;flex-shrink:0;opacity:0.6}
+.nav-item.active svg{opacity:1}
+.nav-item.disabled{opacity:0.35;pointer-events:none}
+.main{flex:1;display:flex;flex-direction:column;min-width:0}
+.topbar{display:flex;align-items:center;gap:16px;padding:10px 28px;height:48px;border-bottom:1px solid var(--border);background:var(--surface)}
+.topbar-title{font-size:14px;font-weight:600;letter-spacing:-0.01em}
+.topbar-spacer{flex:1}
+.topbar-btn{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border:1px solid var(--border);border-radius:4px;background:var(--surface);color:var(--fg);font-size:12px;cursor:pointer;transition:background .15s}
+.topbar-btn:hover{background:var(--bg)}
+.topbar-avatar{width:28px;height:28px;border-radius:4px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
+.content{padding:16px 28px;flex:1;overflow-y:auto;max-width:1440px;display:flex;flex-direction:column;gap:14px}
+/* Filters */
+.filter-bar{display:flex;gap:6px;flex-wrap:wrap;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:4px}
+.filter-pill{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border:1px solid var(--border);border-radius:4px;background:var(--surface);color:var(--muted);font-size:12px;cursor:pointer;transition:all .15s;white-space:nowrap}
+.filter-pill:hover{color:var(--fg)}
+.filter-pill.active{background:var(--accent-bg);border-color:color-mix(in srgb,var(--accent) 30%,var(--border));color:var(--fg)}
+.filter-pill .count{font-family:var(--font-mono);font-size:11px;opacity:0.6}
+/* Split layout */
+.workorder-split{display:grid;grid-template-columns:1fr 1fr;gap:12px;flex:1}
+.wo-list{background:var(--surface);border:1px solid var(--border);border-radius:4px;display:flex;flex-direction:column;overflow:hidden}
+.wo-list-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--border)}
+.wo-list-header h3{font-size:13px;font-weight:600}
+.wo-count{font-size:11px;font-family:var(--font-mono);color:var(--muted)}
+.wo-scroll{overflow-y:auto;flex:1}
+/* Work order card */
+.wo-card{padding:12px 16px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s}
+.wo-card:last-child{border-bottom:none}
+.wo-card:hover{background:var(--bg)}
+.wo-card.active{background:var(--accent-bg);border-left:2px solid var(--accent);padding-left:14px}
+.wo-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.wo-id{font-size:12px;font-weight:600;font-family:var(--font-mono);font-feature-settings:"tnum" 1}
+.wo-time{font-size:11px;color:var(--muted);font-family:var(--font-mono);font-feature-settings:"tnum" 1}
+.wo-title{font-size:12px;color:var(--muted);margin-bottom:6px}
+.wo-footer{display:flex;align-items:center;gap:8px}
+.wo-priority{display:inline-flex;align-items:center;gap:4px;padding:2px 7px;border-radius:3px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em}
+.wo-priority.p0{background:var(--red-bg);color:var(--red)}
+.wo-priority.p1{background:var(--yellow-bg);color:var(--yellow)}
+.wo-priority.p2{background:var(--green-bg);color:var(--green)}
+.wo-status{font-size:11px;color:var(--muted)}
+.wo-assignee{font-size:11px;color:var(--muted);margin-left:auto;font-family:var(--font-mono)}
+
+/* Detail panel */
+.wo-detail{background:var(--surface);border:1px solid var(--border);border-radius:4px;display:flex;flex-direction:column;overflow:hidden}
+.wo-detail-header{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.wo-detail-info{flex:1}
+.wo-detail-id{font-size:14px;font-weight:700;font-family:var(--font-mono);font-feature-settings:"tnum" 1;letter-spacing:-0.02em}
+.wo-detail-title{font-size:14px;color:var(--fg);margin-top:2px}
+.wo-actions{display:flex;gap:6px;flex-shrink:0}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border:1px solid var(--border);border-radius:4px;background:var(--surface);color:var(--fg);font-size:12px;cursor:pointer;transition:all .15s;font-family:var(--font)}
+.btn:hover{background:var(--bg)}
+.btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-primary:hover{filter:brightness(1.1)}
+.wo-detail-body{padding:14px 18px;display:flex;flex-direction:column;gap:14px;flex:1;overflow-y:auto}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.detail-field{display:flex;flex-direction:column;gap:2px}
+.detail-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em}
+.detail-value{font-size:13px}
+.detail-value.mono{font-family:var(--font-mono);font-feature-settings:"tnum" 1}
+.detail-section{border-top:1px solid var(--border);padding-top:12px}
+.detail-section h4{font-size:12px;font-weight:600;margin-bottom:8px}
+/* Timeline */
+.timeline{display:flex;flex-direction:column;gap:8px}
+.timeline-item{display:flex;gap:10px;padding-left:8px;position:relative}
+.timeline-item::before{content:'';position:absolute;left:12px;top:18px;bottom:-8px;width:1px;background:var(--border)}
+.timeline-item:last-child::before{display:none}
+.timeline-dot{width:8px;height:8px;border-radius:50%;background:var(--border);flex-shrink:0;margin-top:4px}
+.timeline-dot.accent{background:var(--accent)}
+.timeline-dot.green{background:var(--green)}
+.timeline-content{flex:1}
+.timeline-text{font-size:12px}
+.timeline-time{font-size:11px;color:var(--muted);font-family:var(--font-mono);font-feature-settings:"tnum" 1}
+/* Modal overlay */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200;display:none;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:4px;width:420px;max-width:90vw;max-height:80vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,.12)}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border)}
+.modal-header h3{font-size:14px;font-weight:600}
+.modal-close{width:28px;height:28px;border:none;background:transparent;color:var(--muted);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center}
+.modal-close:hover{color:var(--fg)}
+.modal-body{padding:14px 18px;display:flex;flex-direction:column;gap:12px}
+.form-group{display:flex;flex-direction:column;gap:4px}
+.form-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em}
+.form-select{padding:6px 10px;border:1px solid var(--border);border-radius:3px;font-size:12px;background:var(--surface);color:var(--fg);font-family:var(--font);cursor:pointer}
+.form-select:focus{outline:none;border-color:var(--accent)}
+.form-textarea{padding:6px 10px;border:1px solid var(--border);border-radius:3px;font-size:12px;background:var(--surface);color:var(--fg);font-family:var(--font);resize:vertical;min-height:60px}
+.form-textarea:focus{outline:none;border-color:var(--accent)}
+.modal-footer{display:flex;justify-content:flex-end;gap:6px;padding:12px 18px;border-top:1px solid var(--border)}
+/* AI recommend */
+.ai-recommend{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--accent-bg);border:1px solid color-mix(in srgb,var(--accent) 20%,var(--border));border-radius:4px;margin-top:6px}
+.ai-icon{width:20px;height:20px;border-radius:3px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0}
+.ai-text{font-size:12px;flex:1}
+.ai-text strong{color:var(--accent)}
+/* Toast */
+.toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--fg);color:var(--surface);padding:10px 18px;border-radius:4px;font-size:12px;font-weight:500;opacity:0;transition:all .3s ease;pointer-events:none;z-index:100}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:768px){
+.sidebar{position:fixed;bottom:0;left:0;right:0;height:auto;min-height:auto;flex-direction:row;border-right:none;border-top:1px solid var(--border);z-index:50;padding:0;overflow-x:auto}
+.sidebar .sidebar-logo,.sidebar .sidebar-section{display:none}
+.nav-item{flex:1;justify-content:center;padding:10px 6px;font-size:10px;white-space:nowrap;gap:4px;flex-direction:column;min-width:0}
+.nav-item.active::before{display:none}
+.nav-item svg{width:18px;height:18px}
+.content{padding:12px 14px;padding-bottom:72px}
+.workorder-split{grid-template-columns:1fr}
+.filter-bar{overflow-x:auto;flex-wrap:nowrap}
+.wo-list{max-height:260px}
+.detail-grid{grid-template-columns:1fr}
+.wo-detail-header{flex-direction:column}
+.wo-actions{width:100%}
+.wo-actions .btn{flex:1;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="6" height="6" rx="1" fill="var(--accent)"/><rect x="15" y="3" width="6" height="6" rx="1" fill="var(--accent)" opacity="0.4"/><rect x="3" y="15" width="6" height="6" rx="1" fill="var(--accent)" opacity="0.4"/><rect x="15" y="15" width="6" height="6" rx="1" fill="var(--accent)"/></svg>
+    <span>智慧巡检</span>
+  </div>
+  <div class="sidebar-section">管理层</div>
+  <a href="pc-dashboard.html" class="nav-item">
+    <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="9" y="1" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="1" y="9" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="9" y="9" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
+    数据大盘
+  </a>
+  <a href="pc-workorder.html" class="nav-item active">
+    <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="9" y="4" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="1" y="11" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="13" y="1" width="2" height="6" rx=".5" fill="var(--accent)" opacity="0.3"/></svg>
+    工单调度
+  </a>
+  <a href="pc-decision.html" class="nav-item">
+    <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="9" width="2" height="6" rx=".5" fill="currentColor"/><rect x="7" y="5" width="2" height="10" rx=".5" fill="currentColor"/><rect x="12" y="1" width="2" height="14" rx=".5" fill="currentColor"/></svg>
+    决策中心
+  </a>
+</nav>
+
+<div class="main">
+<div class="topbar">
+  <div class="topbar-title">工单调度</div>
+  <div class="topbar-spacer"></div>
+  <button class="topbar-btn" onclick="showToast('已刷新')">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 7a5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 4.24 2.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M12 2.5V5.5H9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    刷新
+  </button>
+  <button class="topbar-btn" onclick="showToast('导出中...')">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v8M4 6l3 3 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 9v3h12V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+    导出
+  </button>
+  <div class="topbar-avatar">张</div>
+</div>
+
+<div class="content">
+<div class="filter-bar">
+  <span class="filter-pill active" onclick="switchFilter(this)">全部 <span class="count">42</span></span>
+  <span class="filter-pill" onclick="switchFilter(this)">待分配 <span class="count">8</span></span>
+  <span class="filter-pill" onclick="switchFilter(this)">进行中 <span class="count">18</span></span>
+  <span class="filter-pill" onclick="switchFilter(this)">待验收 <span class="count">11</span></span>
+  <span class="filter-pill" onclick="switchFilter(this)">已关闭 <span class="count">5</span></span>
+</div>
+
+<div class="workorder-split">
+  <div class="wo-list">
+    <div class="wo-list-header">
+      <h3>工单列表</h3>
+      <span class="wo-count">42 项</span>
+    </div>
+    <div class="wo-scroll">
+      <div class="wo-card active" onclick="selectWO(this,'WO-2026-0341')">
+        <div class="wo-card-header"><span class="wo-id">WO-2026-0341</span><span class="wo-time">14:23</span></div>
+        <div class="wo-title">A区3F 消防喷淋头漏水，需紧急维修</div>
+        <div class="wo-footer"><span class="wo-priority p0">P0 紧急</span><span class="wo-status">待分配</span><span class="wo-assignee">—</span></div>
+      </div>
+      <div class="wo-card" onclick="selectWO(this,'WO-2026-0338')">
+        <div class="wo-card-header"><span class="wo-id">WO-2026-0338</span><span class="wo-time">11:05</span></div>
+        <div class="wo-title">B区2F 走廊灯带故障，共计6盏不亮</div>
+        <div class="wo-footer"><span class="wo-priority p1">P1 重要</span><span class="wo-status">进行中</span><span class="wo-assignee">张卫国</span></div>
+      </div>
+      <div class="wo-card" onclick="selectWO(this,'WO-2026-0335')">
+        <div class="wo-card-header"><span class="wo-id">WO-2026-0335</span><span class="wo-time">09:32</span></div>
+        <div class="wo-title">C区 电梯运行异响，需停机检查</div>
+        <div class="wo-footer"><span class="wo-priority p0">P0 紧急</span><span class="wo-status">待分配</span><span class="wo-assignee">—</span></div>
+      </div>
+      <div class="wo-card" onclick="selectWO(this,'WO-2026-0332')">
+        <div class="wo-card-header"><span class="wo-id">WO-2026-0332</span><span class="wo-time">昨日 16:18</span></div>
+        <div class="wo-title">D区 空调出风口温度异常（设定22°C/实测27°C）</div>
+        <div class="wo-footer"><span class="wo-priority p1">P1 重要</span><span class="wo-status">待分配</span><span class="wo-assignee">—</span></div>
+      </div>
+      <div class="wo-card" onclick="selectWO(this,'WO-2026-0329')">
+        <div class="wo-card-header"><span class="wo-id">WO-2026-0329</span><span class="wo-time">昨日 14:40</span></div>
+        <div class="wo-title">A区 地下车库积水，排水泵未自动启动</div>
+        <div class="wo-footer"><span class="wo-priority p0">P0 紧急</span><span class="wo-status">进行中</span><span class="wo-assignee">王海峰</span></div>
+      </div>
+      <div class="wo-card" onclick="selectWO(this,'WO-2026-0326')">
+        <div class="wo-card-header"><span class="wo-id">WO-2026-0326</span><span class="wo-time">昨日 10:22</span></div>
+        <div class="wo-title">B区 门禁系统读卡器故障，2号闸机无法通行</div>
+        <div class="wo-footer"><span class="wo-priority p2">P2 一般</span><span class="wo-status">待验收</span><span class="wo-assignee">李华明</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wo-detail" id="woDetail">
+    <div class="wo-detail-header">
+      <div class="wo-detail-info">
+        <div class="wo-detail-id">WO-2026-0341</div>
+        <div class="wo-detail-title">A区3F 消防喷淋头漏水，需紧急维修</div>
+      </div>
+      <div class="wo-actions">
+        <button class="btn btn-primary" onclick="openDispatch()">派单</button>
+        <button class="btn" onclick="showToast('已转交上级')">转交</button>
+      </div>
+    </div>
+    <div class="wo-detail-body">
+      <div class="detail-grid">
+        <div class="detail-field"><span class="detail-label">优先级</span><span class="wo-priority p0" style="align-self:flex-start">P0 紧急</span></div>
+        <div class="detail-field"><span class="detail-label">状态</span><span class="detail-value" style="color:var(--red)">待分配</span></div>
+        <div class="detail-field"><span class="detail-label">位置</span><span class="detail-value">A区 3F 西侧消防通道</span></div>
+        <div class="detail-field"><span class="detail-label">上报时间</span><span class="detail-value mono">2026-05-22 14:23</span></div>
+        <div class="detail-field"><span class="detail-label">上报人</span><span class="detail-value">王海峰（巡检员）</span></div>
+        <div class="detail-field"><span class="detail-label">AI 识别</span><span class="detail-value">消防喷淋头破损 · 置信度 94.2%</span></div>
+      </div>
+
+      <div class="ai-recommend">
+        <span class="ai-icon">AI</span>
+        <span class="ai-text">建议派单至 <strong>张卫国</strong>（距事故点最近，当前位于 A区2F）</span>
+      </div>
+
+      <div class="detail-section">
+        <h4>处理时间线</h4>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-dot accent"></span>
+            <div class="timeline-content">
+              <div class="timeline-text">问题上报 — AI自动分类为 P0 紧急</div>
+              <div class="timeline-time">14:23</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <div class="timeline-text">待分配 — 等待管理员派单</div>
+              <div class="timeline-time">当前</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="modal-overlay" id="dispatchModal">
+  <div class="modal">
+    <div class="modal-header"><h3>派单 — WO-2026-0341</h3><button class="modal-close" onclick="closeDispatch()">×</button></div>
+    <div class="modal-body">
+      <div class="form-group">
+        <span class="form-label">指派给</span>
+        <select class="form-select">
+          <option>张卫国（A区 · 距事故点 40m）— 推荐</option>
+          <option>王海峰（A区 · 处理中）</option>
+          <option>李华明（B区 · 空闲）</option>
+          <option>赵远（D区 · 离线）</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <span class="form-label">优先级</span>
+        <select class="form-select">
+          <option>P0 紧急（响应 ≤15min）</option>
+          <option>P1 重要（响应 ≤60min）</option>
+          <option>P2 一般（响应 ≤24h）</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <span class="form-label">备注</span>
+        <textarea class="form-textarea" placeholder="请输入派单备注…">AI识别为消防喷淋头破损，需携带备用喷淋头及管钳工具。</textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" onclick="closeDispatch()">取消</button>
+      <button class="btn btn-primary" onclick="confirmDispatch()">确认派单</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+function switchFilter(el){document.querySelectorAll('.filter-pill').forEach(p=>p.classList.remove('active'));el.classList.add('active')}
+function selectWO(el,id){document.querySelectorAll('.wo-card').forEach(c=>c.classList.remove('active'));el.classList.add('active');document.querySelector('.wo-detail-id').textContent=id;showToast('已选择 '+id)}
+function openDispatch(){document.getElementById('dispatchModal').classList.add('open')}
+function closeDispatch(){document.getElementById('dispatchModal').classList.remove('open')}
+function confirmDispatch(){closeDispatch();showToast('已派单成功')}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000)}
+</script>
+</body>
+</html>

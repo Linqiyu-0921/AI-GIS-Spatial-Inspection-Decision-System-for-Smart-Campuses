@@ -1,0 +1,122 @@
+<mxfile host="app.diagrams.net" modified="2026-05-14T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="daily-inspection-journey" name="日常巡检用户旅程地图">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="2" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b style=&quot;font-size:18px;&quot;&gt;日常巡检用户旅程地图&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:11px;color:#666;&quot;&gt;视角：巡检员（张建国+李明辉混合）· 时间跨度：单日 08:00–17:30 · 目标：从接收任务到完成闭环&lt;/span&gt;&lt;/div&gt;" style="text;html=1;fontSize=18;fontColor=#1a1a2e;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="950" y="10" width="1000" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- Emotion curve label -->
+        <mxCell id="3" value="&lt;b&gt;情绪曲线&lt;/b&gt;" style="text;html=1;fontSize=11;fontColor=#555;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="70" width="80" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Emotion level labels -->
+        <mxCell id="4" value="😊 高" style="text;html=1;fontSize=11;fontColor=#2a7a2a;align=right;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="95" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="😐 中" style="text;html=1;fontSize=11;fontColor=#d4a017;align=right;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="130" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="😟 低" style="text;html=1;fontSize=11;fontColor=#c00;align=right;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="165" width="80" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Emotion curve (polyline) -->
+        <mxCell id="7" value="" style="curved=1;strokeColor=#e74c3c;strokeWidth=3;rounded=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="150" y="145" as="sourcePoint" />
+            <mxPoint x="1720" y="125" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="235" y="145" />
+              <mxPoint x="260" y="120" />
+              <mxPoint x="305" y="110" />
+              <mxPoint x="370" y="110" />
+              <mxPoint x="420" y="130" />
+              <mxPoint x="520" y="145" />
+              <mxPoint x="560" y="125" />
+              <mxPoint x="600" y="100" />
+              <mxPoint x="662" y="100" />
+              <mxPoint x="735" y="170" />
+              <mxPoint x="770" y="135" />
+              <mxPoint x="820" y="100" />
+              <mxPoint x="950" y="95" />
+              <mxPoint x="1000" y="95" />
+              <mxPoint x="1065" y="155" />
+              <mxPoint x="1120" y="165" />
+              <mxPoint x="1180" y="130" />
+              <mxPoint x="1230" y="105" />
+              <mxPoint x="1380" y="95" />
+              <mxPoint x="1450" y="110" />
+              <mxPoint x="1595" y="130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Separator line -->
+        <mxCell id="8" value="" style="endArrow=none;startArrow=none;strokeColor=#ccc;strokeWidth=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="150" y="200" as="sourcePoint" />
+            <mxPoint x="1720" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Stage headers -->
+        <mxCell id="9" value="&lt;b&gt;① 接收任务&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;08:00&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="205" y="210" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="&lt;b&gt;② 路线执行&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;08:15–11:30&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="420" y="210" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;b&gt;③ 问题发现&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;09:40&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="635" y="210" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="&lt;b&gt;④ AI判断&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;09:43&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="850" y="210" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="&lt;b&gt;⑤ 处置/跟踪&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;09:45–16:00&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1065" y="210" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;b&gt;⑥ 验收复核&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;次日10:20&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="210" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="&lt;b&gt;⑦ 下班查状态&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;17:30&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1495" y="210" width="200" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Stage content columns -->
+        <mxCell id="16" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 打开APP查看当日计划&lt;br&gt;&#8226; 确认路线和点位清单&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; 「今日任务」卡片&lt;br&gt;&#8226; 计划详情页(地图+列表)&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 老手感觉&quot;走形式&quot;&lt;br&gt;&#8226; 新手不熟路线焦虑&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; 智能调频减少无意义巡检&lt;br&gt;&#8226; 预估时长+难度提示&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; AI预测推荐巡检频次&lt;br&gt;&#8226; GIS空间可视化路线分布&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="205" y="250" width="200" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 按导航逐点巡检&lt;br&gt;&#8226; 逐项完成checklist&lt;br&gt;&#8226; 拍照留证点&quot;完成&quot;&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; GIS导航页&lt;br&gt;&#8226; Checklist确认页&lt;br&gt;&#8226; 进度浮窗(已巡/待巡)&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 老手被强制路线束缚&lt;br&gt;&#8226; 室内GPS漂移定位不准&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; 熟悉路线模式(弱化导航)&lt;br&gt;&#8226; 蓝牙信标辅助到位验证&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; AI漏检/偏离路线预警&lt;br&gt;&#8226; GPS轨迹记录+实时定位&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="420" y="250" width="200" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 发现消防通道堆物&lt;br&gt;&#8226; 拍照→语音→选择类型&lt;br&gt;&#8226; 一键提交上报&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; 上报浮层(多图+语音)&lt;br&gt;&#8226; 问题类型下拉菜单&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 需手写再回办公室录入&lt;br&gt;&#8226; 怕描述不清被追问&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; 拍照语音一键上报&lt;br&gt;&#8226; 语音转文字自动提取关键词&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; AI图像识别自动判定类型&lt;br&gt;&#8226; NLP结构化语音内容&lt;br&gt;&#8226; GPS自动定位打标&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="635" y="250" width="200" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 查看AI判定的严重等级&lt;br&gt;&#8226; 确认建议处置路径&lt;br&gt;&#8226; 手动修正(如需)&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; 分支判断结果弹窗&lt;br&gt;&#8226; 等级修正按钮&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 新手不确定等级怕报错&lt;br&gt;&#8226; 怕被批小题大做或漏报&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; AI显示判定依据+历史案例&lt;br&gt;&#8226; 一键确认降低操作成本&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; 严重程度预测(准确率≥90%)&lt;br&gt;&#8226; 分支引导展示判定依据&lt;br&gt;&#8226; GIS复用步骤③定位数据&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="850" y="250" width="200" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 继续巡检等待工单分派&lt;br&gt;&#8226; 偶尔查看工单处理状态&lt;br&gt;&#8226; 轻微问题当场处置拍照&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; 工单详情页(状态流)&lt;br&gt;&#8226; 处置浮层(前后对比拍照)&lt;br&gt;&#8226; 消息推送通知&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 问题石沉大海无反馈&lt;br&gt;&#8226; 当场处置未计入绩效&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; 状态实时推送(已派给谁)&lt;br&gt;&#8226; 照片AI自动比对确认闭环&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; AI图像比对验证处置效果&lt;br&gt;&#8226; 工单变更主动通知&lt;br&gt;&#8226; GPS定位验证地点一致性&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1065" y="250" width="200" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 经过点位查看历史问题&lt;br&gt;&#8226; 现场复核拍照&lt;br&gt;&#8226; 对比处置前/后照片&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; 点位历史问题浮层&lt;br&gt;&#8226; 验收拍照界面&lt;br&gt;&#8226; 对比视图(处置前vs后)&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 验收标准不清晰&lt;br&gt;&#8226; 不知&quot;算不算解决&quot;&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; AI比对给出置信度评分&lt;br&gt;&#8226; 验收通过即时反馈绩效积分&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; AI图像比对判断解决程度&lt;br&gt;&#8226; 质量评分(时效+完整性)&lt;br&gt;&#8226; GPS到位验证&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="250" width="200" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 查看今日上报处理进度&lt;br&gt;&#8226; 确认所有问题有去向&lt;br&gt;&#8226; 对未分派问题催办&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; 「我的上报」列表&lt;br&gt;&#8226; 状态筛选(全部/处理中/已闭环)&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 问题仍&quot;待分派&quot;不明原因&lt;br&gt;&#8226; 担心被忽略或系统延迟&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; 状态+预计时间+责任人三合一&lt;br&gt;&#8226; 超24h未分派一键催办&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; AI超时检测与催办建议&lt;br&gt;&#8226; 问题点位地图总览&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1495" y="250" width="200" height="490" as="geometry" />
+        </mxCell>
+
+        <!-- Journey insights -->
+        <mxCell id="23" value="&lt;div style=&quot;padding:6px;font-size:10px;&quot;&gt;&lt;b&gt;旅程洞察&lt;/b&gt;&lt;hr size=&quot;1&quot; color=&quot;#ccc&quot;&gt;&lt;b&gt;情绪低谷：&lt;/b&gt;③上报前犹豫 + ⑤跟踪&quot;石沉大海&quot;感 · &lt;b&gt;情绪高峰：&lt;/b&gt;④AI快速判断省时 + ⑥验收确认问题解决&lt;br&gt;&lt;b&gt;关键转化：&lt;/b&gt;从&quot;不确定感&quot;到&quot;掌控感&quot;的核心驱动 = 实时状态可见 + AI辅助减少判断负担&lt;br&gt;&lt;b&gt;设计重点：&lt;/b&gt;减少老手&quot;被约束感&quot; · 降低新手&quot;判断焦虑&quot; · 确保上报必有回响&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#ccc;fontSize=10;verticalAlign=middle;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="205" y="760" width="1490" height="80" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

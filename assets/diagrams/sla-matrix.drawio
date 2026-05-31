@@ -1,0 +1,300 @@
+<mxfile host="app.diagrams.net" modified="2026-05-14T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="sla-matrix" name="SLA时限矩阵">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="s-title" value="&lt;b&gt;SLA 时限矩阵 — 三场景对比&lt;/b&gt;" style="text;html=1;fontSize=20;fontColor=#1a1a2e;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1760" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="s-legend" value="&lt;div&gt;&amp;nbsp;&lt;/div&gt;&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f8cecc&quot; width=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;&lt;td width=&quot;80&quot;&gt;&amp;lt;10min&lt;/td&gt;&lt;td bgcolor=&quot;#ffe6cc&quot; width=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;&lt;td width=&quot;80&quot;&gt;&amp;lt;1h&lt;/td&gt;&lt;td bgcolor=&quot;#fff2cc&quot; width=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;&lt;td width=&quot;80&quot;&gt;&amp;lt;24h&lt;/td&gt;&lt;td bgcolor=&quot;#d5e8d4&quot; width=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;&lt;td width=&quot;80&quot;&gt;&amp;gt;24h&lt;/td&gt;&lt;td bgcolor=&quot;#e1d5e7&quot; width=&quot;20&quot;&gt;&amp;nbsp;&lt;/td&gt;&lt;td width=&quot;100&quot;&gt;N/A（不适用）&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;fontSize=12;fontColor=#333;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="60" width="600" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Matrix Table - Header Row -->
+        <mxCell id="s-h1" value="&lt;b&gt;控制节点&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#333;fontSize=11;fontColor=#fff;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="100" width="240" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="s-h2" value="&lt;b&gt;日常巡检&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontColor=#333;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="260" y="100" width="320" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="s-h3" value="&lt;b&gt;设备检查&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontColor=#333;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="580" y="100" width="320" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="s-h4" value="&lt;b&gt;应急事件&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontColor=#333;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="900" y="100" width="320" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="s-h5" value="&lt;b&gt;触发条件&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontColor=#333;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="100" width="280" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- Row colors: alternating #f8f8f8 and #fff -->
+
+        <!-- Row 1: 计划下发 -->
+        <mxCell id="s-r1a" value="计划下发" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f8f8;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="140" width="240" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r1b" value="每日 06:00 前" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="260" y="140" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r1c" value="检查日前 1 天" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="580" y="140" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r1d" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="900" y="140" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r1e" value="系统自动 / 管理层编排" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="140" width="280" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- Row 2: 问题上报 -->
+        <mxCell id="s-r2a" value="问题/异常上报" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="178" width="240" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r2b" value="&amp;le;3min" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="260" y="178" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r2c" value="&amp;le;5min" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="580" y="178" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r2d" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="900" y="178" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r2e" value="巡检员 / 技术员提交" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="178" width="280" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- Row 3: AI辅助分支 -->
+        <mxCell id="s-r3a" value="分支判断（AI辅助）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f8f8;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="216" width="240" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r3b" value="&amp;le;30 秒" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="260" y="216" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r3c" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="580" y="216" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r3d" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="900" y="216" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r3e" value="上报后自动触发" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="216" width="280" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- Row 4: 当场闭环 -->
+        <mxCell id="s-r4a" value="轻微当场闭环" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="254" width="240" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r4b" value="&amp;le;10min" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="260" y="254" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r4c" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="580" y="254" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r4d" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="900" y="254" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r4e" value="判定为 P3 轻微" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="254" width="280" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- Row 5: 工单创建 -->
+        <mxCell id="s-r5a" value="工单创建" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f8f8;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="292" width="240" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r5b" value="&amp;le;1min" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="260" y="292" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r5c" value="&amp;le;1min" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="580" y="292" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r5d" value="&amp;le;1min" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="900" y="292" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r5e" value="系统自动化创建" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="292" width="280" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- Row 6: 审核分派 -->
+        <mxCell id="s-r6a" value="管理层审核/分派" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="330" width="240" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r6b" value="&amp;le;15min" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="260" y="330" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r6c" value="&amp;le;24h（隐患审核）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="580" y="330" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r6d" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="900" y="330" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r6e" value="工单创建后管理层确认" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="330" width="280" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- Row 7: 处置到场 -->
+        <mxCell id="s-r7a" value="处置人到场" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f8f8;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="368" width="240" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r7b" value="P1&amp;le;30min / P2&amp;le;2h" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="260" y="368" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r7c" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="580" y="368" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r7d" value="&amp;le;10min" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="900" y="368" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r7e" value="工单分派后处置人抵达" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="368" width="280" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- Row 8: 处置完成 -->
+        <mxCell id="s-r8a" value="处置完成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="406" width="240" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r8b" value="P1&amp;le;2h / P2&amp;le;24h" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="260" y="406" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r8c" value="P0/P1&amp;le;48h / P2&amp;le;7d" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="580" y="406" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r8d" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="900" y="406" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r8e" value="到场后开始处置" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="406" width="280" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- Row 9: 巡检验收 -->
+        <mxCell id="s-r9a" value="巡检员验收" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f8f8;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="444" width="240" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r9b" value="&amp;le;24h" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="260" y="444" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r9c" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="580" y="444" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r9d" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="900" y="444" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r9e" value="处置完成后触发" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="444" width="280" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- Row 10: 管理层验收 -->
+        <mxCell id="s-r10a" value="管理层验收" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="482" width="240" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r10b" value="&amp;le;4h" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="260" y="482" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r10c" value="远程&amp;le;24h / 现场&amp;le;48h" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="580" y="482" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r10d" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="900" y="482" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r10e" value="处置完成后触发" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="482" width="280" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- Row 11: 分析生成 -->
+        <mxCell id="s-r11a" value="日报/分析生成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f8f8;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="520" width="240" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r11b" value="当日 22:30 前" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="260" y="520" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r11c" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="580" y="520" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r11d" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="900" y="520" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r11e" value="每日 22:00 自动汇总" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="520" width="280" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- Row 12: 月报 -->
+        <mxCell id="s-r12a" value="月报生成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="558" width="240" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r12b" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="260" y="558" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r12c" value="每月 3 日前" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="580" y="558" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r12d" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="900" y="558" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r12e" value="每月 1 日自动触发" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="558" width="280" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- Row 13: 应急确认 -->
+        <mxCell id="s-r13a" value="应急确认（IoT+人工）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f8f8;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="596" width="240" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r13b" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="260" y="596" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r13c" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="580" y="596" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r13d" value="&amp;le;3min" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="900" y="596" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r13e" value="事件触发后双确认" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="596" width="280" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- Row 14: 应急响应 -->
+        <mxCell id="s-r14a" value="应急响应启动" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="634" width="240" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r14b" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="260" y="634" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r14c" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="580" y="634" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r14d" value="&amp;le;10min" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="900" y="634" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r14e" value="确认后指挥中心接管" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="634" width="280" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- Row 15: 应急到场 -->
+        <mxCell id="s-r15a" value="应急到场" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f8f8;strokeColor=#ddd;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="672" width="240" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r15b" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="260" y="672" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r15c" value="—" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="580" y="672" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r15d" value="&amp;le;10min" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="900" y="672" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="s-r15e" value="从触发到处置人到达" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="672" width="280" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- Bottom note -->
+        <mxCell id="s-note" value="&lt;i&gt;统一原则：若同一工单同时满足多个 SLA 条件，以最短时限为准；所有时限均从上一节点完成时刻开始计算。&lt;/i&gt;" style="text;html=1;fontSize=11;fontColor=#666;fillColor=none;strokeColor=none;align=center;" vertex="1" parent="1">
+          <mxGeometry x="20" y="720" width="1480" height="24" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

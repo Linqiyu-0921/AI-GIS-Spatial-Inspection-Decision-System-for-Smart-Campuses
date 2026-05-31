@@ -1,0 +1,115 @@
+<mxfile host="app.diagrams.net" modified="2026-05-14T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="equipment-inspection" name="设备检查流程">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!-- Title -->
+        <mxCell id="2" value="&lt;b&gt;设备专项检查全流程 — 七步闭环&lt;/b&gt;" style="text;html=1;fontSize=20;fontColor=#1a1a2e;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="550" y="10" width="500" height="30" as="geometry" />
+        </mxCell>
+        <!-- STEP 1 -->
+        <mxCell id="10" value="&lt;b&gt;① 计划编排&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;自动排期+AI预测&lt;br&gt;BIM空间可视化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="30" y="55" width="160" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;技术主管/技术员&lt;br&gt;&lt;b&gt;AI：&lt;/b&gt;预测分析+智能排期&lt;br&gt;&lt;b&gt;GIS：&lt;/b&gt;BIM空间可视化+设备分布分析&lt;br&gt;&lt;b&gt;SLA：&lt;/b&gt;检前1天&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="30" y="130" width="160" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b8a472;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="10" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- STEP 2 -->
+        <mxCell id="20" value="&lt;b&gt;② 清单执行&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;按设备checklist检查&lt;br&gt;OCR表盘识别+BIM定位" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="220" y="55" width="160" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;技术员&lt;br&gt;&lt;b&gt;AI：&lt;/b&gt;OCR表盘识别&lt;br&gt;&lt;b&gt;GIS：&lt;/b&gt;BIM楼层定位+设备导航+到位验证&lt;br&gt;&lt;b&gt;SLA：&lt;/b&gt;计划时长内&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="220" y="130" width="160" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="22" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b8a472;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="20" target="30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- STEP 3 -->
+        <mxCell id="30" value="&lt;b&gt;③ 异常发现&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;AI外观识别+OCR&lt;br&gt;+声音分析综合判断" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="410" y="55" width="160" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;技术员+AI&lt;br&gt;&lt;b&gt;AI：&lt;/b&gt;外观识别+OCR+声音分析+综合判断&lt;br&gt;&lt;b&gt;GIS：&lt;/b&gt;BIM定位打标+空间关联&lt;br&gt;&lt;b&gt;SLA：&lt;/b&gt;≤5min&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="410" y="130" width="160" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="32" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b8a472;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="30" target="40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- STEP 4 -->
+        <mxCell id="40" value="&lt;b&gt;④ 工单分派&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;系统自动创建工单&lt;br&gt;技术主管审核+AI推荐" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="600" y="55" width="160" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;技术主管&lt;br&gt;&lt;b&gt;AI：&lt;/b&gt;智能推荐+方案推荐+SLA建议&lt;br&gt;&lt;b&gt;GIS：&lt;/b&gt;BIM定位+就近匹配&lt;br&gt;&lt;b&gt;SLA：&lt;/b&gt;隐患审核≤24h&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="600" y="130" width="160" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="42" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#d79b00;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="40" target="50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- STEP 5 -->
+        <mxCell id="50" value="&lt;b&gt;⑤ 维修处置&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;维保单位现场维修&lt;br&gt;BIM室内导航+到位验证" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="790" y="55" width="160" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="51" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;维保单位&lt;br&gt;&lt;b&gt;AI：&lt;/b&gt;方案推荐&lt;br&gt;&lt;b&gt;GIS：&lt;/b&gt;BIM室内导航+到位验证+维修区域标注&lt;br&gt;&lt;b&gt;SLA：&lt;/b&gt;P0/P1≤48h/P2≤7d&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="790" y="130" width="160" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="52" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b8a472;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="50" target="60">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- STEP 6 -->
+        <mxCell id="60" value="&lt;b&gt;⑥ 技术验收&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;技术主管远程/现场&lt;br&gt;AI参数验证+质量评分" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="980" y="55" width="160" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="61" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;技术主管&lt;br&gt;&lt;b&gt;AI：&lt;/b&gt;图像比对+参数验证+质量评分&lt;br&gt;&lt;b&gt;GIS：&lt;/b&gt;BIM现场定位+验收状态标注&lt;br&gt;&lt;b&gt;SLA：&lt;/b&gt;远程≤24h/现场≤48h&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="980" y="130" width="160" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="62" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b8a472;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="60" target="70">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- STEP 7 -->
+        <mxCell id="70" value="&lt;b&gt;⑦ 设备分析&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;设备健康度月报&lt;br&gt;AI劣化预测+BIM热力图" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="55" width="160" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="71" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;技术主管/系统&lt;br&gt;&lt;b&gt;AI：&lt;/b&gt;设备劣化预测+异常模式识别+优化建议&lt;br&gt;&lt;b&gt;GIS：&lt;/b&gt;BIM热力图+设备生命周期&lt;br&gt;&lt;b&gt;SLA：&lt;/b&gt;月报每月3日前&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="130" width="160" height="85" as="geometry" />
+        </mxCell>
+        <!-- Return arrow -->
+        <mxCell id="80" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#9673a6;strokeWidth=2;dashed=1;fontSize=10;fontColor=#9673a6;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1250" y="215" as="sourcePoint" />
+            <mxPoint x="110" y="215" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1250" y="430" />
+              <mxPoint x="110" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="81" value="&lt;b&gt;数据回流自优化&lt;/b&gt;" style="text;html=1;fontSize=10;fontColor=#9673a6;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="580" y="420" width="200" height="20" as="geometry" />
+        </mxCell>
+        <!-- Sidebar: 设备检查清单 -->
+        <mxCell id="90" value="&lt;b&gt;设备检查清单模板&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=8;fontSize=12;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="55" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="91" value="&lt;div style=&quot;text-align:left;padding:4px;font-size:10px;line-height:15px;&quot;&gt;&lt;b&gt;🛗 电梯月检（8项）&lt;/b&gt;&lt;br&gt;1. 运行平稳性（声音识别）&lt;br&gt;2. 门机系统（视频识别）&lt;br&gt;3. 安全装置（外观识别）&lt;br&gt;4. 通讯系统&lt;br&gt;5. 照明通风（图像识别）&lt;br&gt;6. 显示系统（OCR）&lt;br&gt;7. 钢丝绳（外观识别）&lt;br&gt;8. 导轨润滑（声音识别）&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="95" width="350" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="92" value="&lt;div style=&quot;text-align:left;padding:4px;font-size:10px;line-height:15px;&quot;&gt;&lt;b&gt;⚡ 配电房周检（8项）&lt;/b&gt;&lt;br&gt;1. 变压器温度（OCR）&lt;br&gt;2. 开关柜状态（外观识别）&lt;br&gt;3. 接地系统（外观识别）&lt;br&gt;4. 通风散热（OCR）&lt;br&gt;5. 消防设施（OCR）&lt;br&gt;6. 电缆桥架（图像识别）&lt;br&gt;7. 防潮防鼠（图像识别）&lt;br&gt;8. 运行声音（声音识别）&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="245" width="350" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="93" value="&lt;div style=&quot;text-align:left;padding:4px;font-size:10px;line-height:15px;&quot;&gt;&lt;b&gt;🔥 消防泵房季检（8项）&lt;/b&gt;&lt;br&gt;1. 水泵运行（声音+振动分析）&lt;br&gt;2. 阀门状态（外观识别）&lt;br&gt;3. 压力表读数（OCR）&lt;br&gt;4. 管道连接（外观识别）&lt;br&gt;5. 应急电源（OCR）&lt;br&gt;6. 控制柜（图像识别）&lt;br&gt;7. 水箱水位（图像识别）&lt;br&gt;8. 管道标识（图像识别）&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="395" width="350" height="140" as="geometry" />
+        </mxCell>
+        <!-- Legend -->
+        <mxCell id="100" value="&lt;b&gt;图例&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="480" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="101" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:16px;&quot;&gt;&lt;span style=&quot;background-color:#e6d5b0;&quot;&gt; 标准步骤 &lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color:#ffe6cc;&quot;&gt; 工单审核分派 &lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color:#e1d5e7;&quot;&gt; 数据分析环节 &lt;/span&gt;&lt;br&gt;&lt;b&gt;与日常巡检差异：&lt;/b&gt;&lt;br&gt;• 全部走工单（无轻微当场）&lt;br&gt;• BIM室内定位代替GPS&lt;br&gt;• 技术验收代替简单复核&lt;/div&gt;" style="text;html=1;fontSize=10;fontColor=#333;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="35" y="500" width="210" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

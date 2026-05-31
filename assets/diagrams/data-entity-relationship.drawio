@@ -1,0 +1,229 @@
+<mxfile host="app.diagrams.net" modified="2026-05-14T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="data-entity-relationship" name="数据实体关系与血缘图">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="数据实体关系与血缘图" style="text;html=1;fontSize=20;fontStyle=1;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="600" y="15" width="600" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="数据主题 → 核心表 → 数据来源 → 消费方" style="text;html=1;fontSize=12;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="600" y="50" width="600" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ========== Top Section: Title bar ========== -->
+        <mxCell id="section-flow" value="&lt;b&gt;数据血缘流（七步闭环 → 数据主题层层传递）&lt;/b&gt;" style="swimlane;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;arcSize=8;fontSize=13;fontStyle=1;fontColor=#1a1a2e;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="80" width="1700" height="450" as="geometry" />
+        </mxCell>
+
+        <!-- Row 1: 8 data themes -->
+        <!-- ① 巡检计划 -->
+        <mxCell id="t1-plan" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;① 巡检计划&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.5;&quot;&gt;inspection_plan&lt;br&gt;route&lt;br&gt;checkpoint&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;" vertex="1" parent="section-flow">
+          <mxGeometry x="30" y="45" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="t1-src" value="来源: ①计划编排" style="text;html=1;fontSize=10;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="section-flow">
+          <mxGeometry x="30" y="140" width="170" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="t1-consumer" value="消费: ②执行" style="text;html=1;fontSize=10;fontColor=#82b366;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="section-flow">
+          <mxGeometry x="30" y="155" width="170" height="15" as="geometry" />
+        </mxCell>
+
+        <!-- ② 轨迹数据 -->
+        <mxCell id="t2-trajectory" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;② 轨迹数据&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.5;&quot;&gt;trajectory&lt;br&gt;checkpoint_record&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;" vertex="1" parent="section-flow">
+          <mxGeometry x="250" y="45" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="t2-src" value="来源: ②执行采集" style="text;html=1;fontSize=10;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="section-flow">
+          <mxGeometry x="250" y="140" width="170" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="t2-consumer" value="消费: ⑦分析统计" style="text;html=1;fontSize=10;fontColor=#82b366;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="section-flow">
+          <mxGeometry x="250" y="155" width="170" height="15" as="geometry" />
+        </mxCell>
+
+        <!-- ③ 问题数据 -->
+        <mxCell id="t3-issue" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;③ 问题数据&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.5;&quot;&gt;issue_report&lt;br&gt;ai_recognition&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;" vertex="1" parent="section-flow">
+          <mxGeometry x="470" y="45" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="t3-src" value="来源: ③发现上报" style="text;html=1;fontSize=10;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="section-flow">
+          <mxGeometry x="470" y="140" width="170" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="t3-consumer" value="消费: ④工单引用" style="text;html=1;fontSize=10;fontColor=#82b366;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="section-flow">
+          <mxGeometry x="470" y="155" width="170" height="15" as="geometry" />
+        </mxCell>
+
+        <!-- ④ 工单数据 -->
+        <mxCell id="t4-workorder" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;④ 工单数据&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.5;&quot;&gt;work_order&lt;br&gt;dispatch_record&lt;br&gt;work_order_action&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;" vertex="1" parent="section-flow">
+          <mxGeometry x="690" y="45" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="t4-src" value="来源: ④⑤环节产生" style="text;html=1;fontSize=10;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="section-flow">
+          <mxGeometry x="690" y="140" width="170" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="t4-consumer" value="消费: ⑥验收读取" style="text;html=1;fontSize=10;fontColor=#82b366;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="section-flow">
+          <mxGeometry x="690" y="155" width="170" height="15" as="geometry" />
+        </mxCell>
+
+        <!-- ⑤ 验收数据 -->
+        <mxCell id="t5-accept" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;⑤ 验收数据&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.5;&quot;&gt;acceptance_record&lt;br&gt;image_comparison&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;" vertex="1" parent="section-flow">
+          <mxGeometry x="910" y="45" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="t5-src" value="来源: ⑥验收产生" style="text;html=1;fontSize=10;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="section-flow">
+          <mxGeometry x="910" y="140" width="170" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="t5-consumer" value="消费: ⑦分析统计" style="text;html=1;fontSize=10;fontColor=#82b366;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="section-flow">
+          <mxGeometry x="910" y="155" width="170" height="15" as="geometry" />
+        </mxCell>
+
+        <!-- ⑥ 分析数据 -->
+        <mxCell id="t6-report" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;⑥ 分析数据&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.5;&quot;&gt;report&lt;br&gt;cluster_result&lt;br&gt;prediction&lt;br&gt;optimization_suggestion&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;" vertex="1" parent="section-flow">
+          <mxGeometry x="1130" y="45" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="t6-src" value="来源: ⑦分析产出" style="text;html=1;fontSize=10;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="section-flow">
+          <mxGeometry x="1130" y="140" width="170" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="t6-consumer" value="消费: ①计划回流" style="text;html=1;fontSize=10;fontColor=#b85450;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="section-flow">
+          <mxGeometry x="1130" y="155" width="170" height="15" as="geometry" />
+        </mxCell>
+
+        <!-- ⑦ 空间数据 -->
+        <mxCell id="t7-gis" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;⑦ 空间数据&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.5;&quot;&gt;GIS引擎图层&lt;br&gt;空间索引&lt;br&gt;地图瓦片&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;" vertex="1" parent="section-flow">
+          <mxGeometry x="1350" y="45" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="t7-src" value="来源: GIS引擎维护" style="text;html=1;fontSize=10;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="section-flow">
+          <mxGeometry x="1350" y="140" width="170" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="t7-consumer" value="消费: 全环节调用" style="text;html=1;fontSize=10;fontColor=#82b366;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="section-flow">
+          <mxGeometry x="1350" y="155" width="170" height="15" as="geometry" />
+        </mxCell>
+
+        <!-- ⑧ AI模型数据 -->
+        <mxCell id="t8-ai" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;⑧ AI模型数据&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.5;&quot;&gt;模型版本&lt;br&gt;识别日志&lt;br&gt;推荐日志&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;" vertex="1" parent="section-flow">
+          <mxGeometry x="1530" y="45" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="t8-src" value="来源: AI引擎维护" style="text;html=1;fontSize=10;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="section-flow">
+          <mxGeometry x="1530" y="140" width="150" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="t8-consumer" value="消费: 模型评估" style="text;html=1;fontSize=10;fontColor=#82b366;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="section-flow">
+          <mxGeometry x="1530" y="155" width="150" height="15" as="geometry" />
+        </mxCell>
+
+        <!-- Blood arrows between themes (①→②→③→④→⑤→⑥→① feedback) -->
+        <mxCell id="blood-1-2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="section-flow" source="t1-plan" target="t2-trajectory">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="blood-2-3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="section-flow" source="t2-trajectory" target="t3-issue">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="blood-3-4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="section-flow" source="t3-issue" target="t4-workorder">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="blood-4-5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="section-flow" source="t4-workorder" target="t5-accept">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="blood-5-6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="section-flow" source="t5-accept" target="t6-report">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Feedback: ⑥ → ① -->
+        <mxCell id="blood-6-1-fb" value="数据回流" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b85450;strokeWidth=2;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=1;fontSize=10;fontColor=#b85450;" edge="1" parent="section-flow" source="t6-report" target="t1-plan">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1215" y="210" />
+              <mxPoint x="115" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 空间关联线: ③ → GIS -->
+        <mxCell id="blood-3-7" value="spatial" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="section-flow" source="t3-issue" target="t7-gis">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- AI关联: ③ → ⑧ -->
+        <mxCell id="blood-3-8" value="ai_ref" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b85450;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="section-flow" source="t3-issue" target="t8-ai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========== Bottom Section: Storage ========== -->
+        <mxCell id="section-storage" value="&lt;b&gt;存储层&lt;/b&gt;" style="swimlane;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;rounded=1;arcSize=8;fontSize=13;fontStyle=1;fontColor=#1a1a2e;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="560" width="1700" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s1-postgres" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;PostgreSQL 业务数据库&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.5;&quot;&gt;· 巡检计划 inspection_plan&lt;br&gt;· 问题数据 issue_report&lt;br&gt;· 工单数据 work_order / dispatch_record&lt;br&gt;· 验收/分析/用户/配置 等业务实体&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;" vertex="1" parent="section-storage">
+          <mxGeometry x="30" y="45" width="350" height="75" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s2-postgis" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;PostGIS 空间数据库&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.5;&quot;&gt;· 轨迹数据 trajectory&lt;br&gt;· 空间索引 GIS引擎图层&lt;br&gt;· 路线定义 route / 聚类结果 cluster_result&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;" vertex="1" parent="section-storage">
+          <mxGeometry x="430" y="45" width="350" height="75" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s3-oss" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;OSS / MinIO 文件存储&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.5;&quot;&gt;· 现场照片/视频 （按日期+巡检员ID分目录）&lt;br&gt;· AI识别原始图片 / 处置后照片&lt;br&gt;· 报告导出文件 / 语音数据&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;" vertex="1" parent="section-storage">
+          <mxGeometry x="830" y="45" width="350" height="75" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s4-redis" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;Redis 缓存&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.5;&quot;&gt;· 实时位置（5分钟过期）&lt;br&gt;· 用户会话（30分钟过期）&lt;br&gt;· 热点数据 / 地图瓦片缓存&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;arcSize=10;fontSize=11;verticalAlign=top;spacingTop=5;" vertex="1" parent="section-storage">
+          <mxGeometry x="1230" y="45" width="350" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- Storage connections -->
+        <mxCell id="conn-s1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#6c8ebf;strokeWidth=1.5;exitX=0.5;exitY=1;entryX=0.2;entryY=0;dashed=1;" edge="1" parent="1" source="t1-plan" target="s1-postgres">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn-s2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#6c8ebf;strokeWidth=1.5;exitX=0.5;exitY=1;entryX=0.4;entryY=0;dashed=1;" edge="1" parent="1" source="t2-trajectory" target="s2-postgis">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn-s3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#6c8ebf;strokeWidth=1.5;exitX=0.5;exitY=1;entryX=0.6;entryY=0;dashed=1;" edge="1" parent="1" source="t3-issue" target="s1-postgres">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn-s4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#6c8ebf;strokeWidth=1.5;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="755" y="230" as="sourcePoint" />
+            <mxPoint x="605" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#ccc;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="50" y="720" width="500" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-t" value="&lt;b&gt;图例&lt;/b&gt;" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="65" y="722" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-th" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="65" y="748" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-th-t" value="流程数据主题" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="90" y="746" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-sp" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="180" y="748" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-sp-t" value="空间数据主题" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="205" y="746" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-al" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="305" y="748" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-al-t" value="AI/分析数据主题" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="330" y="746" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-fb" value="" style="endArrow=classic;html=1;strokeColor=#b85450;strokeWidth=2;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="30" height="10" relative="1" as="geometry">
+            <mxPoint x="65" y="775" as="sourcePoint" />
+            <mxPoint x="105" y="775" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg-fb-t" value="数据回流/反馈" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="110" y="773" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-db" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;" vertex="1" parent="1">
+          <mxGeometry x="210" y="775" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-db-t" value="存储层" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="235" y="773" width="50" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

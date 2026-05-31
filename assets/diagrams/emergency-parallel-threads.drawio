@@ -1,0 +1,52 @@
+﻿<mxfile host="app.diagrams.net" modified="2026-05-14T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="emergency-parallel-threads" name="应急并行线程模型">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="&lt;b&gt;应急事件多线程并行模型&lt;/b&gt;" style="text;html=1;fontSize=20;fontColor=#1a1a2e;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="500" y="10" width="500" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="&lt;b&gt;指挥中心（态势地图）&lt;/b&gt;&lt;hr size=&quot;1&amp;quot&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:16px;&quot;&gt;统一调度指挥中枢&lt;br&gt;事件定级 &amp;amp; 资源调度&lt;br&gt;GIS缓冲区分析&lt;br&gt;AI预案匹配&lt;br&gt;实时态势监控&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=15;fontSize=12;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="500" y="200" width="260" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="&lt;b&gt;线程1：现场处置&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:17px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;巡检员/维修队&lt;br&gt;&lt;b&gt;核心任务：&lt;/b&gt;&lt;br&gt; 到达事件现场&lt;br&gt; 执行处置操作（灭火/关阀/急救）&lt;br&gt; 拍照上传处置结果&lt;br&gt;&lt;b&gt;AI支持：&lt;/b&gt;知识库方案推荐&lt;br&gt;&lt;b&gt;GIS支持：&lt;/b&gt;实时导航+到位验证&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=10;fontSize=11;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="320" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="&lt;b&gt;线程2：设备抢修&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:17px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;维保团队&lt;br&gt;&lt;b&gt;核心任务：&lt;/b&gt;&lt;br&gt; 设备故障诊断&lt;br&gt; 抢修（电梯/水管/电气）&lt;br&gt; 功能测试确认&lt;br&gt;&lt;b&gt;AI支持：&lt;/b&gt;故障诊断+维修方案&lt;br&gt;&lt;b&gt;GIS支持：&lt;/b&gt;BIM室内导航&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=10;fontSize=11;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="840" y="100" width="320" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="40" value="&lt;b&gt;线程3：疏散引导&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:17px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;安保人员&lt;br&gt;&lt;b&gt;核心任务：&lt;/b&gt;&lt;br&gt; 疏散周边人员&lt;br&gt; 设置警戒线&lt;br&gt; 人员清点确认&lt;br&gt;&lt;b&gt;AI支持：&lt;/b&gt;疏散路径优化&lt;br&gt;&lt;b&gt;GIS支持：&lt;/b&gt;影响范围+逃生指引&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=10;fontSize=11;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="100" y="360" width="320" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="50" value="&lt;b&gt;线程4：资源协调&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:17px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;管理层&lt;br&gt;&lt;b&gt;核心任务：&lt;/b&gt;&lt;br&gt; 协调外部资源（消防/医疗）&lt;br&gt; 信息上报&lt;br&gt; 后勤保障&lt;br&gt;&lt;b&gt;AI支持：&lt;/b&gt;资源匹配优化&lt;br&gt;&lt;b&gt;GIS支持：&lt;/b&gt;资源分布可视化&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=10;fontSize=11;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="840" y="360" width="320" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="60" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#d6b656;strokeWidth=2;exitX=0;exitY=0.5;entryX=1;entryY=0.3;" edge="1" parent="1" source="10" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="61" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#d6b656;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="10" target="30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="62" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#d6b656;strokeWidth=2;exitX=0;exitY=0.7;entryX=1;entryY=0.3;" edge="1" parent="1" source="10" target="40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="63" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#d6b656;strokeWidth=2;exitX=1;exitY=0.7;entryX=0;entryY=0.3;" edge="1" parent="1" source="10" target="50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70" value="&lt;b&gt;线程间协同规则&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=8;fontSize=11;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="50" y="610" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="71" value="&lt;div style=&quot;text-align:left;padding:4px;font-size:10px;line-height:16px;&quot;&gt;&lt;b&gt;资源冲突：&lt;/b&gt;指挥中心统一调度，优先级高的线程优先使用资源&lt;br&gt;&lt;b&gt;信息同步：&lt;/b&gt;各线程通过指挥中心中转，避免直接通信混乱&lt;br&gt;&lt;b&gt;任务依赖：&lt;/b&gt;疏散完成是现场处置的前提，指挥中心协调时序&lt;br&gt;&lt;b&gt;异常处理：&lt;/b&gt;任一线程异常，指挥中心立即调整其他线程任务&lt;/div&gt;" style="text;html=1;fontSize=10;fontColor=#333;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="55" y="645" width="390" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="80" value="&lt;b&gt;图例&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="580" y="610" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="81" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:16px;&quot;&gt;&lt;span style=&quot;background-color:#fff2cc;&quot;&gt; 指挥中心 &lt;/span&gt;— 核心中枢&lt;br&gt;&lt;span style=&quot;background-color:#d5e8d4;&quot;&gt; 并行线程 &lt;/span&gt;— 独立执行&lt;br&gt;━━━ 调度/通信连接&lt;br&gt;&lt;b&gt;SLA：&lt;/b&gt;确认≤3min / 到场≤10min&lt;/div&gt;" style="text;html=1;fontSize=10;fontColor=#333;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="585" y="630" width="210" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

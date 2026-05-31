@@ -1,0 +1,267 @@
+<mxfile host="app.diagrams.net" modified="2026-05-14T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="system-architecture" name="系统架构图">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="智慧园区空间巡检决策系统 — 系统架构图" style="text;html=1;fontSize=22;fontStyle=1;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="550" y="15" width="600" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== 展示层 ==================== -->
+        <mxCell id="layer-presentation" value="展示层 Presentation" style="swimlane;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;arcSize=8;fontSize=14;fontStyle=1;fontColor=#1a1a2e;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="70" width="1540" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- 移动端 -->
+        <mxCell id="mobile" value="&lt;b style=&quot;font-size:13px;&quot;&gt;移动端 — 巡检员端&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.6;&quot;&gt;· 任务中心 · 场景化巡检（日常/设备/应急）&lt;br&gt;· AI辅助识别 · LBS服务（定位/导航）&lt;br&gt;· 工单处置 · 即时通讯&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=10;fontSize=12;verticalAlign=top;spacingTop=5;" vertex="1" parent="layer-presentation">
+          <mxGeometry x="30" y="45" width="340" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- PC端 -->
+        <mxCell id="pc" value="&lt;b style=&quot;font-size:13px;&quot;&gt;PC端 — 管理层端&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.6;&quot;&gt;· 数据大盘 · 工单调度（闭环）&lt;br&gt;· 决策中心 · 系统管理 · GIS后台&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=10;fontSize=12;verticalAlign=top;spacingTop=5;" vertex="1" parent="layer-presentation">
+          <mxGeometry x="420" y="45" width="280" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- 角色标注 -->
+        <mxCell id="role-label" value="&lt;font color=&quot;#555&quot;&gt;&lt;b&gt;角色:&lt;/b&gt; 巡检员（老手/新手）&lt;/font&gt;" style="text;html=1;fontSize=10;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="layer-presentation">
+          <mxGeometry x="100" y="135" width="170" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="role-label2" value="&lt;font color=&quot;#555&quot;&gt;&lt;b&gt;角色:&lt;/b&gt; 物业经理 / 技术主管 / 园区负责人 / 管理员&lt;/font&gt;" style="text;html=1;fontSize=10;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="layer-presentation">
+          <mxGeometry x="380" y="135" width="340" height="15" as="geometry" />
+        </mxCell>
+
+        <!-- V1.0 / V2.0 标签 -->
+        <mxCell id="v1-tag" value="V1.0" style="text;html=1;fontSize=10;fontStyle=1;align=center;verticalAlign=middle;fillColor=#6c8ebf;strokeColor=none;fontColor=#ffffff;rounded=1;" vertex="1" parent="layer-presentation">
+          <mxGeometry x="750" y="50" width="42" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tag" value="V2.0" style="text;html=1;fontSize=10;fontStyle=1;align=center;verticalAlign=middle;fillColor=#999999;strokeColor=none;fontColor=#ffffff;rounded=1;" vertex="1" parent="layer-presentation">
+          <mxGeometry x="800" y="50" width="42" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- V2.0 扩展模块 -->
+        <mxCell id="v2-modules" value="&lt;b style=&quot;font-size:13px;&quot;&gt;V2.0 扩展&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:1.6;&quot;&gt;· IoT设备接入 &amp; 自动告警&lt;br&gt;· BIM/3D数字孪生 · 多园区管理&lt;br&gt;· 开放API · AI模型自训练&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#999;arcSize=10;fontSize=12;verticalAlign=top;spacingTop=5;dashed=1;" vertex="1" parent="layer-presentation">
+          <mxGeometry x="752" y="45" width="280" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== 展示层→业务层连接 ==================== -->
+        <mxCell id="conn-pres-biz" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="layer-presentation" target="layer-business">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== 业务层 ==================== -->
+        <mxCell id="layer-business" value="业务层 Business — 七步闭环" style="swimlane;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;arcSize=8;fontSize=14;fontStyle=1;fontColor=#1a1a2e;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="245" width="1540" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- 七步闭环节点 -->
+        <mxCell id="step1" value="&lt;b&gt;① 计划&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;&quot;&gt;编排下发&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=12;fontSize=13;fontStyle=1;" vertex="1" parent="layer-business">
+          <mxGeometry x="30" y="45" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="step2" value="&lt;b&gt;② 执行&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;&quot;&gt;现场巡检&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=12;fontSize=13;fontStyle=1;" vertex="1" parent="layer-business">
+          <mxGeometry x="200" y="45" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="step3" value="&lt;b&gt;③ 发现&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;&quot;&gt;上报识别&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=12;fontSize=13;fontStyle=1;" vertex="1" parent="layer-business">
+          <mxGeometry x="370" y="45" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="step4" value="&lt;b&gt;④ 工单&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;&quot;&gt;创建分派&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=12;fontSize=13;fontStyle=1;" vertex="1" parent="layer-business">
+          <mxGeometry x="540" y="45" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="step5" value="&lt;b&gt;⑤ 处置&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;&quot;&gt;处置反馈&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=12;fontSize=13;fontStyle=1;" vertex="1" parent="layer-business">
+          <mxGeometry x="710" y="45" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="step6" value="&lt;b&gt;⑥ 验收&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;&quot;&gt;结果确认&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=12;fontSize=13;fontStyle=1;" vertex="1" parent="layer-business">
+          <mxGeometry x="880" y="45" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="step7" value="&lt;b&gt;⑦ 分析&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;&quot;&gt;数据决策&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=12;fontSize=13;fontStyle=1;" vertex="1" parent="layer-business">
+          <mxGeometry x="1050" y="45" width="110" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- 闭环箭头（带AI/GIS标注） -->
+        <mxCell id="arrow-s1-s2" value="&lt;font color=&quot;#333&quot;&gt;预测分析+覆盖分析&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontSize=10;fontColor=#82b366;fontStyle=1;" edge="1" parent="layer-business" source="step1" target="step2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-s2-s3" value="&lt;font color=&quot;#333&quot;&gt;异常检测+轨迹记录&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontSize=10;fontColor=#82b366;fontStyle=1;" edge="1" parent="layer-business" source="step2" target="step3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-s3-s4" value="&lt;font color=&quot;#333&quot;&gt;图像识别+NLP+定位打标&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontSize=10;fontColor=#82b366;fontStyle=1;" edge="1" parent="layer-business" source="step3" target="step4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-s4-s5" value="&lt;font color=&quot;#333&quot;&gt;智能推荐+就近匹配&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontSize=10;fontColor=#82b366;fontStyle=1;" edge="1" parent="layer-business" source="step4" target="step5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-s5-s6" value="&lt;font color=&quot;#333&quot;&gt;知识库推荐+导航指引&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontSize=10;fontColor=#82b366;fontStyle=1;" edge="1" parent="layer-business" source="step5" target="step6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-s6-s7" value="&lt;font color=&quot;#333&quot;&gt;图像比对+现场确认&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontSize=10;fontColor=#82b366;fontStyle=1;" edge="1" parent="layer-business" source="step6" target="step7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 数据回流箭头 -->
+        <mxCell id="feedback-arrow" value="&lt;b&gt;数据回流自优化&lt;/b&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b85450;strokeWidth=2;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=1;fontSize=11;fontColor=#b85450;" edge="1" parent="layer-business" source="step7" target="step1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1105" y="140" />
+              <mxPoint x="85" y="140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 闭环说明 -->
+        <mxCell id="loop-label" value="&lt;font color=&quot;#666&quot;&gt;七步闭环 — 箭头标注为各环节调用的 AI+GIS 能力&lt;/font&gt;" style="text;html=1;fontSize=10;fontStyle=2;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="layer-business">
+          <mxGeometry x="1060" y="110" width="310" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== 业务层→能力层连接 ==================== -->
+        <mxCell id="conn-biz-cap" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="layer-business" target="layer-capability">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== 能力层 ==================== -->
+        <mxCell id="layer-capability" value="能力层 Capability — AI + GIS 双引擎" style="swimlane;startSize=30;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;arcSize=8;fontSize=14;fontStyle=1;fontColor=#1a1a2e;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="430" width="1540" height="190" as="geometry" />
+        </mxCell>
+
+        <!-- AI 引擎 -->
+        <mxCell id="ai-engine" value="&lt;b style=&quot;font-size:14px;&quot;&gt;AI 引擎&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:11px;line-height:1.8;&quot;&gt;· 图像识别（缺陷分类）· NLP结构化（语音/文字）&lt;br&gt;· 预测分析（趋势/推荐）· 图像比对（验收验证）&lt;br&gt;· 智能推荐（处置人/方案）· 异常检测（行为预警）&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=10;fontSize=12;verticalAlign=top;spacingTop=5;" vertex="1" parent="layer-capability">
+          <mxGeometry x="30" y="45" width="440" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- GIS 引擎 -->
+        <mxCell id="gis-engine" value="&lt;b style=&quot;font-size:14px;&quot;&gt;GIS 引擎&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:11px;line-height:1.8;&quot;&gt;· 空间可视化（2D地图）· 轨迹记录与回放&lt;br&gt;· 聚类分析（热力图）· 覆盖分析（盲区检测）&lt;br&gt;· 就近匹配（人员/资源）· 导航指引（路径规划）&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=10;fontSize=12;verticalAlign=top;spacingTop=5;" vertex="1" parent="layer-capability">
+          <mxGeometry x="520" y="45" width="440" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- AI/GIS 嵌入点映射 -->
+        <mxCell id="ai-gis-map" value="&lt;b style=&quot;font-size:13px;&quot;&gt;AI/GIS 嵌入点映射&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;line-height:2.0;&quot;&gt;① 计划 → 预测分析 + 覆盖分析&lt;br&gt;② 执行 → 异常检测 + 轨迹记录&lt;br&gt;③ 发现 → 图像识别+NLP + 定位打标&lt;br&gt;④ 工单 → 智能推荐 + 就近匹配&lt;br&gt;⑤ 处置 → 知识库推荐 + 导航指引&lt;br&gt;⑥ 验收 → 图像比对 + 现场确认&lt;br&gt;⑦ 分析 → 趋势预测+异常检测 + 热力图聚类&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#9673a6;arcSize=10;fontSize=12;verticalAlign=top;spacingTop=5;" vertex="1" parent="layer-capability">
+          <mxGeometry x="1020" y="45" width="480" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== 能力层→数据层连接 ==================== -->
+        <mxCell id="conn-cap-data" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="layer-capability" target="layer-data">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== 数据层 ==================== -->
+        <mxCell id="layer-data" value="数据层 Data" style="swimlane;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;rounded=1;arcSize=8;fontSize=14;fontStyle=1;fontColor=#1a1a2e;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="645" width="1540" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- 数据存储模块 -->
+        <mxCell id="data-vector" value="&lt;b style=&quot;font-size:13px;&quot;&gt;矢量地图数据&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;&quot;&gt;园区2D底图（地图API）&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=10;fontSize=12;" vertex="1" parent="layer-data">
+          <mxGeometry x="30" y="45" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="data-bim" value="&lt;b style=&quot;font-size:13px;&quot;&gt;BIM数据&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;&quot;&gt;V2.0 扩展&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;arcSize=10;fontSize=12;dashed=1;" vertex="1" parent="layer-data">
+          <mxGeometry x="300" y="45" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="data-iot" value="&lt;b style=&quot;font-size:13px;&quot;&gt;IoT数据&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;&quot;&gt;V2.0 扩展&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;arcSize=10;fontSize=12;dashed=1;" vertex="1" parent="layer-data">
+          <mxGeometry x="570" y="45" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="data-business" value="&lt;b style=&quot;font-size:13px;&quot;&gt;业务数据&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;&quot;&gt;巡检 / 工单 / 用户 / 报告&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=10;fontSize=12;" vertex="1" parent="layer-data">
+          <mxGeometry x="840" y="45" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="data-file" value="&lt;b style=&quot;font-size:13px;&quot;&gt;文件存储&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;&quot;&gt;照片 / 语音 / 文档&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=10;fontSize=12;" vertex="1" parent="layer-data">
+          <mxGeometry x="1110" y="45" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== 图例 ==================== -->
+        <mxCell id="legend-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#ccc;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="800" width="750" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="&lt;b&gt;图例说明&lt;/b&gt;" style="text;html=1;fontSize=12;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="95" y="805" width="80" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Row 1 of legend -->
+        <mxCell id="leg-v1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="95" y="830" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-v1-text" value="V1.0 范围模块" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="120" y="828" width="90" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg-v2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="830" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-v2-text" value="V2.0 规划扩展" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="245" y="828" width="90" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg-loop" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="345" y="830" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-loop-text" value="分析/决策/回流节点" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="370" y="828" width="110" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg-ai" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="490" y="830" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-ai-text" value="AI 引擎" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="515" y="828" width="60" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg-gis" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="580" y="830" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-gis-text" value="GIS 引擎" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="605" y="828" width="60" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Row 2 of legend -->
+        <mxCell id="leg-layer1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="95" y="855" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-layer1-text" value="展示层/Swimlane" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="120" y="853" width="100" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg-layer2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="230" y="855" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-layer2-text" value="业务层/Swimlane" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="255" y="853" width="100" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg-layer3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="365" y="855" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-layer3-text" value="能力层/Swimlane" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="390" y="853" width="100" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg-layer4" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="500" y="855" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-layer4-text" value="数据层/Swimlane" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="525" y="853" width="100" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg-feedback" value="" style="endArrow=classic;html=1;strokeColor=#b85450;strokeWidth=2;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="10" relative="1" as="geometry">
+            <mxPoint x="640" y="862" as="sourcePoint" />
+            <mxPoint x="690" y="862" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg-feedback-text" value="数据回流(红虚线)" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="695" y="853" width="100" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Notation说明 -->
+        <mxCell id="notation-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#ccc;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="880" y="800" width="740" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="notation-title" value="&lt;b&gt;业务箭头标注说明&lt;/b&gt;" style="text;html=1;fontSize=12;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="895" y="805" width="140" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="note-s1" value="&lt;div style=&quot;font-size:10px;line-height:1.8;&quot;&gt;①→② &lt;b&gt;预测分析+覆盖分析&lt;/b&gt;：AI预测问题高发区域，GIS验证路线覆盖&lt;br&gt;②→③ &lt;b&gt;异常检测+轨迹记录&lt;/b&gt;：AI识别跳过检查行为，GIS采集GPS轨迹&lt;br&gt;③→④ &lt;b&gt;图像识别+NLP+定位打标&lt;/b&gt;：AI判别问题类型，GIS关联空间坐标&lt;br&gt;④→⑤ &lt;b&gt;智能推荐+就近匹配&lt;/b&gt;：AI推荐最优处置人，GIS计算距离排序&lt;br&gt;⑤→⑥ &lt;b&gt;知识库推荐+导航指引&lt;/b&gt;：AI推荐处置方案，GIS规划到场路径&lt;br&gt;⑥→⑦ &lt;b&gt;图像比对+现场确认&lt;/b&gt;：AI比对照片验证，GIS确认位置一致&lt;br&gt;⑦→① &lt;b&gt;趋势预测+热力图聚类+数据回流&lt;/b&gt;：AI生成优化建议，GIS聚类分析&lt;/div&gt;" style="text;html=1;fontSize=10;align=left;verticalAlign=top;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="895" y="828" width="710" height="70" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

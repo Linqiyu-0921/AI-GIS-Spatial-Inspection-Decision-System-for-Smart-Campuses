@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>任务中心 — 智慧巡检</title>
+<style>
+:root {
+  --bg: oklch(99% 0.003 240);
+  --surface: oklch(100% 0 0);
+  --fg: oklch(19% 0.018 240);
+  --muted: oklch(48% 0.01 240);
+  --border: oklch(88% 0.006 240);
+  --accent: oklch(52% 0.10 250);
+  --accent-bg: oklch(52% 0.10 250 / 0.08);
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  --red: oklch(52% 0.16 28);
+  --red-bg: oklch(52% 0.16 28 / 0.08);
+  --green: oklch(52% 0.12 145);
+  --green-bg: oklch(52% 0.12 145 / 0.08);
+  --yellow: oklch(60% 0.14 95);
+  --yellow-bg: oklch(60% 0.14 95 / 0.08);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{font-family:var(--font);background:var(--bg);color:var(--fg);max-width:430px;margin:0 auto;min-height:100vh;position:relative;line-height:1.5;-webkit-font-smoothing:antialiased}
+
+/* Status bar */
+.status-bar{display:flex;align-items:center;justify-content:space-between;padding:8px 18px 4px;font-size:11px;font-weight:600;color:var(--fg);font-family:var(--font-mono);font-feature-settings:"tnum" 1}
+
+/* Header */
+.header{display:flex;align-items:center;justify-content:space-between;padding:6px 18px 12px}
+.header-left{display:flex;align-items:center;gap:10px}
+.header-avatar{width:36px;height:36px;border-radius:6px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px}
+.header-greeting{font-size:13px;color:var(--muted)}
+.header-name{font-size:16px;font-weight:700;margin-top:-1px}
+.header-right{display:flex;gap:8px}
+.header-icon{width:36px;height:36px;border:1px solid var(--border);border-radius:6px;background:var(--surface);display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;transition:background .15s}
+.header-icon:hover{background:var(--bg)}
+.header-icon svg{width:18px;height:18px;color:var(--muted)}
+.notif-badge{position:absolute;top:4px;right:4px;width:16px;height:16px;border-radius:50%;background:var(--red);color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center}
+
+/* Stats row */
+.stats-row{display:flex;gap:8px;padding:0 18px 14px}
+.stat-card{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:12px 10px;text-align:center}
+.stat-value{font-size:22px;font-weight:700;font-family:var(--font-mono);font-feature-settings:"tnum" 1;letter-spacing:-0.02em}
+.stat-label{font-size:10px;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:0.04em}
+.stat-value.blue{color:var(--accent)}
+.stat-value.green{color:var(--green)}
+.stat-value.red{color:var(--red)}
+
+/* Section header */
+.section-header{display:flex;align-items:center;justify-content:space-between;padding:6px 18px 8px}
+.section-title{font-size:15px;font-weight:700}
+.section-action{font-size:12px;color:var(--muted);cursor:pointer;border:none;background:none;padding:0;font-family:var(--font)}
+.section-action:hover{color:var(--accent)}
+
+/* Task scroll */
+.task-scroll{padding:0 18px;overflow-x:auto;display:flex;gap:10px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:6px}
+.task-scroll::-webkit-scrollbar{display:none}
+.task-card{min-width:200px;max-width:220px;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:14px;scroll-snap-align:start;flex-shrink:0}
+.task-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.task-priority{font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px}
+.task-priority.p0{background:var(--red-bg);color:var(--red)}
+.task-priority.p1{background:var(--yellow-bg);color:var(--yellow)}
+.task-priority.p2{background:var(--green-bg);color:var(--green)}
+.task-area{font-size:10px;color:var(--muted)}
+.task-name{font-size:13px;font-weight:600;margin-bottom:4px;line-height:1.4}
+.task-location{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:4px}
+.task-location svg{width:12px;height:12px;flex-shrink:0}
+.task-footer{display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding-top:8px;border-top:1px solid var(--border)}
+.task-time{font-size:11px;color:var(--muted);font-family:var(--font-mono);font-feature-settings:"tnum" 1}
+.task-btn{font-size:11px;padding:4px 12px;border:1px solid var(--border);border-radius:4px;background:var(--surface);color:var(--fg);cursor:pointer;transition:background .15s;font-family:var(--font)}
+.task-btn:hover{background:var(--bg)}
+.task-btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* Urgent banner */
+.urgent-banner{display:flex;align-items:center;gap:10px;margin:6px 18px 0;padding:12px 14px;background:var(--red-bg);border:1px solid color-mix(in srgb,var(--red) 15%,transparent);border-radius:6px}
+.urgent-banner svg{width:18px;height:18px;color:var(--red);flex-shrink:0}
+.urgent-text{font-size:12px;flex:1}
+.urgent-text strong{color:var(--red)}
+.urgent-btn{font-size:11px;padding:6px 14px;border:1px solid var(--red);border-radius:4px;background:var(--surface);color:var(--red);cursor:pointer;font-weight:600;font-family:var(--font)}
+.urgent-btn:hover{background:var(--red-bg)}
+
+/* Work order list */
+.wo-list{padding:0 18px 100px;display:flex;flex-direction:column;gap:8px}
+.wo-item{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--surface);border:1px solid var(--border);border-radius:6px;cursor:pointer;transition:background .15s}
+.wo-item:active{background:var(--bg)}
+.wo-dot{width:4px;height:28px;border-radius:2px;flex-shrink:0}
+.wo-dot.p0{background:var(--red)}
+.wo-dot.p1{background:var(--yellow)}
+.wo-dot.p2{background:var(--green)}
+.wo-content{flex:1;min-width:0}
+.wo-title{font-size:13px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wo-meta{font-size:11px;color:var(--muted);margin-top:2px}
+.wo-right{text-align:right;flex-shrink:0}
+.wo-id-text{font-size:11px;font-family:var(--font-mono);font-feature-settings:"tnum" 1;color:var(--muted)}
+.wo-status-text{font-size:11px;color:var(--accent)}
+/* Swipe hint */
+.swipe-hint{text-align:center;font-size:10px;color:var(--muted);padding:4px 0 8px;letter-spacing:0.04em}
+
+/* Bottom nav */
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);max-width:430px;width:100%;background:var(--surface);border-top:1px solid var(--border);display:flex;padding:6px 0 calc(6px + var(--safe-bottom));z-index:50}
+.nav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:4px 0;text-decoration:none;color:var(--muted);font-size:10px;transition:color .15s}
+.nav-item.active{color:var(--accent)}
+.nav-item svg{width:22px;height:22px}
+.nav-item.active svg{color:var(--accent)}
+.nav-item span{font-weight:500}
+
+/* Toast */
+.toast{position:fixed;top:60px;left:50%;transform:translateX(-50%) translateY(-20px);background:var(--fg);color:var(--surface);padding:10px 18px;border-radius:6px;font-size:13px;font-weight:500;opacity:0;transition:all .3s ease;pointer-events:none;z-index:100;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="status-bar"><span>09:41</span><span>📶 🔋 87%</span></div>
+
+<div class="header">
+  <div class="header-left">
+    <div class="header-avatar">张</div>
+    <div><div class="header-greeting">早上好 👋</div><div class="header-name">张卫国</div></div>
+  </div>
+  <div class="header-right">
+    <div class="header-icon" onclick="showToast('通知中心')">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="notif-badge">3</span>
+    </div>
+  </div>
+</div>
+
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-value blue">4</div><div class="stat-label">待巡检</div></div>
+  <div class="stat-card"><div class="stat-value green">2</div><div class="stat-label">进行中</div></div>
+  <div class="stat-card"><div class="stat-value red">1</div><div class="stat-label">紧急</div></div>
+</div>
+
+<div class="section-header">
+  <span class="section-title">今日巡检计划</span>
+  <button class="section-action" onclick="showToast('查看全部计划')">查看全部 →</button>
+</div>
+
+<div class="task-scroll" id="taskScroll">
+  <div class="task-card">
+    <div class="task-card-top"><span class="task-priority p1">P1 常规</span><span class="task-area">A区</span></div>
+    <div class="task-name">A区 3F 消防设施月度检查</div>
+    <div class="task-location"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1a4 4 0 0 0-4 4c0 3 4 6 4 6s4-3 4-6a4 4 0 0 0-4-4z" stroke="currentColor" stroke-width="1.2"/><circle cx="6" cy="5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>A3F-消防通道</div>
+    <div class="task-footer"><span class="task-time">09:00 - 10:30</span><button class="task-btn primary" onclick="showToast('开始巡检')">开始</button></div>
+  </div>
+  <div class="task-card">
+    <div class="task-card-top"><span class="task-priority p1">P1 常规</span><span class="task-area">B区</span></div>
+    <div class="task-name">B区 设备间空调机组巡检</div>
+    <div class="task-location"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1a4 4 0 0 0-4 4c0 3 4 6 4 6s4-3 4-6a4 4 0 0 0-4-4z" stroke="currentColor" stroke-width="1.2"/><circle cx="6" cy="5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>B1F-设备间</div>
+    <div class="task-footer"><span class="task-time">10:45 - 12:00</span><button class="task-btn" onclick="showToast('已安排')">稍后</button></div>
+  </div>
+  <div class="task-card">
+    <div class="task-card-top"><span class="task-priority p2">P2 例行</span><span class="task-area">C区</span></div>
+    <div class="task-name">C区 公共区域照明全面巡检</div>
+    <div class="task-location"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1a4 4 0 0 0-4 4c0 3 4 6 4 6s4-3 4-6a4 4 0 0 0-4-4z" stroke="currentColor" stroke-width="1.2"/><circle cx="6" cy="5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>C2F-走廊</div>
+    <div class="task-footer"><span class="task-time">14:00 - 15:30</span><button class="task-btn" onclick="showToast('已安排')">稍后</button></div>
+  </div>
+  <div class="task-card">
+    <div class="task-card-top"><span class="task-priority p0">P0 今日截止</span><span class="task-area">D区</span></div>
+    <div class="task-name">D区 给排水管道压力检测</div>
+    <div class="task-location"><svg viewBox="0 0 12 12" fill="none"><path d="M6 1a4 4 0 0 0-4 4c0 3 4 6 4 6s4-3 4-6a4 4 0 0 0-4-4z" stroke="currentColor" stroke-width="1.2"/><circle cx="6" cy="5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>D1F-泵房</div>
+    <div class="task-footer"><span class="task-time">16:00 - 17:30</span><button class="task-btn" onclick="showToast('已安排')">稍后</button></div>
+  </div>
+</div>
+<div class="swipe-hint">← 左右滑动查看更多 →</div>
+
+<div class="urgent-banner">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 7v6M12 17v.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z" stroke="currentColor" stroke-width="1.6"/></svg>
+  <div class="urgent-text"><strong>紧急工单</strong> — A区3F 消防喷淋头漏水</div>
+  <button class="urgent-btn" onclick="showToast('已接单')">接单</button>
+</div>
+
+<div class="section-header" style="padding-top:14px">
+  <span class="section-title">我的工单</span>
+  <button class="section-action" onclick="showToast('查看全部')">全部 →</button>
+</div>
+
+<div class="wo-list">
+  <div class="wo-item">
+    <span class="wo-dot p0"></span>
+    <div class="wo-content">
+      <div class="wo-title">A区3F 消防喷淋头漏水，需紧急维修</div>
+      <div class="wo-meta">上报于 14:23 · AI识别</div>
+    </div>
+    <div class="wo-right">
+      <div class="wo-id-text">WO-0341</div>
+      <div class="wo-status-text">待接单</div>
+    </div>
+  </div>
+  <div class="wo-item">
+    <span class="wo-dot p1"></span>
+    <div class="wo-content">
+      <div class="wo-title">B区2F 走廊灯带故障检修</div>
+      <div class="wo-meta">已分配 · 进行中</div>
+    </div>
+    <div class="wo-right">
+      <div class="wo-id-text">WO-0338</div>
+      <div class="wo-status-text">处理中</div>
+    </div>
+  </div>
+  <div class="wo-item">
+    <span class="wo-dot p2"></span>
+    <div class="wo-content">
+      <div class="wo-title">C区 1F 洗手间感应器校准</div>
+      <div class="wo-meta">已完成 · 待验收</div>
+    </div>
+    <div class="wo-right">
+      <div class="wo-id-text">WO-0325</div>
+      <div class="wo-status-text">验收</div>
+    </div>
+  </div>
+</div>
+
+<nav class="bottom-nav">
+  <a href="mobile-task-center.html" class="nav-item active">
+    <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.6"/></svg>
+    <span>任务</span>
+  </a>
+  <a href="mobile-inspection.html" class="nav-item">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+    <span>巡查</span>
+  </a>
+  <a href="mobile-ai-report.html" class="nav-item">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="13" r="4" stroke="currentColor" stroke-width="1.6"/></svg>
+    <span>拍照</span>
+  </a>
+</nav>
+
+<div class="toast" id="toast"></div>
+
+<script>
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000)}
+</script>
+</body>
+</html>

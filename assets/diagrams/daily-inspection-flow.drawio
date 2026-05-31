@@ -1,0 +1,147 @@
+<mxfile host="app.diagrams.net" modified="2026-05-14T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="daily-inspection" name="日常巡检流程">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!-- Title -->
+        <mxCell id="2" value="&lt;b&gt;日常巡检全流程 — 八步闭环&lt;/b&gt;" style="text;html=1;fontSize=20;fontColor=#1a1a2e;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="600" y="10" width="500" height="30" as="geometry" />
+        </mxCell>
+        <!-- STEP 1: 计划编排下发 -->
+        <mxCell id="10" value="&lt;b&gt;① 计划编排下发&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;每日自动生成巡检计划&lt;br&gt;AI优化路线，GIS覆盖分析" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="30" y="55" width="160" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;管理层/巡检员&lt;br&gt;&lt;b&gt;AI：&lt;/b&gt;预测分析+路线优化&lt;br&gt;&lt;b&gt;GIS：&lt;/b&gt;覆盖分析+空间可视化&lt;br&gt;&lt;b&gt;SLA：&lt;/b&gt;每日06:00前&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="30" y="130" width="160" height="85" as="geometry" />
+        </mxCell>
+        <!-- Arrow ①→② -->
+        <mxCell id="12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b8a472;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="10" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- STEP 2: 现场巡检执行 -->
+        <mxCell id="20" value="&lt;b&gt;② 现场巡检执行&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;按导航路线逐点巡检&lt;br&gt;GPS轨迹记录，AI实时预警" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="220" y="55" width="160" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;巡检员&lt;br&gt;&lt;b&gt;AI：&lt;/b&gt;实时预警&lt;br&gt;&lt;b&gt;GIS：&lt;/b&gt;轨迹记录+实时定位+路线导航&lt;br&gt;&lt;b&gt;SLA：&lt;/b&gt;计划时长内&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="220" y="130" width="160" height="85" as="geometry" />
+        </mxCell>
+        <!-- Arrow ②→③ -->
+        <mxCell id="22" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b8a472;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="20" target="30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- STEP 3: 发现上报 -->
+        <mxCell id="30" value="&lt;b&gt;③ 发现上报&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;拍照+语音上报异常&lt;br&gt;AI识别分类，NLP结构化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="410" y="55" width="160" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;巡检员&lt;br&gt;&lt;b&gt;AI：&lt;/b&gt;图像识别+NLP结构化&lt;br&gt;&lt;b&gt;GIS：&lt;/b&gt;定位打标+空间关联&lt;br&gt;&lt;b&gt;SLA：&lt;/b&gt;≤3min&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="410" y="130" width="160" height="85" as="geometry" />
+        </mxCell>
+        <!-- Arrow ③→④ -->
+        <mxCell id="32" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b8a472;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="30" target="40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- STEP 4: 分支判断 -->
+        <mxCell id="40" value="&lt;b&gt;④ 分支判断&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;AI辅助判定严重等级&lt;br&gt;轻微当场闭环/严重走工单" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="600" y="55" width="160" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;系统+巡检员&lt;br&gt;&lt;b&gt;AI：&lt;/b&gt;严重程度预测&lt;br&gt;&lt;b&gt;GIS：&lt;/b&gt;复用定位数据&lt;br&gt;&lt;b&gt;SLA：&lt;/b&gt;≤30秒&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="600" y="130" width="160" height="85" as="geometry" />
+        </mxCell>
+        <!-- Branch label -->
+        <mxCell id="42" value="&lt;b&gt;轻微(P3)&lt;/b&gt;" style="text;html=1;fontSize=10;fontColor=#82b366;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="660" y="180" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="43" value="&lt;b&gt;严重(P0-P2)&lt;/b&gt;" style="text;html=1;fontSize=10;fontColor=#d79b00;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="700" y="72" width="60" height="20" as="geometry" />
+        </mxCell>
+        <!-- Arrow ④→⑤-轻 (down) -->
+        <mxCell id="44" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="40" target="50L">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Arrow ④→⑤-严 (right) -->
+        <mxCell id="45" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#d79b00;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="40" target="50H">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- STEP 5-轻: 当场处置 -->
+        <mxCell id="50L" value="&lt;b&gt;⑤-轻 当场处置&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;巡检员现场处理&lt;br&gt;AI图像比对验证" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="600" y="210" width="160" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="51L" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;巡检员&lt;br&gt;&lt;b&gt;AI：&lt;/b&gt;图像比对&lt;br&gt;&lt;b&gt;GIS：&lt;/b&gt;定位验证&lt;br&gt;&lt;b&gt;SLA：&lt;/b&gt;≤10min&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="600" y="285" width="160" height="85" as="geometry" />
+        </mxCell>
+        <!-- Arrow ⑤-轻→⑧ (data回流) -->
+        <mxCell id="52L" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=1.5;dashed=1;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="50L" target="80">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="242" />
+              <mxPoint x="840" y="115" />
+              <mxPoint x="1390" y="115" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <!-- STEP 5-严: 工单分派 -->
+        <mxCell id="50H" value="&lt;b&gt;⑤-严 工单创建分派&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;AI推荐处置人&lt;br&gt;GIS就近匹配" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="790" y="55" width="160" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="51H" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;管理层&lt;br&gt;&lt;b&gt;AI：&lt;/b&gt;智能推荐+工单结构化&lt;br&gt;&lt;b&gt;GIS：&lt;/b&gt;就近匹配+空间可视化&lt;br&gt;&lt;b&gt;SLA：&lt;/b&gt;≤30min&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="790" y="130" width="160" height="85" as="geometry" />
+        </mxCell>
+        <!-- Arrow ⑤-严→⑥ -->
+        <mxCell id="52H" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#d79b00;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="50H" target="60">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- STEP 6: 处置 -->
+        <mxCell id="60" value="&lt;b&gt;⑥ 处置&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;处置人现场维修&lt;br&gt;AI方案推荐+到场验证" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="990" y="55" width="160" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="61" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;处置人&lt;br&gt;&lt;b&gt;AI：&lt;/b&gt;方案推荐+到场验证&lt;br&gt;&lt;b&gt;GIS：&lt;/b&gt;导航指引+位置验证&lt;br&gt;&lt;b&gt;SLA：&lt;/b&gt;P1≤2h/P2≤24h&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="990" y="130" width="160" height="85" as="geometry" />
+        </mxCell>
+        <!-- Arrow ⑥→⑦ -->
+        <mxCell id="62" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b8a472;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="60" target="70">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- STEP 7: 验收 -->
+        <mxCell id="70" value="&lt;b&gt;⑦ 验收&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;巡检员现场复核&lt;br&gt;AI图像比对+质量评分" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="55" width="160" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="71" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;巡检员/管理层&lt;br&gt;&lt;b&gt;AI：&lt;/b&gt;图像比对+质量评分&lt;br&gt;&lt;b&gt;GIS：&lt;/b&gt;现场确认&lt;br&gt;&lt;b&gt;SLA：&lt;/b&gt;巡检员≤24h/管理层≤4h&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="130" width="160" height="85" as="geometry" />
+        </mxCell>
+        <!-- Arrow ⑦→⑧ -->
+        <mxCell id="72" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b8a472;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="70" target="80">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- STEP 8: 分析 -->
+        <mxCell id="80" value="&lt;b&gt;⑧ 分析&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;日报/周报/月报&lt;br&gt;AI趋势预测+优化建议" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="55" width="160" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="81" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;角色：&lt;/b&gt;管理层/系统&lt;br&gt;&lt;b&gt;AI：&lt;/b&gt;趋势预测+异常检测+优化建议&lt;br&gt;&lt;b&gt;GIS：&lt;/b&gt;热力图聚类+覆盖率分析&lt;br&gt;&lt;b&gt;SLA：&lt;/b&gt;日报22:30前&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;spacingTop=2;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="130" width="160" height="85" as="geometry" />
+        </mxCell>
+        <!-- Return arrow ⑧→① -->
+        <mxCell id="90" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#9673a6;strokeWidth=2;dashed=1;fontSize=10;fontColor=#9673a6;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1470" y="215" as="sourcePoint" />
+            <mxPoint x="110" y="215" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1470" y="430" />
+              <mxPoint x="110" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="91" value="&lt;b&gt;数据回流自优化 ↓(日) / ←(周/月)&lt;/b&gt;" style="text;html=1;fontSize=10;fontColor=#9673a6;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="660" y="420" width="200" height="20" as="geometry" />
+        </mxCell>
+        <!-- Legend -->
+        <mxCell id="100" value="&lt;b&gt;图例&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="480" width="220" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="101" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:16px;&quot;&gt;&lt;span style=&quot;background-color:#e6d5b0;&quot;&gt; 标准步骤 &lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color:#d5e8d4;&quot;&gt; 轻微当场闭环 &lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color:#ffe6cc;&quot;&gt; 严重工单流程 &lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color:#e1d5e7;&quot;&gt; 数据分析环节 &lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color:#f5f5f5;border:1px solid #999;&quot;&gt; 角色/AI/GIS/SLA &lt;/span&gt;&lt;br&gt;&lt;hr size=&quot;1&quot;&gt;&lt;b&gt;SLA升级：&lt;/b&gt;超时30min→主管；超时1h→经理&lt;/div&gt;" style="text;html=1;fontSize=10;fontColor=#333;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="35" y="500" width="210" height="130" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

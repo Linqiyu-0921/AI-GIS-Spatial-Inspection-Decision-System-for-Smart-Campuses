@@ -1,0 +1,347 @@
+<mxfile host="app.diagrams.net" modified="2026-05-14T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="data-flow" name="数据流图">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="智慧园区空间巡检决策系统 — 数据流图" style="text;html=1;fontSize=20;fontStyle=1;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="550" y="10" width="600" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- ========== Top: 7-step flow ========== -->
+        <mxCell id="layer-top" value="七步闭环总览" style="swimlane;startSize=25;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;arcSize=8;fontSize=13;fontStyle=1;fontColor=#1a1a2e;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="55" width="1600" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- 7 step boxes -->
+        <mxCell id="s1" value="&lt;b&gt;① 计划&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;编排下发&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=12;fontSize=12;fontStyle=1;" vertex="1" parent="layer-top">
+          <mxGeometry x="20" y="35" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="&lt;b&gt;② 执行&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;现场巡检&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=12;fontSize=12;fontStyle=1;" vertex="1" parent="layer-top">
+          <mxGeometry x="260" y="35" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="&lt;b&gt;③ 发现&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;上报识别&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=12;fontSize=12;fontStyle=1;" vertex="1" parent="layer-top">
+          <mxGeometry x="480" y="35" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" value="&lt;b&gt;④ 工单&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;创建分派&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=12;fontSize=12;fontStyle=1;" vertex="1" parent="layer-top">
+          <mxGeometry x="700" y="35" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s5" value="&lt;b&gt;⑤ 处置&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;处置反馈&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=12;fontSize=12;fontStyle=1;" vertex="1" parent="layer-top">
+          <mxGeometry x="920" y="35" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s6" value="&lt;b&gt;⑥ 验收&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;结果确认&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=12;fontSize=12;fontStyle=1;" vertex="1" parent="layer-top">
+          <mxGeometry x="1140" y="35" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s7" value="&lt;b&gt;⑦ 分析&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;数据决策&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=12;fontSize=12;fontStyle=1;" vertex="1" parent="layer-top">
+          <mxGeometry x="1360" y="35" width="100" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Top row arrows -->
+        <mxCell id="arr-t1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="layer-top" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-t2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="layer-top" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-t3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="layer-top" source="s3" target="s4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-t4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="layer-top" source="s4" target="s5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-t5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="layer-top" source="s5" target="s6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-t6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82b366;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="layer-top" source="s6" target="s7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========== Detail swimlane ========== -->
+        <mxCell id="layer-detail" value="分环节数据流详情" style="swimlane;startSize=25;fillColor=#f5f5f5;strokeColor=#999;rounded=1;arcSize=8;fontSize=13;fontStyle=1;fontColor=#1a1a2e;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="145" width="1600" height="520" as="geometry" />
+        </mxCell>
+
+        <!-- ======= Column 1: ① 计划 ======= -->
+        <!-- Step label -->
+        <mxCell id="d1-label" value="&lt;b&gt;① 计划编排&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=8;fontSize=11;fontStyle=1;" vertex="1" parent="layer-detail">
+          <mxGeometry x="20" y="35" width="200" height="30" as="geometry" />
+        </mxCell>
+        <!-- Input -->
+        <mxCell id="d1-in" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#6c8ebf&quot;&gt;输入数据&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 历史巡检记录(30天)&lt;br&gt;· 园区矢量地图 &lt;br&gt;· 巡检点位清单 &lt;br&gt;· 上期优化建议 &lt;br&gt;· 人员排班表&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f8ff;strokeColor=#6c8ebf;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="20" y="75" width="200" height="85" as="geometry" />
+        </mxCell>
+        <!-- Processing -->
+        <mxCell id="d1-proc" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#b85450&quot;&gt;处理逻辑&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;1. 读取历史数据&lt;br&gt;2. AI预测分析区域问题频率&lt;br&gt;3. GIS覆盖分析验证盲区&lt;br&gt;4. 生成当日计划&lt;br&gt;5. 推送至移动端&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff5f5;strokeColor=#b85450;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="20" y="170" width="200" height="85" as="geometry" />
+        </mxCell>
+        <!-- Output -->
+        <mxCell id="d1-out" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#82b366&quot;&gt;输出数据&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 巡检计划（路线序列）&lt;br&gt;· 点位清单 &lt;br&gt;· checklist模板 &lt;br&gt;· 预计时长&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fff0;strokeColor=#82b366;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="20" y="265" width="200" height="85" as="geometry" />
+        </mxCell>
+        <!-- Storage -->
+        <mxCell id="d1-stor" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#9673a6&quot;&gt;数据存储&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· inspection_plan 表&lt;br&gt;· route 表 &lt;br&gt;· coverage_report 表&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f0ff;strokeColor=#9673a6;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="20" y="360" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Down arrows in column 1 -->
+        <mxCell id="d1a1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d1-in" target="d1-proc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d1a2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d1-proc" target="d1-out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d1a3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d1-out" target="d1-stor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ======= Column 2: ② 执行 ======= -->
+        <mxCell id="d2-label" value="&lt;b&gt;② 执行巡检&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=8;fontSize=11;fontStyle=1;" vertex="1" parent="layer-detail">
+          <mxGeometry x="240" y="35" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="d2-in" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#6c8ebf&quot;&gt;输入数据&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 当日巡检计划 &lt;br&gt;· 实时GPS坐标 &lt;br&gt;· 巡检员操作事件&lt;br&gt;· 点位checklist模板&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f8ff;strokeColor=#6c8ebf;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="240" y="75" width="200" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="d2-proc" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#b85450&quot;&gt;处理逻辑&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;1. 加载计划 &lt;br&gt;2. 启动GPS采样(10s)&lt;br&gt;3. 逐点导航+checklist&lt;br&gt;4. 实时同步进度 &lt;br&gt;5. AI异常行为检测&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff5f5;strokeColor=#b85450;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="240" y="170" width="200" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="d2-out" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#82b366&quot;&gt;输出数据&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 巡检轨迹点序列 &lt;br&gt;· 点位完成记录 &lt;br&gt;· 现场照片/视频 &lt;br&gt;· 进度状态&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fff0;strokeColor=#82b366;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="240" y="265" width="200" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="d2-stor" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#9673a6&quot;&gt;数据存储&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· trajectory 表 &lt;br&gt;· checkpoint_record 表&lt;br&gt;· OSS 照片/视频&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f0ff;strokeColor=#9673a6;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="240" y="360" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d2a1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d2-in" target="d2-proc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d2a2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d2-proc" target="d2-out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d2a3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d2-out" target="d2-stor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ======= Column 3: ③ 发现 ======= -->
+        <mxCell id="d3-label" value="&lt;b&gt;③ 发现上报&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=8;fontSize=11;fontStyle=1;" vertex="1" parent="layer-detail">
+          <mxGeometry x="460" y="35" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="d3-in" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#6c8ebf&quot;&gt;输入数据&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 现场照片(1-N张)&lt;br&gt;· 语音/文字描述 &lt;br&gt;· 当前GPS坐标 &lt;br&gt;· 点位编号+巡检员ID&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f8ff;strokeColor=#6c8ebf;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="460" y="75" width="200" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="d3-proc" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#b85450&quot;&gt;处理逻辑&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;1. 接收多媒体 &lt;br&gt;2. AI图像识别问题类型&lt;br&gt;3. NLP结构化描述 &lt;br&gt;4. 附加时空信息 &lt;br&gt;5. 生成上报记录&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff5f5;strokeColor=#b85450;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="460" y="170" width="200" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="d3-out" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#82b366&quot;&gt;输出数据&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 问题上报记录 &lt;br&gt;· 问题类型+严重等级&lt;br&gt;· 结构化工单字段&lt;br&gt;· 定位信息（区域/楼栋）&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fff0;strokeColor=#82b366;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="460" y="265" width="200" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="d3-stor" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#9673a6&quot;&gt;数据存储&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· issue_report 表 &lt;br&gt;· ai_recognition 表&lt;br&gt;· OSS 原图保留&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f0ff;strokeColor=#9673a6;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="460" y="360" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d3a1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d3-in" target="d3-proc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d3a2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d3-proc" target="d3-out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d3a3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d3-out" target="d3-stor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ======= Column 4: ④ 工单 ======= -->
+        <mxCell id="d4-label" value="&lt;b&gt;④ 工单分派&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=8;fontSize=11;fontStyle=1;" vertex="1" parent="layer-detail">
+          <mxGeometry x="680" y="35" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="d4-in" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#6c8ebf&quot;&gt;输入数据&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· ③上报记录(AI识别)&lt;br&gt;· 处置人档案(技能/负载)&lt;br&gt;· 处置人实时坐标 &lt;br&gt;· SLA规则配置&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f8ff;strokeColor=#6c8ebf;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="680" y="75" width="200" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="d4-proc" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#b85450&quot;&gt;处理逻辑&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;1. 自动创建工单(预填)&lt;br&gt;2. AI推荐最优处置人&lt;br&gt;3. GIS就近距离计算 &lt;br&gt;4. 管理层确认分派 &lt;br&gt;5. 推送通知至处置人&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff5f5;strokeColor=#b85450;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="680" y="170" width="200" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="d4-out" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#82b366&quot;&gt;输出数据&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 已分派工单 &lt;br&gt;· 处置人+SLA时限 &lt;br&gt;· 导航入口 &lt;br&gt;· 推送通知&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fff0;strokeColor=#82b366;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="680" y="265" width="200" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="d4-stor" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#9673a6&quot;&gt;数据存储&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· work_order 表 &lt;br&gt;· dispatch_recommendation&lt;br&gt;· dispatch_record 表&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f0ff;strokeColor=#9673a6;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="680" y="360" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d4a1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d4-in" target="d4-proc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d4a2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d4-proc" target="d4-out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d4a3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d4-out" target="d4-stor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ======= Column 5: ⑤ 处置 ======= -->
+        <mxCell id="d5-label" value="&lt;b&gt;⑤ 处置反馈&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=8;fontSize=11;fontStyle=1;" vertex="1" parent="layer-detail">
+          <mxGeometry x="900" y="35" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="d5-in" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#6c8ebf&quot;&gt;输入数据&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 已分派工单 &lt;br&gt;· 处置人当前位置 &lt;br&gt;· AI推荐处置方案 &lt;br&gt;· 处置过程照片/描述&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f8ff;strokeColor=#6c8ebf;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="900" y="75" width="200" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="d5-proc" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#b85450&quot;&gt;处理逻辑&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;1. 导航到场 &lt;br&gt;2. 到场打卡(GPS验证)&lt;br&gt;3. 按方案处置 &lt;br&gt;4. 上传处置结果 &lt;br&gt;5. 提交完成&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff5f5;strokeColor=#b85450;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="900" y="170" width="200" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="d5-out" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#82b366&quot;&gt;输出数据&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 到场时间+坐标 &lt;br&gt;· 处置描述+后照片 &lt;br&gt;· 完成时间+总耗时 &lt;br&gt;· SLA达标判定&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fff0;strokeColor=#82b366;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="900" y="265" width="200" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="d5-stor" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#9673a6&quot;&gt;数据存储&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· work_order_action 表&lt;br&gt;· OSS 处置后照片 &lt;br&gt;· arrival_verification 表&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f0ff;strokeColor=#9673a6;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="900" y="360" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d5a1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d5-in" target="d5-proc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d5a2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d5-proc" target="d5-out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d5a3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d5-out" target="d5-stor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ======= Column 6: ⑥ 验收 ======= -->
+        <mxCell id="d6-label" value="&lt;b&gt;⑥ 验收确认&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d5b0;strokeColor=#b8a472;arcSize=8;fontSize=11;fontStyle=1;" vertex="1" parent="layer-detail">
+          <mxGeometry x="1120" y="35" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="d6-in" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#6c8ebf&quot;&gt;输入数据&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 上报时照片(③) &lt;br&gt;· 处置后照片(⑤) &lt;br&gt;· 处置描述 &lt;br&gt;· 验收人GPS坐标&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f8ff;strokeColor=#6c8ebf;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="1120" y="75" width="200" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="d6-proc" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#b85450&quot;&gt;处理逻辑&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;1. AI图像比对 &lt;br&gt;2. 质量评分 &lt;br&gt;3. 验收人确认/复核 &lt;br&gt;4. 判定通过/不通过&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff5f5;strokeColor=#b85450;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="1120" y="170" width="200" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="d6-out" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#82b366&quot;&gt;输出数据&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 验收结果(通过/不通过)&lt;br&gt;· AI比对置信度 &lt;br&gt;· 综合质量评分(1-5)&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fff0;strokeColor=#82b366;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="1120" y="265" width="200" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="d6-stor" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#9673a6&quot;&gt;数据存储&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· acceptance_record 表&lt;br&gt;· image_comparison 表&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f0ff;strokeColor=#9673a6;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="1120" y="360" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d6a1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d6-in" target="d6-proc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d6a2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d6-proc" target="d6-out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d6a3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d6-out" target="d6-stor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ======= Column 7: ⑦ 分析 ======= -->
+        <mxCell id="d7-label" value="&lt;b&gt;⑦ 分析决策&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=8;fontSize=11;fontStyle=1;" vertex="1" parent="layer-detail">
+          <mxGeometry x="1340" y="35" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="d7-in" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#6c8ebf&quot;&gt;输入数据&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 全流程历史数据 &lt;br&gt;· 问题点位集合 &lt;br&gt;· 时间序列数据 &lt;br&gt;· 巡检完成率/趋势&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f8ff;strokeColor=#6c8ebf;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="1340" y="75" width="220" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="d7-proc" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#b85450&quot;&gt;处理逻辑&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;1. 汇总当日全流程数据&lt;br&gt;2. AI趋势预测+异常检测&lt;br&gt;3. GIS热力图聚类分析&lt;br&gt;4. 生成优化建议 &lt;br&gt;5. 输出报告&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff5f5;strokeColor=#b85450;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="1340" y="170" width="220" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="d7-out" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#82b366&quot;&gt;输出数据&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· 日报/周报/月报 &lt;br&gt;· 问题热力图 &lt;br&gt;· 趋势预测报告 &lt;br&gt;· 优化建议清单&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fff0;strokeColor=#82b366;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="1340" y="265" width="220" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="d7-stor" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#9673a6&quot;&gt;数据存储&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;text-align:left;font-size:10px;&quot;&gt;· report 表 &lt;br&gt;· cluster_result 表&lt;br&gt;· prediction 表 &lt;br&gt;· optimization_suggestion&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f0ff;strokeColor=#9673a6;arcSize=8;fontSize=10;verticalAlign=top;spacingTop=3;" vertex="1" parent="layer-detail">
+          <mxGeometry x="1340" y="360" width="220" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d7a1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d7-in" target="d7-proc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d7a2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d7-proc" target="d7-out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d7a3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="layer-detail" source="d7-out" target="d7-stor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========== Storage Section ========== -->
+        <mxCell id="layer-storage" value="数据存储总览" style="swimlane;startSize=25;fillColor=#fff2cc;strokeColor=#d6b656;rounded=1;arcSize=8;fontSize=13;fontStyle=1;fontColor=#1a1a2e;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="690" width="1600" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="st-psql" value="&lt;b&gt;PostgreSQL 业务库&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;计划/工单/问题/验收/报告&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="layer-storage">
+          <mxGeometry x="30" y="45" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="st-postgis" value="&lt;b&gt;PostGIS 空间库&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;轨迹/点位/路线/聚类&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="layer-storage">
+          <mxGeometry x="360" y="45" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="st-redis" value="&lt;b&gt;Redis 缓存&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;会话/实时位置/热点/瓦片&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="layer-storage">
+          <mxGeometry x="690" y="45" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="st-oss" value="&lt;b&gt;OSS / MinIO 文件存储&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;照片/视频/语音/报告PDF&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;arcSize=10;fontSize=11;verticalAlign=middle;" vertex="1" parent="layer-storage">
+          <mxGeometry x="1020" y="45" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Storage connections from detail section storage boxes -->
+        <mxCell id="conn-st1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#6c8ebf;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.2;entryY=0;dashed=1;" edge="1" parent="1" source="d1-stor" target="st-psql">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn-st6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#6c8ebf;strokeWidth=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;dashed=1;" edge="1" parent="1" source="d7-stor" target="st-psql">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========== Feedback Arrow ========== -->
+        <mxCell id="feedback-arrow" value="数据回流自优化" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#b85450;strokeWidth=2;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontSize=11;fontColor=#b85450;fontStyle=1;" edge="1" parent="1" source="d7-stor" target="d1-in">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1450" y="870" />
+              <mxPoint x="120" y="870" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== Legend ========== -->
+        <mxCell id="legend-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#ccc;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="50" y="840" width="600" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-t" value="&lt;b&gt;图例&lt;/b&gt;" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="65" y="842" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-in" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f8ff;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="65" y="868" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-in-t" value="输入数据" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="90" y="866" width="55" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-proc" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff5f5;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="160" y="868" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-proc-t" value="处理逻辑" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="185" y="866" width="55" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-out" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fff0;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="255" y="868" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-out-t" value="输出数据" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="280" y="866" width="55" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-stor" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f0ff;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="350" y="868" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-stor-t" value="数据存储" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="375" y="866" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-fb" value="" style="endArrow=classic;html=1;strokeColor=#b85450;strokeWidth=2;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="30" height="10" relative="1" as="geometry">
+            <mxPoint x="450" y="875" as="sourcePoint" />
+            <mxPoint x="480" y="875" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg-fb-t" value="数据回流" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="485" y="866" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-db" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="555" y="868" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-db-t" value="存储总览" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="580" y="866" width="60" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

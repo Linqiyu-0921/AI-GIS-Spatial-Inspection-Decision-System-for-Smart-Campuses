@@ -1,0 +1,158 @@
+﻿<mxfile host="app.diagrams.net" modified="2026-05-14T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="water-pipe-burst-timeline" name="水管爆裂时间线">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="&lt;b&gt;水管爆裂应急事件时间线推演&lt;/b&gt;" style="text;html=1;fontSize=20;fontColor=#1a1a2e;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="600" y="10" width="500" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="&lt;b&gt;B区3楼主水管爆裂 — 从T+0s到T+30min完整流程&lt;/b&gt;" style="text;html=1;fontSize=11;fontColor=#666;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="600" y="35" width="500" height="18" as="geometry" />
+        </mxCell>
+        <!-- Timeline arrow -->
+        <mxCell id="4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1a1a2e;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="50" y="75" as="sourcePoint" />
+            <mxPoint x="1700" y="75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5" value="T+0s" style="text;html=1;fontSize=10;fontColor=#333;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="50" y="80" width="50" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="T+30min" style="text;html=1;fontSize=10;fontColor=#333;align=right;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1650" y="80" width="50" height="14" as="geometry" />
+        </mxCell>
+        <!-- 触发 -->
+        <mxCell id="10" value="&lt;b&gt;触发&lt;/b&gt;" style="swimlane;startSize=24;fillColor=#f8cecc;strokeColor=#b85450;rounded=1;arcSize=6;fontSize=10;fontStyle=1;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="100" width="170" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;div style=&quot;text-align:left;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;T+0s&lt;/b&gt; 水浸传感器报警+巡检员上报&lt;br&gt;&lt;i&gt;系统+巡检员&lt;/i&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;arcSize=6;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="60" y="132" width="150" height="55" as="geometry" />
+        </mxCell>
+        <!-- 确认 -->
+        <mxCell id="20" value="&lt;b&gt;确认&lt;/b&gt;&lt;br&gt;≤3min" style="swimlane;startSize=24;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;arcSize=6;fontSize=10;fontStyle=1;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="100" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="&lt;div style=&quot;text-align:left;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;T+30s&lt;/b&gt; IoT读取水浸数据，确认漏水&lt;br&gt;&lt;i&gt;系统自动&lt;/i&gt;&lt;br&gt;&lt;b&gt;T+1min&lt;/b&gt; 视频联动AI确认大量漏水&lt;br&gt;&lt;i&gt;系统自动&lt;/i&gt;&lt;br&gt;&lt;b&gt;T+2min&lt;/b&gt; 巡检员到场拍照确认爆管&lt;br&gt;&lt;i&gt;巡检员&lt;/i&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;arcSize=6;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="260" y="132" width="260" height="55" as="geometry" />
+        </mxCell>
+        <!-- 研判调度 -->
+        <mxCell id="30" value="&lt;b&gt;研判调度&lt;/b&gt;&lt;br&gt;≤10min" style="swimlane;startSize=24;fillColor=#fff2cc;strokeColor=#d6b656;rounded=1;arcSize=6;fontSize=10;fontStyle=1;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="100" width="270" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="&lt;div style=&quot;text-align:left;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;T+3min&lt;/b&gt; 指挥中心定级P0，启动应急&lt;br&gt;&lt;i&gt;指挥中心&lt;/i&gt;&lt;br&gt;&lt;b&gt;T+3.5min&lt;/b&gt; GIS缓冲区分析半径30m&lt;br&gt;&lt;i&gt;系统自动&lt;/i&gt;&lt;br&gt;&lt;b&gt;T+4min&lt;/b&gt; AI匹配预案：关阀+维修+疏散&lt;br&gt;&lt;i&gt;AI引擎&lt;/i&gt;&lt;br&gt;&lt;b&gt;T+4.5min&lt;/b&gt; 调度维修队/安保/保洁&lt;br&gt;&lt;i&gt;指挥中心&lt;/i&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;arcSize=6;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="570" y="132" width="250" height="55" as="geometry" />
+        </mxCell>
+        <!-- 并行响应 -->
+        <mxCell id="40" value="&lt;b&gt;并行响应&lt;/b&gt;&lt;br&gt;多线程同步" style="swimlane;startSize=24;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;arcSize=6;fontSize=10;fontStyle=1;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="860" y="100" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="&lt;div style=&quot;text-align:left;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;T+5min&lt;/b&gt; 线程1: 维修队到达，关闭上游阀门&lt;br&gt;&lt;i&gt;维修队&lt;/i&gt;&lt;br&gt;&lt;b&gt;T+5min&lt;/b&gt; 线程2: 安保疏散B区3-4楼人员&lt;br&gt;&lt;i&gt;安保&lt;/i&gt;&lt;br&gt;&lt;b&gt;T+5min&lt;/b&gt; 线程3: 管理层协调资源&lt;br&gt;&lt;i&gt;管理层&lt;/i&gt;&lt;br&gt;&lt;b&gt;T+15min&lt;/b&gt; 临时修复完成，漏水停止&lt;br&gt;&lt;b&gt;T+20min&lt;/b&gt; 疏散完成，无遗漏&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;arcSize=6;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="870" y="132" width="280" height="55" as="geometry" />
+        </mxCell>
+        <!-- 态势追踪 -->
+        <mxCell id="50" value="&lt;b&gt;态势追踪&lt;/b&gt;" style="swimlane;startSize=24;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;arcSize=6;fontSize=10;fontStyle=1;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="100" width="170" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="51" value="&lt;div style=&quot;text-align:left;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;T+0~25min&lt;/b&gt; 指挥中心通过态势地图&lt;br&gt;实时监控各线程状态&lt;br&gt;&lt;i&gt;指挥中心&lt;/i&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;arcSize=6;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="132" width="150" height="55" as="geometry" />
+        </mxCell>
+        <!-- 解除 -->
+        <mxCell id="60" value="&lt;b&gt;解除&lt;/b&gt;" style="swimlane;startSize=24;fillColor=#ffe6cc;strokeColor=#d79b00;rounded=1;arcSize=6;fontSize=10;fontStyle=1;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="100" width="150" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="61" value="&lt;div style=&quot;text-align:left;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;T+25min&lt;/b&gt; 各线程逐一确认&lt;br&gt;现场/设备/人员确认完成&lt;br&gt;&lt;b&gt;T+26min&lt;/b&gt; 指挥中心宣布解除&lt;br&gt;&lt;i&gt;指挥中心&lt;/i&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;arcSize=6;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="132" width="130" height="55" as="geometry" />
+        </mxCell>
+        <!-- 复盘 -->
+        <mxCell id="70" value="&lt;b&gt;复盘&lt;/b&gt;" style="swimlane;startSize=24;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;arcSize=6;fontSize=10;fontStyle=1;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="1570" y="100" width="140" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="71" value="&lt;div style=&quot;text-align:left;font-size:10px;line-height:14px;&quot;&gt;&lt;b&gt;T+30min&lt;/b&gt; AI自动生成&lt;br&gt;复盘报告&lt;br&gt;从触发到解除&lt;br&gt;耗时26min&lt;br&gt;&lt;i&gt;系统自动&lt;/i&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;arcSize=6;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1580" y="132" width="120" height="55" as="geometry" />
+        </mxCell>
+        <!-- Arrows connecting stages -->
+        <mxCell id="15" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="10" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="20" target="30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="35" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="30" target="40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="45" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="40" target="50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="55" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="50" target="60">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="65" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#666;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="60" target="70">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- SLA table -->
+        <mxCell id="80" value="&lt;b&gt;SLA达成情况表&lt;/b&gt;" style="text;html=1;fontSize=14;fontColor=#1a1a2e;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="600" y="240" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="81" value="阶段" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=6;fontSize=11;fontStyle=1;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="500" y="270" width="160" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="82" value="SLA要求" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=6;fontSize=11;fontStyle=1;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="660" y="270" width="160" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="83" value="实际耗时" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=6;fontSize=11;fontStyle=1;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="820" y="270" width="160" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="84" value="达成情况" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=6;fontSize=11;fontStyle=1;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="980" y="270" width="160" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="85" value="确认" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="500" y="298" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="86" value="≤3min" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="660" y="298" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="87" value="2min" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="820" y="298" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="88" value="达成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=6;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="980" y="298" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="89" value="到场" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="500" y="322" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="90" value="≤10min" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="660" y="322" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="91" value="5min" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="820" y="322" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="92" value="达成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=6;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="980" y="322" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="93" value="响应" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="500" y="346" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="94" value="≤10min" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="660" y="346" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="95" value="4.5min" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="820" y="346" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="96" value="达成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=6;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="980" y="346" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="100" value="&lt;div style=&quot;text-align:left;padding:6px;font-size:11px;line-height:18px;&quot;&gt;&lt;b&gt;关键洞察：&lt;/b&gt;&lt;br&gt; 从触发到解除全程仅26分钟，所有SLA均达成&lt;br&gt; 确认环节IoT+视频联动仅1分钟完成，人工到场确认作为兜底&lt;br&gt; 并行响应大幅缩短处置时间——5分钟即启动多线程同步处置&lt;br&gt; AI预案匹配+GIS缓冲区分析在1.5分钟内完成研判调度&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=8;fontSize=11;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="500" y="400" width="640" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="110" value="&lt;b&gt;图例&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=6;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="50" y="270" width="260" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="111" value="&lt;div style=&quot;text-align:left;padding:2px;font-size:10px;line-height:16px;&quot;&gt;&lt;span style=&quot;background-color:#f8cecc;&quot;&gt; 触发 &lt;/span&gt; 事件发生&lt;br&gt;&lt;span style=&quot;background-color:#dae8fc;&quot;&gt; 确认 &lt;/span&gt; IoT+人工双确认&lt;br&gt;&lt;span style=&quot;background-color:#fff2cc;&quot;&gt; 研判调度 &lt;/span&gt; 指挥中心操作&lt;br&gt;&lt;span style=&quot;background-color:#d5e8d4;&quot;&gt; 并行响应 &lt;/span&gt; 多线程执行&lt;br&gt;&lt;span style=&quot;background-color:#e1d5e7;&quot;&gt; 态势/复盘 &lt;/span&gt; 监控与分析&lt;br&gt;&lt;span style=&quot;background-color:#ffe6cc;&quot;&gt; 解除 &lt;/span&gt; 事件关闭&lt;br&gt;━━━ 阶段流转&lt;/div&gt;" style="text;html=1;fontSize=10;fontColor=#333;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="55" y="290" width="250" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

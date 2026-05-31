@@ -1,0 +1,167 @@
+<mxfile host="app.diagrams.net" modified="2026-05-14T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="escalation-flow" name="升级策略流程">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="e-title" value="&lt;b&gt;升级策略流程 — 三类升级机制&lt;/b&gt;" style="text;html=1;fontSize=20;fontColor=#1a1a2e;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1560" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- ===== LEFT SECTION: 超时自动升级 ===== -->
+        <mxCell id="e-s1" value="" style="swimlane;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;arcSize=8;fontSize=14;fontStyle=1;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="70" width="740" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="e-s1-title" value="&lt;b&gt;超时自动升级 — 时间线&lt;/b&gt;" style="text;html=1;fontSize=14;fontColor=#1a1a2e;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="72" width="740" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- T+0 level -->
+        <mxCell id="e-t0" value="&lt;b&gt;T+0：首次通知&lt;/b&gt;&lt;hr&gt;巡检员 / 处置人" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=8;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="490" width="300" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- T+30min level -->
+        <mxCell id="e-t30" value="&lt;b&gt;T+30min：首次升级&lt;/b&gt;&lt;hr&gt;通知主管" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=8;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="400" width="300" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- T+1h level -->
+        <mxCell id="e-t1" value="&lt;b&gt;T+1h：二次升级&lt;/b&gt;&lt;hr&gt;通知经理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;arcSize=8;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="310" width="300" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- T+2h level -->
+        <mxCell id="e-t2" value="&lt;b&gt;T+2h：三次升级&lt;/b&gt;&lt;hr&gt;通知园区负责人" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=8;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="220" width="300" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- Vertical arrows connecting escalation levels -->
+        <mxCell id="e-a01" value="超时触发" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#d6b656;strokeWidth=2;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="e-t0" target="e-t30" />
+        <mxCell id="e-a12" value="超时触发" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#d79b00;strokeWidth=2;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="e-t30" target="e-t1" />
+        <mxCell id="e-a23" value="超时触发" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#b85450;strokeWidth=2;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="e-t1" target="e-t2" />
+
+        <!-- Right side of left section: which nodes trigger escalation -->
+        <mxCell id="e-triggers" value="&lt;b&gt;触发超时的节点：&lt;/b&gt;" style="text;html=1;fontSize=12;fontColor=#333;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="420" y="120" width="320" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e-trig1" value="工单审核/分派超时" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#6c8ebf;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="420" y="160" width="310" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e-trig2" value="处置人到场超时" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#6c8ebf;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="420" y="200" width="310" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e-trig3" value="处置完成超时" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#6c8ebf;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="420" y="240" width="310" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e-trig4" value="应急确认 3min 未确认 → 自动升至 P0" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#6c8ebf;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="420" y="280" width="310" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e-trig5" value="应急到场 10min 未到场 → 调度备选" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#6c8ebf;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="420" y="320" width="310" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Special rule -->
+        <mxCell id="e-special" value="&lt;i&gt;特殊规则：应急事件连续 2 次推送不确认 → 强制升级至最高级，全员推送 + 指挥中心接管&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=6;fontSize=10;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="420" y="380" width="310" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- ===== RIGHT SECTION: 严重性自动升级 ===== -->
+        <mxCell id="e-s2" value="" style="swimlane;startSize=30;fillColor=#ffe6cc;strokeColor=#d79b00;rounded=1;arcSize=8;fontSize=14;fontStyle=1;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="800" y="70" width="780" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="e-s2-title" value="&lt;b&gt;严重性自动升级 — 触发条件与动作&lt;/b&gt;" style="text;html=1;fontSize=14;fontColor=#1a1a2e;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="800" y="72" width="780" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- 6 trigger conditions -->
+        <mxCell id="e-cond1" value="&lt;div style=&quot;text-align:left;padding:3px;&quot;&gt;&lt;b&gt;P0 重大安全&lt;/b&gt;&lt;br&gt;AI判定严重等级为P0&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="830" y="110" width="340" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="e-cond2" value="&lt;div style=&quot;text-align:left;padding:3px;&quot;&gt;&lt;b&gt;消防类问题&lt;/b&gt;&lt;br&gt;火灾/消防通道堵塞/设备失效&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="830" y="170" width="340" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="e-cond3" value="&lt;div style=&quot;text-align:left;padding:3px;&quot;&gt;&lt;b&gt;同类高频&lt;/b&gt;&lt;br&gt;同类问题单周≥3次&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="830" y="230" width="340" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="e-cond4" value="&lt;div style=&quot;text-align:left;padding:3px;&quot;&gt;&lt;b&gt;设备参数持续超阈值&lt;/b&gt;&lt;br&gt;连续3次检测超标&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="830" y="290" width="340" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="e-cond5" value="&lt;div style=&quot;text-align:left;padding:3px;&quot;&gt;&lt;b&gt;日常→设备&lt;/b&gt;&lt;br&gt;日常巡检发现设备异常&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="830" y="350" width="340" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="e-cond6" value="&lt;div style=&quot;text-align:left;padding:3px;&quot;&gt;&lt;b&gt;设备→应急&lt;/b&gt;&lt;br&gt;设备检查发现重大隐患&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="830" y="410" width="340" height="46" as="geometry" />
+        </mxCell>
+
+        <!-- Action arrows and boxes on the right -->
+        <mxCell id="e-act1" value="自动升级紧急工单&lt;br&gt;跳过常规审核" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#b85450;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="112" width="340" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="e-act2" value="自动升级至最高级响应&lt;br&gt;全员推送 + 指挥中心接管" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#b85450;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="172" width="340" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="e-act3" value="标记重点关注&lt;br&gt;升级至经理层面" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#d6b656;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="232" width="340" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="e-act4" value="自动升级P1&lt;br&gt;触发专项设备检查" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#d6b656;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="292" width="340" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="e-act5" value="按设备检查 SLA 执行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#82b366;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="352" width="340" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="e-act6" value="按应急 SLA 执行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#82b366;arcSize=6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="412" width="340" height="42" as="geometry" />
+        </mxCell>
+
+        <!-- Arrows from conditions to actions -->
+        <mxCell id="e-ca1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#b85450;strokeWidth=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="e-cond1" target="e-act1" />
+        <mxCell id="e-ca2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#b85450;strokeWidth=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="e-cond2" target="e-act2" />
+        <mxCell id="e-ca3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#d6b656;strokeWidth=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="e-cond3" target="e-act3" />
+        <mxCell id="e-ca4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#d6b656;strokeWidth=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="e-cond4" target="e-act4" />
+        <mxCell id="e-ca5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#82b366;strokeWidth=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="e-cond5" target="e-act5" />
+        <mxCell id="e-ca6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#82b366;strokeWidth=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="e-cond6" target="e-act6" />
+
+        <!-- ===== BOTTOM SECTION: L3 最高级响应 ===== -->
+        <mxCell id="e-s3" value="" style="swimlane;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;rounded=1;arcSize=8;fontSize=14;fontStyle=1;swimlaneLine=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="580" width="1560" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="e-s3-title" value="&lt;b&gt;L3 最高级响应（P0 应急 / 重大安全事件）&lt;/b&gt;" style="text;html=1;fontSize=14;fontColor=#1a1a2e;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="582" width="1560" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- 6 response dimension boxes in 3x2 grid -->
+        <!-- Row 1 -->
+        <mxCell id="e-l3-1" value="&lt;b&gt;全员推送&lt;/b&gt;&lt;hr&gt;巡检员、管理层、指挥中心&lt;br&gt;安保、维保单位" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#b85450;arcSize=8;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="50" y="630" width="470" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e-l3-2" value="&lt;b&gt;指挥中心接管&lt;/b&gt;&lt;hr&gt;统一调度所有资源&lt;br&gt;跨部门调度无需逐级审批" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#b85450;arcSize=8;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="550" y="630" width="470" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e-l3-3" value="&lt;b&gt;自动拉群&lt;/b&gt;&lt;hr&gt;主管+经理自动拉群（企微/钉钉）&lt;br&gt;实时同步事件进展" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#b85450;arcSize=8;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="630" width="500" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Row 2 -->
+        <mxCell id="e-l3-4" value="&lt;b&gt;处置超时上报&lt;/b&gt;&lt;hr&gt;若处置超时仍未解决&lt;br&gt;自动上报园区负责人" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#b85450;arcSize=8;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="50" y="720" width="470" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e-l3-5" value="&lt;b&gt;资源跨部门调度&lt;/b&gt;&lt;hr&gt;可跨部门调度人员、设备、物资&lt;br&gt;无需逐级审批" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#b85450;arcSize=8;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="550" y="720" width="470" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e-l3-6" value="&lt;b&gt;态势地图同步&lt;/b&gt;&lt;hr&gt;态势地图实时同步至所有相关人员&lt;br&gt;确保信息透明" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff;strokeColor=#b85450;arcSize=8;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="720" width="500" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ===== LEGEND ===== -->
+        <mxCell id="e-legend" value="&lt;div&gt;&amp;nbsp;&lt;/div&gt;&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#d5e8d4&quot; width=&quot;16&quot;&gt;&amp;nbsp;&lt;/td&gt;&lt;td width=&quot;100&quot;&gt;初始通知&lt;/td&gt;&lt;td bgcolor=&quot;#fff2cc&quot; width=&quot;16&quot;&gt;&amp;nbsp;&lt;/td&gt;&lt;td width=&quot;100&quot;&gt;首次升级&lt;/td&gt;&lt;td bgcolor=&quot;#ffe6cc&quot; width=&quot;16&quot;&gt;&amp;nbsp;&lt;/td&gt;&lt;td width=&quot;100&quot;&gt;二次升级&lt;/td&gt;&lt;td bgcolor=&quot;#f8cecc&quot; width=&quot;16&quot;&gt;&amp;nbsp;&lt;/td&gt;&lt;td width=&quot;100&quot;&gt;三次 / 最高级&lt;/td&gt;&lt;td bgcolor=&quot;#dae8fc&quot; width=&quot;16&quot;&gt;&amp;nbsp;&lt;/td&gt;&lt;td width=&quot;100&quot;&gt;升级机制&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;fontSize=11;fontColor=#333;align=left;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="920" width="700" height="24" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

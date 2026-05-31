@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智慧园区巡检系统 — 原型总览</title>
+<style>
+:root {
+  --bg: oklch(99% 0.003 240);
+  --surface: oklch(100% 0 0);
+  --fg: oklch(19% 0.018 240);
+  --muted: oklch(48% 0.01 240);
+  --border: oklch(88% 0.006 240);
+  --accent: oklch(52% 0.10 250);
+  --accent-bg: oklch(52% 0.10 250 / 0.08);
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:15px}
+body{font-family:var(--font);background:var(--bg);color:var(--fg);line-height:1.5;min-height:100vh}
+.container{max-width:960px;margin:0 auto;padding:40px 24px 60px}
+/* Hero */
+.hero{display:flex;align-items:center;justify-content:space-between;margin-bottom:48px;gap:32px}
+.hero-text{flex:1}
+.hero-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:6px}
+.hero h1{font-size:28px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;margin-bottom:8px}
+.hero p{font-size:14px;color:var(--muted);max-width:480px;line-height:1.6}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;background:var(--accent-bg);color:var(--accent);border-radius:4px;font-size:11px;font-weight:600;margin-top:12px}
+.hero-badge svg{width:14px;height:14px}
+.hero-logo{flex-shrink:0}
+.hero-logo svg{width:64px;height:64px}
+/* Section */
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.section-header h2{font-size:18px;font-weight:700;letter-spacing:-0.01em}
+.section-count{font-size:11px;color:var(--muted);font-family:var(--font-mono);padding:2px 8px;border:1px solid var(--border);border-radius:4px}
+.section-desc{font-size:13px;color:var(--muted);margin-bottom:16px}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:6px;overflow:hidden;text-decoration:none;color:inherit;transition:all .15s;display:flex;flex-direction:column}
+.card:hover{border-color:var(--accent);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.card-preview{height:140px;background:var(--bg);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+.card-preview svg{width:40px;height:40px;color:var(--muted);opacity:0.4}
+.card-preview.card-pc{background:linear-gradient(135deg,var(--bg),var(--surface))}
+.card-preview.card-mobile{background:linear-gradient(135deg,var(--surface),var(--bg))}
+.card-preview .device-frame{position:absolute;bottom:14px;right:14px;font-size:10px;color:var(--muted);padding:2px 8px;border:1px solid var(--border);border-radius:3px;background:var(--surface)}
+.card-body{padding:14px 16px;flex:1;display:flex;flex-direction:column}
+.card-title{font-size:14px;font-weight:700;margin-bottom:4px}
+.card-desc{font-size:12px;color:var(--muted);line-height:1.5;flex:1}
+.card-tags{display:flex;gap:4px;margin-top:10px;flex-wrap:wrap}
+.card-tag{font-size:10px;padding:2px 7px;border-radius:3px;background:var(--accent-bg);color:var(--accent);font-weight:500}
+.card-tag.gis{background:var(--accent-bg);color:var(--accent)}
+.card-tag.ai{background:color-mix(in srgb,var(--accent) 10%,var(--surface));color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 20%,transparent)}
+.card-tag.mobile{background:var(--bg);color:var(--muted);border:1px solid var(--border)}
+.card-tag.pc{background:var(--fg);color:var(--surface)}
+/* Footer */
+.footer{text-align:center;padding:24px 0;border-top:1px solid var(--border);font-size:12px;color:var(--muted)}
+.footer-links{display:flex;justify-content:center;gap:16px;margin-top:8px}
+.footer-links a{color:var(--accent);text-decoration:none;font-size:12px}
+.footer-links a:hover{text-decoration:underline}
+@media(max-width:640px){
+.container{padding:24px 16px 40px}
+.hero{flex-direction:column;align-items:flex-start;gap:16px}
+.hero h1{font-size:22px}
+.card-grid{grid-template-columns:1fr}
+.card-preview{height:110px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="hero">
+  <div class="hero-text">
+    <div class="hero-label">Smart Campus Inspection</div>
+    <h1>智慧园区巡检决策系统</h1>
+    <p>基于 AI 大模型与 GIS 空间分析的园区巡检全流程原型 —— 覆盖日常巡检、设备检查、应急响应三大场景。</p>
+    <span class="hero-badge">
+      <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.6"/></svg>
+      6 screens · High-fidelity · Interactive
+    </span>
+  </div>
+  <div class="hero-logo">
+    <svg width="64" height="64" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="6" height="6" rx="1" fill="var(--accent)"/><rect x="15" y="3" width="6" height="6" rx="1" fill="var(--accent)" opacity="0.4"/><rect x="3" y="15" width="6" height="6" rx="1" fill="var(--accent)" opacity="0.4"/><rect x="15" y="15" width="6" height="6" rx="1" fill="var(--accent)"/></svg>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">
+    <h2>PC 后台 — 管理层</h2>
+    <span class="section-count">3 screens</span>
+  </div>
+  <div class="section-desc">巡检调度、数据监控与决策分析 —— 面向园区管理层，支持工单流转、GIS 热力分析和 AI 预测。</div>
+  <div class="card-grid">
+    <a href="screens/pc-dashboard.html" class="card">
+      <div class="card-preview card-pc">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M12 17v4M8 21h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span class="device-frame">Desktop</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">数据大盘</div>
+        <div class="card-desc">KPI 指标卡、巡检完成趋势图、设备健康度、实时 GIS 热力图、人员位置追踪</div>
+        <div class="card-tags"><span class="card-tag pc">PC</span><span class="card-tag gis">GIS</span></div>
+      </div>
+    </a>
+    <a href="screens/pc-workorder.html" class="card">
+      <div class="card-preview card-pc">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span class="device-frame">Desktop</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">工单调度</div>
+        <div class="card-desc">工单筛选、列表/详情分屏、AI 推荐派单、派单弹窗、处理时间线</div>
+        <div class="card-tags"><span class="card-tag pc">PC</span><span class="card-tag ai">AI</span></div>
+      </div>
+    </a>
+    <a href="screens/pc-decision.html" class="card">
+      <div class="card-preview card-pc">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="13" width="3" height="8" rx=".5" fill="currentColor" opacity="0.6"/><rect x="10.5" y="8" width="3" height="13" rx=".5" fill="currentColor" opacity="0.6"/><rect x="17" y="3" width="3" height="18" rx=".5" fill="currentColor"/></svg>
+        <span class="device-frame">Desktop</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">决策中心</div>
+        <div class="card-desc">路线偏差分析、覆盖率热力图、巡检员效率对比、风险趋势预测、AI 聚类洞察</div>
+        <div class="card-tags"><span class="card-tag pc">PC</span><span class="card-tag ai">AI</span><span class="card-tag gis">GIS</span></div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">
+    <h2>移动端 — 巡检员</h2>
+    <span class="section-count">3 screens</span>
+  </div>
+  <div class="section-desc">现场巡检核心流程 —— 任务接收、导航定位、设备检查、AI 拍照识别、问题上报。</div>
+  <div class="card-grid">
+    <a href="screens/mobile-task-center.html" class="card">
+      <div class="card-preview card-mobile">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="18" r="1" fill="currentColor"/></svg>
+        <span class="device-frame">Mobile</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">任务中心</div>
+        <div class="card-desc">今日巡检统计、计划卡片（左右滑动）、紧急接单、待办工单列表、底部导航</div>
+        <div class="card-tags"><span class="card-tag mobile">Mobile</span></div>
+      </div>
+    </a>
+    <a href="screens/mobile-inspection.html" class="card">
+      <div class="card-preview card-mobile">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span class="device-frame">Mobile</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">巡查执行</div>
+        <div class="card-desc">楼层平面图、POI 标记打卡、路线轨迹、检查清单抽屉、围栏提示</div>
+        <div class="card-tags"><span class="card-tag mobile">Mobile</span><span class="card-tag gis">GIS</span></div>
+      </div>
+    </a>
+    <a href="screens/mobile-ai-report.html" class="card">
+      <div class="card-preview card-mobile">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="13" r="4" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span class="device-frame">Mobile</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">AI 拍照上报</div>
+        <div class="card-desc">相机取景器、扫描动画、AI 识别叠加层（bbox+置信度）、问题上报表单、紧急程度选择</div>
+        <div class="card-tags"><span class="card-tag mobile">Mobile</span><span class="card-tag ai">AI</span></div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="footer">
+  <div>智慧园区巡检决策系统 · 产品原型</div>
+  <div class="footer-links">
+    <a href="https://opencode.ai" target="_blank">OpenCode</a>
+    <a href="screens/pc-dashboard.html">PC 端</a>
+    <a href="screens/mobile-task-center.html">移动端</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

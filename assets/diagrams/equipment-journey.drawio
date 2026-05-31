@@ -1,0 +1,185 @@
+<mxfile host="app.diagrams.net" modified="2026-05-14T00:00:00.000Z" agent="Claude Code" version="24.0.0" type="device">
+  <diagram id="equipment-journey" name="设备检查用户旅程地图">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="2" value="&lt;div style=&quot;text-align:center;&quot;&gt;&lt;b style=&quot;font-size:18px;&quot;&gt;设备检查用户旅程地图 — 双轨视角&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:11px;color:#666;&quot;&gt;双轨视角：技术主管（陈志远）+ 技术员（张建国）· 时间跨度：单设备检查周期（3–7天，以电梯月检为例）&lt;/span&gt;&lt;/div&gt;" style="text;html=1;fontSize=18;fontColor=#1a1a2e;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="950" y="10" width="1000" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- ====== UPPER TRACK: 技术主管 ====== -->
+
+        <!-- Upper track label -->
+        <mxCell id="3" value="&lt;b&gt;技术主管视角 · 陈志远&lt;/b&gt;" style="text;html=1;fontSize=12;fontColor=#9673a6;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="60" width="150" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Upper emotion level labels -->
+        <mxCell id="4" value="😊" style="text;html=1;fontSize=11;fontColor=#2a7a2a;align=right;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="85" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="😐" style="text;html=1;fontSize=11;fontColor=#d4a017;align=right;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="108" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="😟" style="text;html=1;fontSize=11;fontColor=#c00;align=right;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="131" width="40" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Upper emotion curve -->
+        <mxCell id="7" value="" style="curved=1;strokeColor=#9673a6;strokeWidth=3;rounded=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="100" as="sourcePoint" />
+            <mxPoint x="1500" y="100" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="315" y="80" />
+              <mxPoint x="530" y="118" />
+              <mxPoint x="745" y="88" />
+              <mxPoint x="960" y="125" />
+              <mxPoint x="1175" y="95" />
+              <mxPoint x="1390" y="75" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Upper separator -->
+        <mxCell id="8" value="" style="endArrow=none;startArrow=none;strokeColor=#ccc;strokeWidth=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="260" y="145" as="sourcePoint" />
+            <mxPoint x="1500" y="145" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Upper stage headers -->
+        <mxCell id="9" value="&lt;b&gt;① 计划编排&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;月初&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="315" y="155" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="&lt;b&gt;② 异常审核&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;检查次日&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="530" y="155" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;b&gt;③ 工单分派&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;审核后&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="745" y="155" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="&lt;b&gt;④ 维修跟踪&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;分派后2天内&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="960" y="155" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="&lt;b&gt;⑤ 技术验收&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;维修完成后&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1175" y="155" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;b&gt;⑥ 分析决策&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;月度&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="155" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Upper content boxes -->
+        <mxCell id="15" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 查看系统自动排期&lt;br&gt;&#8226; 根据故障率调整计划&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; 设备检查计划页&lt;br&gt;&#8226; BIM设备分布+甘特图&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 台账分散不一致&lt;br&gt;&#8226; 排期靠经验拍脑袋&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; 系统聚合数据推排期&lt;br&gt;&#8226; BIM可视发现盲区&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; AI预测高风险设备&lt;br&gt;&#8226; 智能排期多维度约束&lt;br&gt;&#8226; BIM空间可视化&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#faf5fc;strokeColor=#9673a6;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="315" y="190" width="200" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 查看异常上报推送&lt;br&gt;&#8226; 审AI判断结果&lt;br&gt;&#8226; 确认等级/维保单位&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; 异常审核页&lt;br&gt;&#8226; 详情(多图+OCR+评分)&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 描述参差需反复沟通&lt;br&gt;&#8226; 担心AI误判导致事故&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; AI综合评分+依据展示&lt;br&gt;&#8226; 历史案例辅助判断&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; AI外观/OCR/声音分析&lt;br&gt;&#8226; 综合健康度评分(0-100)&lt;br&gt;&#8226; BIM定位打标异常设备&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#faf5fc;strokeColor=#9673a6;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="530" y="190" width="200" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 确认AI推荐维保单位&lt;br&gt;&#8226; 设定SLA时限&lt;br&gt;&#8226; 一键分派工单&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; 工单创建页(自动预填)&lt;br&gt;&#8226; 维保推荐卡片(评分)&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 维保质量参差不齐&lt;br&gt;&#8226; 紧急不知最近可用人&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; 维保评分透明化&lt;br&gt;&#8226; GIS就近匹配+档期&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; AI智能推荐最优单位&lt;br&gt;&#8226; 维修方案匹配案例&lt;br&gt;&#8226; GIS就近匹配+实时档期&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#faf5fc;strokeColor=#9673a6;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="745" y="190" width="200" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 查看维修进度看板&lt;br&gt;&#8226; 接收超时预警&lt;br&gt;&#8226; 必要时电话督办&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; 维修跟踪看板&lt;br&gt;&#8226; 工单时间线+超时标红&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 维保虚报进度难验证&lt;br&gt;&#8226; 多工单并行易遗漏&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; GPS+BIM到场验证防虚报&lt;br&gt;&#8226; 超时自动升级(30min)&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; AI到场时间GPS比对&lt;br&gt;&#8226; 超时自动升级机制&lt;br&gt;&#8226; BIM室内导航+安全标注&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#faf5fc;strokeColor=#9673a6;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="960" y="190" width="200" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 远程审核维修报告&lt;br&gt;&#8226; 查看AI图像比对结果&lt;br&gt;&#8226; 必要时现场功能测试&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; 验收审核页(照片对比)&lt;br&gt;&#8226; AI参数验证结果&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 远程怕报喜不报忧&lt;br&gt;&#8226; 现场验收跨楼成本高&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; AI红框标注差异区域&lt;br&gt;&#8226; 仅低置信度需现场验收&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; AI图像比对标记差异&lt;br&gt;&#8226; 参数自动比对标准范围&lt;br&gt;&#8226; BIM现场定位验证&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#faf5fc;strokeColor=#9673a6;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1175" y="190" width="200" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 查看设备健康度月报&lt;br&gt;&#8226; 分析故障趋势与热力&lt;br&gt;&#8226; 制定维保预算计划&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; 健康度报告&lt;br&gt;&#8226; 故障趋势图+BIM热力&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 趋势靠记忆手工统计&lt;br&gt;&#8226; 预算分配无数据支撑&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; AI劣化预测提前预警&lt;br&gt;&#8226; ROI模拟辅助预算分配&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; AI设备劣化预测&lt;br&gt;&#8226; 异常模式识别&lt;br&gt;&#8226; BIM故障热力图+生命周期&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#faf5fc;strokeColor=#9673a6;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="190" width="200" height="300" as="geometry" />
+        </mxCell>
+
+        <!-- ====== LOWER TRACK: 技术员 ====== -->
+
+        <!-- Lower track label -->
+        <mxCell id="21" value="&lt;b&gt;技术员视角 · 张建国&lt;/b&gt;" style="text;html=1;fontSize=12;fontColor=#6c8ebf;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="520" width="150" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Lower emotion level labels -->
+        <mxCell id="22" value="😊" style="text;html=1;fontSize=11;fontColor=#2a7a2a;align=right;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="540" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="😐" style="text;html=1;fontSize=11;fontColor=#d4a017;align=right;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="563" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="😟" style="text;html=1;fontSize=11;fontColor=#c00;align=right;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="586" width="40" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Lower emotion curve -->
+        <mxCell id="25" value="" style="curved=1;strokeColor=#6c8ebf;strokeWidth=3;rounded=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="555" as="sourcePoint" />
+            <mxPoint x="1500" y="555" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="315" y="535" />
+              <mxPoint x="530" y="555" />
+              <mxPoint x="745" y="575" />
+              <mxPoint x="960" y="545" />
+              <mxPoint x="1175" y="535" />
+              <mxPoint x="1390" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Lower separator -->
+        <mxCell id="26" value="" style="endArrow=none;startArrow=none;strokeColor=#ccc;strokeWidth=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="260" y="600" as="sourcePoint" />
+            <mxPoint x="1500" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Lower stage headers -->
+        <mxCell id="27" value="&lt;b&gt;① 接收计划&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;检查前1天&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="315" y="610" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="&lt;b&gt;② 清单执行&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;检查当日&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="530" y="610" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="&lt;b&gt;③ 异常判断&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;检查中&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="745" y="610" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="&lt;b&gt;④ 协助维修&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;维保到场后&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="960" y="610" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="&lt;b&gt;⑤ 功能测试&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;维修后&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1175" y="610" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="&lt;b&gt;⑥ 记录归档&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;检查完成&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;verticalAlign=middle;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="610" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Lower content boxes -->
+        <mxCell id="33" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 打开APP查看待检设备&lt;br&gt;&#8226; 确认检查时间和地点&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; 设备检查列表&lt;br&gt;&#8226; 详情(检查清单+BIM位)&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 不清楚检查重点漏项&lt;br&gt;&#8226; 设备房位置难找&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; 高风险设备标红提示&lt;br&gt;&#8226; BIM室内导航指路&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; AI预测标记高风险&lt;br&gt;&#8226; BIM楼层定位&lt;br&gt;&#8226; 室内导航路径规划&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f8ff;strokeColor=#6c8ebf;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="315" y="645" width="200" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 到位验证(蓝牙/二维码)&lt;br&gt;&#8226; 按checklist逐项确认&lt;br&gt;&#8226; 拍摄表盘+外观照片&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; 检查清单(逐项打勾)&lt;br&gt;&#8226; 相机拍摄+OCR识别弹窗&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 表盘手记再比对易错&lt;br&gt;&#8226; 检查项多怕漏项&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; OCR自动识别标红超标&lt;br&gt;&#8226; 未完成项强制提醒&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; OCR表盘读数识别&lt;br&gt;&#8226; 超标自动告警&lt;br&gt;&#8226; 蓝牙信标到位验证&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f8ff;strokeColor=#6c8ebf;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="530" y="645" width="200" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 发现异响/异常标记&lt;br&gt;&#8226; 拍照+录音+填写描述&lt;br&gt;&#8226; 查看AI判断结果&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; 异常上报浮层&lt;br&gt;&#8226; AI分析(外观+频谱+评分)&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 不确定是否够严重&lt;br&gt;&#8226; 参数标准记不住翻手册&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; AI实时建议+严重等级&lt;br&gt;&#8226; 关联历史异常辅助判断&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; AI外观/OCR/声音综合&lt;br&gt;&#8226; 设备健康度评分&lt;br&gt;&#8226; BIM异常设备标记&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f8ff;strokeColor=#6c8ebf;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="745" y="645" width="200" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 协助维保入场&lt;br&gt;&#8226; 提供历史异常记录&lt;br&gt;&#8226; 维修后协助功能测试&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; 工单详情(历史时间线)&lt;br&gt;&#8226; 功能测试checklist&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 维保不熟位置需指路&lt;br&gt;&#8226; 测试标准不清晰&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; BIM导航直接引导维保&lt;br&gt;&#8226; 测试清单内置APP&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; 维修方案推荐&lt;br&gt;&#8226; BIM室内导航&lt;br&gt;&#8226; 维修区安全标注&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f8ff;strokeColor=#6c8ebf;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="960" y="645" width="200" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 按标准执行功能测试&lt;br&gt;&#8226; 记录测试数据(仪表拍)&lt;br&gt;&#8226; 提交测试报告&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; 功能测试checklist&lt;br&gt;&#8226; OCR录入界面&lt;br&gt;&#8226; 测试报告预览&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 测试数据手写再录入&lt;br&gt;&#8226; 手动比对标准易出错&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; 仪表拍照OCR自动录入&lt;br&gt;&#8226; 数据自动比对标准范围&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; OCR测试数据录入&lt;br&gt;&#8226; 参数自动比对&lt;br&gt;&#8226; BIM现场定位验证&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f8ff;strokeColor=#6c8ebf;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1175" y="645" width="200" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="38" value="&lt;div style=&quot;padding:3px;font-size:10px;&quot;&gt;&lt;b&gt;Actions:&lt;/b&gt;&lt;br&gt;&#8226; 提交完整检查记录&lt;br&gt;&#8226; 确认所有项已完成&lt;br&gt;&#8226; 查看个人检查统计&lt;br&gt;&lt;br&gt;&lt;b&gt;Touchpoints:&lt;/b&gt;&lt;br&gt;&#8226; 检查记录提交页&lt;br&gt;&#8226; 工作台「月检查统计」&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c00;&quot;&gt;Pain:&lt;/b&gt;&lt;br&gt;&#8226; 提交后不知道有用没&lt;br&gt;&#8226; 感觉像「交作业」&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#2a7a2a;&quot;&gt;Opportunity:&lt;/b&gt;&lt;br&gt;&#8226; 展示设备健康度变化&lt;br&gt;&#8226; 可视化工作价值&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#7a2a9a;&quot;&gt;AI/GIS:&lt;/b&gt;&lt;br&gt;&#8226; AI健康度变化计算&lt;br&gt;&#8226; 个人绩效统计&lt;br&gt;&#8226; BIM设备状态更新&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f8ff;strokeColor=#6c8ebf;fontSize=10;verticalAlign=top;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="645" width="200" height="300" as="geometry" />
+        </mxCell>
+
+        <!-- Journey insights -->
+        <mxCell id="39" value="&lt;div style=&quot;padding:6px;font-size:10px;&quot;&gt;&lt;b&gt;双轨旅程洞察&lt;/b&gt;&lt;hr size=&quot;1&quot; color=&quot;#ccc&quot;&gt;&lt;b&gt;情绪低谷：&lt;/b&gt;技术主管→异常审核信息不对称焦虑 · 技术员→异常判断不确定感&lt;br&gt;&lt;b&gt;情绪高峰：&lt;/b&gt;技术主管→分析决策数据支撑底气足 · 技术员→AI辅助判断有了主心骨&lt;br&gt;&lt;b&gt;关键转化：&lt;/b&gt;双轨交汇点=工单分派与维修跟踪——主管&quot;放心&quot;依赖技术员&quot;到位&quot;&lt;br&gt;&lt;b&gt;设计重点：&lt;/b&gt;技术主管→一眼看清全局掌控感 · 技术员→不背锅的判断辅助+少打字低摩擦操作&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#ccc;fontSize=10;verticalAlign=middle;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="315" y="970" width="1275" height="90" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
